@@ -29,29 +29,17 @@
     <!-- Custom CSS -->
     <style>
         :root {
-            /* Brand Colors: Red, Green, Blue */
-            --primary-red: #E63946;      /* Vibrant Red */
-            --primary-green: #2A9D8F;    /* Teal Green */
-            --primary-blue: #1D3557;     /* Dark Blue */
+            /* Brand Colors: Green (dominant) and Red (accent) */
+            --primary-green: #2A9D8F;    /* Teal Green - Dominant */
+            --primary-red: #E63946;      /* Vibrant Red - Accent */
             
             /* Color Variations */
-            --red-light: #FF6B6B;
-            --red-lighter: #FFE8E8;
-            --red-dark: #C1121F;
             --green-light: #4ECDC4;
             --green-lighter: #E8F6F5;
             --green-dark: #1A7F7A;
-            --blue-light: #457B9D;
-            --blue-lighter: #E8F1F8;
-            --blue-dark: #0D1B2A;
-            
-            /* South African Colors */
-            --sa-red: #E23D28;    /* South African flag red */
-            --sa-blue: #002395;   /* South African flag blue */
-            --sa-green: #007A4D;  /* South African flag green */
-            --sa-yellow: #FFB81C; /* South African flag yellow */
-            --sa-black: #000000;  /* South African flag black */
-            --sa-white: #FFFFFF;  /* South African flag white */
+            --red-light: #FF6B6B;
+            --red-lighter: #FFE8E8;
+            --red-dark: #C1121F;
             
             /* Neutral Colors */
             --white: #FFFFFF;
@@ -126,22 +114,7 @@
             pointer-events: none;
             z-index: -1;
             opacity: 0.03;
-        }
-        
-        .sa-pattern::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background-image: 
-                linear-gradient(45deg, var(--sa-red) 25%, transparent 25%),
-                linear-gradient(-45deg, var(--sa-green) 25%, transparent 25%),
-                linear-gradient(45deg, transparent 75%, var(--sa-blue) 75%),
-                linear-gradient(-45deg, transparent 75%, var(--sa-yellow) 75%);
-            background-size: 100px 100px;
-            background-position: 0 0, 0 50px, 50px -50px, -50px 0px;
+            background-color: var(--green-lighter);
         }
         
         .sa-border-top {
@@ -150,13 +123,7 @@
             left: 0;
             right: 0;
             height: 4px;
-            background: linear-gradient(90deg, 
-                var(--sa-black) 0%, 
-                var(--sa-red) 20%, 
-                var(--sa-blue) 40%, 
-                var(--sa-green) 60%, 
-                var(--sa-yellow) 80%, 
-                var(--sa-white) 100%);
+            background-color: var(--primary-green);
             z-index: 1001;
         }
         
@@ -166,13 +133,7 @@
             left: 0;
             right: 0;
             height: 4px;
-            background: linear-gradient(90deg, 
-                var(--sa-white) 0%, 
-                var(--sa-yellow) 20%, 
-                var(--sa-green) 40%, 
-                var(--sa-blue) 60%, 
-                var(--sa-red) 80%, 
-                var(--sa-black) 100%);
+            background-color: var(--primary-red);
             z-index: 1001;
         }
         
@@ -206,10 +167,6 @@
             color: var(--primary-green) !important;
         }
         
-        .text-blue {
-            color: var(--primary-blue) !important;
-        }
-        
         .bg-red {
             background-color: var(--primary-red) !important;
         }
@@ -218,20 +175,12 @@
             background-color: var(--primary-green) !important;
         }
         
-        .bg-blue {
-            background-color: var(--primary-blue) !important;
-        }
-        
         .bg-red-light {
             background-color: var(--red-lighter) !important;
         }
         
         .bg-green-light {
             background-color: var(--green-lighter) !important;
-        }
-        
-        .bg-blue-light {
-            background-color: var(--blue-lighter) !important;
         }
         
         .lead {
@@ -259,7 +208,7 @@
             transform: translateX(-50%);
             width: 60px;
             height: 4px;
-            background: linear-gradient(90deg, var(--sa-red), var(--sa-green), var(--sa-blue));
+            background-color: var(--primary-green);
             border-radius: var(--radius-full);
         }
         
@@ -273,8 +222,7 @@
         
         /* Navigation - Horizontal Fixed Menu */
         .navbar-main {
-            background: rgba(255, 255, 255, 0.98);
-            backdrop-filter: blur(10px);
+            background-color: var(--white);
             border-bottom: 1px solid var(--gray-200);
             padding: 0.5rem 0;
             transition: all var(--transition-normal);
@@ -319,7 +267,9 @@
             justify-content: center;
             overflow: hidden;
             border-radius: var(--radius-lg);
-            border: 2px solid var(--primary-blue);
+            border: 2px solid var(--primary-green);
+            background-color: var(--primary-green);
+            color: white;
         }
         
         .brand-logo img {
@@ -330,8 +280,6 @@
         
         /* Default logo if none provided */
         .brand-logo.default-logo {
-            background-color: var(--primary-blue);
-            color: white;
             font-size: 1.25rem;
         }
         
@@ -345,7 +293,7 @@
             font-size: 1.5rem;
             font-weight: 800;
             line-height: 1;
-            color: var(--primary-blue);
+            color: var(--primary-green);
         }
         
         .navbar-brand .brand-tagline {
@@ -380,11 +328,11 @@
         }
         
         .nav-link:hover {
-            color: var(--primary-red) !important;
+            color: var(--primary-green) !important;
         }
         
         .nav-link.active {
-            color: var(--primary-red) !important;
+            color: var(--primary-green) !important;
             font-weight: 600;
         }
         
@@ -395,12 +343,12 @@
             left: 1.25rem;
             right: 1.25rem;
             height: 3px;
-            background: linear-gradient(90deg, var(--sa-red), var(--sa-green));
+            background-color: var(--primary-green);
             border-radius: var(--radius-full);
         }
         
         /* Get Started Button */
-        .nav-item .btn-red {
+        .nav-item .btn-green {
             padding: 0.75rem 1.5rem;
             margin-left: 1rem;
             white-space: nowrap;
@@ -445,17 +393,6 @@
             color: var(--white);
         }
         
-        .btn-blue {
-            background-color: var(--primary-blue);
-            color: var(--white);
-            box-shadow: var(--shadow-md);
-        }
-        
-        .btn-blue:hover {
-            background-color: var(--blue-dark);
-            color: var(--white);
-        }
-        
         .btn-outline-red {
             background-color: transparent;
             border: 2px solid var(--primary-red);
@@ -475,17 +412,6 @@
         
         .btn-outline-green:hover {
             background-color: var(--primary-green);
-            color: var(--white);
-        }
-        
-        .btn-outline-blue {
-            background-color: transparent;
-            border: 2px solid var(--primary-blue);
-            color: var(--primary-blue);
-        }
-        
-        .btn-outline-blue:hover {
-            background-color: var(--primary-blue);
             color: var(--white);
         }
         
@@ -512,10 +438,7 @@
             right: 0;
             bottom: 0;
             opacity: 0.1;
-            background: 
-                radial-gradient(circle at 20% 80%, var(--sa-red) 0%, transparent 50%),
-                radial-gradient(circle at 80% 20%, var(--sa-green) 0%, transparent 50%),
-                radial-gradient(circle at 40% 40%, var(--sa-blue) 0%, transparent 50%);
+            background-color: var(--green-lighter);
             z-index: -1;
         }
         
@@ -530,10 +453,7 @@
         }
         
         .hero-title span {
-            background: linear-gradient(90deg, var(--sa-red), var(--sa-green), var(--sa-blue));
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
+            color: var(--primary-green);
         }
         
         .hero-badges {
@@ -564,10 +484,6 @@
             border-left: 4px solid var(--primary-green);
         }
         
-        .badge-blue {
-            border-left: 4px solid var(--primary-blue);
-        }
-        
         .hero-image-container {
             position: relative;
             height: 100%;
@@ -588,23 +504,10 @@
             width: 300px;
             height: 300px;
             border-radius: 50%;
-            background: conic-gradient(
-                var(--sa-red) 0deg 60deg,
-                var(--sa-blue) 60deg 120deg,
-                var(--sa-green) 120deg 180deg,
-                var(--sa-yellow) 180deg 240deg,
-                var(--sa-black) 240deg 300deg,
-                var(--sa-white) 300deg 360deg
-            );
+            background-color: var(--primary-green);
             margin: 0 auto;
             position: relative;
-            animation: rotate 20s linear infinite;
             box-shadow: var(--shadow-2xl);
-        }
-        
-        @keyframes rotate {
-            from { transform: rotate(0deg); }
-            to { transform: rotate(360deg); }
         }
         
         .sa-circle-inner {
@@ -614,7 +517,7 @@
             transform: translate(-50%, -50%);
             width: 200px;
             height: 200px;
-            background: var(--white);
+            background-color: var(--white);
             border-radius: 50%;
             display: flex;
             align-items: center;
@@ -624,7 +527,7 @@
         
         .sa-circle-inner i {
             font-size: 4rem;
-            color: var(--primary-blue);
+            color: var(--primary-green);
         }
         
         .floating-element {
@@ -645,21 +548,21 @@
             top: 10%;
             right: 10%;
             animation-delay: 0s;
-            border-color: var(--sa-red);
+            border-color: var(--primary-red);
         }
         
         .floating-element-2 {
             top: 50%;
             right: 5%;
             animation-delay: 2s;
-            border-color: var(--sa-green);
+            border-color: var(--primary-green);
         }
         
         .floating-element-3 {
             bottom: 20%;
             right: 15%;
             animation-delay: 4s;
-            border-color: var(--sa-blue);
+            border-color: var(--primary-green);
         }
         
         @keyframes float {
@@ -669,7 +572,7 @@
         
         /* Stats Section */
         .stats-section {
-            background: linear-gradient(135deg, var(--white) 0%, var(--gray-100) 100%);
+            background-color: var(--white);
             padding: 3rem 0;
             border-radius: var(--radius-2xl);
             margin-top: -3rem;
@@ -677,6 +580,7 @@
             z-index: 10;
             box-shadow: var(--shadow-xl);
             border: 1px solid var(--gray-200);
+            border-top: 4px solid var(--primary-green);
         }
         
         .stat-item {
@@ -687,10 +591,7 @@
         .stat-number {
             font-size: 3rem;
             font-weight: 900;
-            background: linear-gradient(90deg, var(--sa-red), var(--sa-green), var(--sa-blue));
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
+            color: var(--primary-green);
             line-height: 1;
             margin-bottom: 0.5rem;
         }
@@ -724,7 +625,7 @@
         .feature-card:hover {
             transform: translateY(-8px);
             box-shadow: var(--shadow-xl);
-            border-color: transparent;
+            border-color: var(--primary-green);
         }
         
         .feature-card::before {
@@ -734,7 +635,7 @@
             left: 0;
             right: 0;
             height: 4px;
-            background: linear-gradient(90deg, var(--sa-red), var(--sa-green), var(--sa-blue));
+            background-color: var(--primary-green);
         }
         
         .feature-icon {
@@ -747,27 +648,15 @@
             margin: 0 auto 1.5rem;
             font-size: 1.75rem;
             color: var(--white);
-            background: linear-gradient(135deg, var(--primary-blue), var(--primary-green));
+            background-color: var(--primary-green);
         }
         
         /* How It Works */
         .how-it-works {
-            background: linear-gradient(135deg, var(--primary-blue) 0%, var(--blue-dark) 100%);
+            background-color: var(--primary-green);
             color: var(--white);
             position: relative;
             overflow: hidden;
-        }
-        
-        .how-it-works::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: 
-                radial-gradient(circle at 20% 80%, rgba(255, 255, 255, 0.1) 0%, transparent 50%),
-                radial-gradient(circle at 80% 20%, rgba(255, 255, 255, 0.1) 0%, transparent 50%);
         }
         
         .how-it-works .section-title::after {
@@ -775,25 +664,24 @@
         }
         
         .step-card {
-            background: rgba(255, 255, 255, 0.1);
-            backdrop-filter: blur(10px);
+            background-color: rgba(255, 255, 255, 0.1);
             border-radius: var(--radius-xl);
             padding: 2rem;
             height: 100%;
-            border: 1px solid rgba(255, 255, 255, 0.1);
+            border: 1px solid rgba(255, 255, 255, 0.2);
             transition: all var(--transition-normal);
             text-align: center;
         }
         
         .step-card:hover {
-            background: rgba(255, 255, 255, 0.15);
+            background-color: rgba(255, 255, 255, 0.15);
             transform: translateY(-4px);
         }
         
         .step-number {
             width: 60px;
             height: 60px;
-            background: linear-gradient(135deg, var(--sa-red), var(--sa-green));
+            background-color: var(--white);
             border-radius: 50%;
             display: flex;
             align-items: center;
@@ -801,7 +689,7 @@
             font-size: 1.5rem;
             font-weight: 700;
             margin: 0 auto 1.5rem;
-            color: var(--white);
+            color: var(--primary-green);
         }
         
         /* Testimonials */
@@ -818,6 +706,7 @@
             position: relative;
             height: 100%;
             border: 1px solid var(--gray-200);
+            border-top: 4px solid var(--primary-green);
         }
         
         .testimonial-card::before {
@@ -850,7 +739,7 @@
         .author-avatar {
             width: 50px;
             height: 50px;
-            background: linear-gradient(135deg, var(--sa-red), var(--sa-blue));
+            background-color: var(--primary-green);
             border-radius: 50%;
             display: flex;
             align-items: center;
@@ -879,10 +768,9 @@
         }
         
         .pricing-card.featured {
-            border-color: var(--primary-red);
+            border-color: var(--primary-green);
             transform: scale(1.05);
             box-shadow: var(--shadow-xl);
-            border-image: linear-gradient(135deg, var(--sa-red), var(--sa-green), var(--sa-blue)) 1;
         }
         
         .pricing-card:hover:not(.featured) {
@@ -896,7 +784,7 @@
             top: -12px;
             left: 50%;
             transform: translateX(-50%);
-            background: linear-gradient(135deg, var(--sa-red), var(--sa-green));
+            background-color: var(--primary-green);
             color: var(--white);
             padding: 0.5rem 2rem;
             border-radius: var(--radius-full);
@@ -907,7 +795,7 @@
         .price {
             font-size: 3rem;
             font-weight: 900;
-            color: var(--dark);
+            color: var(--primary-green);
             margin: 1.5rem 0;
         }
         
@@ -934,7 +822,8 @@
         }
         
         .pricing-features i.fa-times {
-            color: var(--gray-400);
+            color: var(--primary-red);
+            opacity: 0.7;
         }
         
         /* Contact Forms */
@@ -949,6 +838,7 @@
             padding: 3rem;
             box-shadow: var(--shadow-lg);
             border: 1px solid var(--gray-200);
+            border-top: 4px solid var(--primary-green);
         }
         
         .form-control-custom {
@@ -962,8 +852,8 @@
         }
         
         .form-control-custom:focus {
-            border-color: var(--primary-blue);
-            box-shadow: 0 0 0 3px rgba(29, 53, 87, 0.1);
+            border-color: var(--primary-green);
+            box-shadow: 0 0 0 3px rgba(42, 157, 143, 0.1);
             background: var(--white);
         }
         
@@ -978,13 +868,13 @@
         }
         
         .file-upload-area:hover {
-            border-color: var(--primary-blue);
-            background: rgba(29, 53, 87, 0.05);
+            border-color: var(--primary-green);
+            background: var(--green-lighter);
         }
         
         /* Footer */
         .footer-main {
-            background: linear-gradient(135deg, var(--primary-blue) 0%, var(--blue-dark) 100%);
+            background-color: var(--primary-green);
             color: var(--white);
             padding: 4rem 0 2rem;
             position: relative;
@@ -997,7 +887,7 @@
             left: 0;
             right: 0;
             height: 4px;
-            background: linear-gradient(90deg, var(--sa-red), var(--sa-green), var(--sa-blue));
+            background-color: var(--primary-red);
         }
         
         .footer-logo {
@@ -1012,6 +902,8 @@
             width: 50px;
             height: 50px;
             border-color: var(--white);
+            background-color: var(--white);
+            color: var(--primary-green);
         }
         
         .footer-logo .brand-name {
@@ -1025,6 +917,18 @@
             color: var(--white);
             margin-bottom: 1.5rem;
             font-size: 1.125rem;
+            position: relative;
+            padding-bottom: 0.5rem;
+        }
+        
+        .footer-links h5::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 30px;
+            height: 2px;
+            background-color: var(--primary-red);
         }
         
         .footer-links a {
@@ -1041,7 +945,7 @@
         }
         
         .footer-contact i {
-            color: var(--green-light);
+            color: var(--white);
             width: 20px;
         }
         
@@ -1051,19 +955,19 @@
             justify-content: center;
             width: 40px;
             height: 40px;
-            background: rgba(255, 255, 255, 0.1);
+            background-color: rgba(255, 255, 255, 0.1);
             border-radius: 50%;
             color: var(--white);
             transition: all var(--transition-normal);
         }
         
         .social-icon:hover {
-            background: linear-gradient(135deg, var(--sa-red), var(--sa-green));
+            background-color: var(--primary-red);
             transform: translateY(-2px);
         }
         
         .footer-bottom {
-            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            border-top: 1px solid rgba(255, 255, 255, 0.2);
             padding-top: 2rem;
             margin-top: 3rem;
         }
@@ -1075,7 +979,7 @@
             right: 2rem;
             width: 60px;
             height: 60px;
-            background: linear-gradient(135deg, #25D366, #128C7E);
+            background-color: #25D366;
             border-radius: 50%;
             display: flex;
             align-items: center;
@@ -1089,7 +993,7 @@
         }
         
         .whatsapp-float:hover {
-            transform: scale(1.1) rotate(10deg);
+            transform: scale(1.1);
             box-shadow: var(--shadow-xl);
         }
         
@@ -1321,7 +1225,7 @@
                 font-size: 0.9rem;
             }
             
-            .nav-item .btn-red {
+            .nav-item .btn-green {
                 margin-left: 0;
                 margin-top: 0.5rem;
                 width: 100%;
@@ -1383,14 +1287,14 @@
             <div class="container">
                 <a class="navbar-brand" href="#" @click.prevent="scrollToTop">
                     <!-- Your Logo Here -->
-                      <img src="logo.png" alt="SpazaSure Logo"> 
-                    
+                     <!-- <img src="logo.png" alt="SpazaSure Logo"> -->
+                    <div class="brand-logo default-logo">
                         <!-- Replace this with your logo -->
-                        
+                        <i class="fas fa-shield-check"></i>
                     </div>
                     <div class="brand-text">
                         <span class="brand-name">SpazaSure</span>
-                        <span class="brand-tagline">“Buy Smart. Verify Fast. Grow Together.”</span>
+                        <span class="brand-tagline">"Buy Smart. Verify Fast. Grow Together."</span>
                     </div>
                 </a>
                 
@@ -1412,7 +1316,7 @@
                         <a class="nav-link" href="#" @click.prevent="scrollToSection('contact')" :class="{ 'active': activeSection === 'contact' }">Contact</a>
                     </li>
                     <li class="nav-item ms-lg-3">
-                        <a class="btn btn-red" href="#" @click.prevent="showRegistration('shop')">
+                        <a class="btn btn-green" href="#" @click.prevent="showRegistration('shop')">
                             Get Started
                         </a>
                     </li>
@@ -1434,8 +1338,8 @@
                                 <span class="badge badge-green animate__animated animate__fadeInUp" style="animation-delay: 0.4s">
                                     <i class="fas fa-tags text-green"></i> Bulk Discounts
                                 </span>
-                                <span class="badge badge-blue animate__animated animate__fadeInUp" style="animation-delay: 0.6s">
-                                    <i class="fas fa-truck text-blue"></i> Township Delivery
+                                <span class="badge badge-green animate__animated animate__fadeInUp" style="animation-delay: 0.6s">
+                                    <i class="fas fa-truck text-green"></i> Township Delivery
                                 </span>
                             </div>
                             
@@ -1448,10 +1352,10 @@
                             </p>
                             
                             <div class="d-flex flex-wrap gap-3 mb-4 animate__animated animate__fadeInUp" style="animation-delay: 1.2s">
-                                <button class="btn btn-red btn-lg" @click="showRegistration('shop')">
+                                <button class="btn btn-green btn-lg" @click="showRegistration('shop')">
                                     <i class="fas fa-store me-2"></i> Join as Spaza Shop
                                 </button>
-                                <button class="btn btn-outline-red btn-lg" @click="showRegistration('supplier')">
+                                <button class="btn btn-outline-green btn-lg" @click="showRegistration('supplier')">
                                     <i class="fas fa-handshake me-2"></i> Become a Supplier
                                 </button>
                             </div>
@@ -1507,9 +1411,9 @@
                                 </div>
                                 
                                 <div class="floating-element floating-element-3">
-                                    <i class="fas fa-truck-fast text-blue"></i>
+                                    <i class="fas fa-truck-fast text-green"></i>
                                     <div>
-                                        <strong class="text-blue">Fast Delivery</strong>
+                                        <strong class="text-green">Fast Delivery</strong>
                                         <div class="small text-muted">To Your Doorstep</div>
                                     </div>
                                 </div>
@@ -1556,7 +1460,7 @@
         <section id="features" class="features-section">
             <div class="container">
                 <div class="section-title">
-                    <h2 class="mb-3">Why Choose SpazaSure?</h2>
+                    <h2 class="mb-3">Why Choose <span class="text-green">SpazaSure</span>?</h2>
                     <p class="lead">
                         Comprehensive solutions designed specifically for township retail businesses
                     </p>
@@ -1750,7 +1654,7 @@
                                 <li><i class="fas fa-times"></i> Priority support</li>
                                 <li><i class="fas fa-times"></i> WhatsApp integration</li>
                             </ul>
-                            <button class="btn btn-outline-red w-100" @click="showRegistration('shop')">
+                            <button class="btn btn-outline-green w-100" @click="showRegistration('shop')">
                                 Get Started Free
                             </button>
                         </div>
@@ -1771,7 +1675,7 @@
                                 <li><i class="fas fa-check"></i> WhatsApp integration</li>
                                 <li><i class="fas fa-times"></i> Dedicated account manager</li>
                             </ul>
-                            <button class="btn btn-red w-100" @click="showRegistration('shop')">
+                            <button class="btn btn-green w-100" @click="showRegistration('shop')">
                                 Upgrade Now
                             </button>
                         </div>
@@ -1816,12 +1720,12 @@
                             <!-- Registration Type Selector -->
                             <div class="d-flex mb-4 border rounded overflow-hidden">
                                 <button class="btn flex-fill rounded-0" 
-                                        :class="registrationType === 'shop' ? 'btn-red' : 'btn-light'"
+                                        :class="registrationType === 'shop' ? 'btn-green' : 'btn-light'"
                                         @click="registrationType = 'shop'">
                                     <i class="fas fa-store me-2"></i> Spaza Shop
                                 </button>
                                 <button class="btn flex-fill rounded-0" 
-                                        :class="registrationType === 'supplier' ? 'btn-red' : 'btn-light'"
+                                        :class="registrationType === 'supplier' ? 'btn-green' : 'btn-light'"
                                         @click="registrationType = 'supplier'">
                                     <i class="fas fa-truck me-2"></i> Supplier
                                 </button>
@@ -1852,15 +1756,15 @@
                                     </div>
                                     <div class="col-12">
                                         <div class="file-upload-area" @click="triggerFileUpload('shop')" @dragover.prevent @drop.prevent="handleFileDrop($event, 'shop')">
-                                            <i class="fas fa-cloud-upload-alt fa-3x text-blue mb-3"></i>
-                                            <h5>Upload Business Documents (Optional)</h5>
+                                            <i class="fas fa-cloud-upload-alt fa-3x text-green mb-3"></i>
+                                            <h5 class="text-green">Upload Business Documents (Optional)</h5>
                                             <p class="text-muted">Drag & drop or click to upload ID, Business licence, etc.</p>
                                             <input type="file" id="shopFiles" class="d-none" @change="handleFileUpload($event, 'shop')" multiple>
                                             <div v-if="shopForm.files.length > 0" class="mt-3">
                                                 <div v-for="(file, index) in shopForm.files" :key="index" 
                                                      class="d-flex align-items-center justify-content-between bg-light p-2 rounded mb-2">
                                                     <span class="small">{{ file.name }}</span>
-                                                    <button type="button" class="btn btn-sm btn-outline-red" @click.stop="removeFile(index, 'shop')">
+                                                    <button type="button" class="btn btn-sm btn-outline-green" @click.stop="removeFile(index, 'shop')">
                                                         <i class="fas fa-times"></i>
                                                     </button>
                                                 </div>
@@ -1868,7 +1772,7 @@
                                         </div>
                                     </div>
                                     <div class="col-12">
-                                        <button type="submit" class="btn btn-red btn-lg w-100" :disabled="isSubmitting">
+                                        <button type="submit" class="btn btn-green btn-lg w-100" :disabled="isSubmitting">
                                             <span v-if="isSubmitting">
                                                 <span class="spinner-border spinner-border-sm me-2" role="status"></span>
                                                 Processing...
@@ -1915,15 +1819,15 @@
                                     </div>
                                     <div class="col-12">
                                         <div class="file-upload-area" @click="triggerFileUpload('supplier')" @dragover.prevent @drop.prevent="handleFileDrop($event, 'supplier')">
-                                            <i class="fas fa-file-contract fa-3x text-blue mb-3"></i>
-                                            <h5>Upload Compliance Documents *</h5>
+                                            <i class="fas fa-file-contract fa-3x text-green mb-3"></i>
+                                            <h5 class="text-green">Upload Compliance Documents *</h5>
                                             <p class="text-muted">Drag & drop or click to upload CIPC registration, Tax certificate, Product certifications</p>
                                             <input type="file" id="supplierFiles" class="d-none" @change="handleFileUpload($event, 'supplier')" multiple required>
                                             <div v-if="supplierForm.files.length > 0" class="mt-3">
                                                 <div v-for="(file, index) in supplierForm.files" :key="index" 
                                                      class="d-flex align-items-center justify-content-between bg-light p-2 rounded mb-2">
                                                     <span class="small">{{ file.name }}</span>
-                                                    <button type="button" class="btn btn-sm btn-outline-red" @click.stop="removeFile(index, 'supplier')">
+                                                    <button type="button" class="btn btn-sm btn-outline-green" @click.stop="removeFile(index, 'supplier')">
                                                         <i class="fas fa-times"></i>
                                                     </button>
                                                 </div>
@@ -1939,7 +1843,7 @@
                                         </div>
                                     </div>
                                     <div class="col-12">
-                                        <button type="submit" class="btn btn-red btn-lg w-100" :disabled="isSubmitting">
+                                        <button type="submit" class="btn btn-green btn-lg w-100" :disabled="isSubmitting">
                                             <span v-if="isSubmitting">
                                                 <span class="spinner-border spinner-border-sm me-2" role="status"></span>
                                                 Processing...
@@ -1967,8 +1871,6 @@
                             <div class="brand-logo default-logo">
                                 <!-- Replace this with your logo -->
                                 <i class="fas fa-shield-check"></i>
-                                <!-- OR add your logo image: -->
-                                <!-- <img src="your-logo-white.png" alt="SpazaSure Logo"> -->
                             </div>
                             <span class="brand-name">SpazaSure</span>
                         </a>
