@@ -258,7 +258,7 @@
             margin-right: 2rem;
         }
         
-        /* Your Logo Container - Add your logo here */
+        /* Your Logo Container */
         .brand-logo {
             width: 45px;
             height: 45px;
@@ -268,19 +268,26 @@
             overflow: hidden;
             border-radius: var(--radius-lg);
             border: 2px solid var(--primary-green);
-            background-color: var(--primary-green);
-            color: white;
+            background-color: var(--white);
+            position: relative;
         }
         
         .brand-logo img {
             width: 100%;
             height: 100%;
             object-fit: contain;
+            padding: 5px;
         }
         
-        /* Default logo if none provided */
-        .brand-logo.default-logo {
-            font-size: 1.25rem;
+        .footer-logo .brand-logo {
+            width: 50px;
+            height: 50px;
+            border-color: var(--white);
+            background-color: var(--white);
+        }
+        
+        .footer-logo .brand-logo img {
+            padding: 7px;
         }
         
         .navbar-brand .brand-text {
@@ -898,14 +905,6 @@
             text-decoration: none;
         }
         
-        .footer-logo .brand-logo {
-            width: 50px;
-            height: 50px;
-            border-color: var(--white);
-            background-color: var(--white);
-            color: var(--primary-green);
-        }
-        
         .footer-logo .brand-name {
             font-family: 'Poppins', sans-serif;
             font-size: 1.75rem;
@@ -1264,7 +1263,11 @@
             .brand-logo {
                 width: 40px;
                 height: 40px;
-                font-size: 1rem;
+            }
+            
+            .footer-logo .brand-logo {
+                width: 40px;
+                height: 40px;
             }
             
             .nav-link {
@@ -1286,11 +1289,9 @@
         <nav class="navbar-main" :class="{ 'scrolled': isScrolled }">
             <div class="container">
                 <a class="navbar-brand" href="#" @click.prevent="scrollToTop">
-                    <!-- Your Logo Here -->
-                     <!-- <img src="logo.png" alt="SpazaSure Logo"> -->
-                    <div class="brand-logo default-logo">
-                        <!-- Replace this with your logo -->
-                        <i class="fas fa-shield-check"></i>
+                    <!-- Your Logo Here - Replace logo.png with your logo file -->
+                    <div class="brand-logo">
+                        <img src="logo.png" alt="SpazaSure Logo">
                     </div>
                     <div class="brand-text">
                         <span class="brand-name">SpazaSure</span>
@@ -1348,7 +1349,7 @@
                             </h1>
                             
                             <p class="lead mb-4 animate__animated animate__fadeInUp" style="animation-delay: 1s">
-                                Connect with verified suppliers, access bulk buying discounts, and ensure product safety—all through one seamless platform designed for township businesses.
+                                Connect with verified suppliers, access bulk buying discounts, and ensure product safety, all through one seamless platform designed for township businesses.
                             </p>
                             
                             <div class="d-flex flex-wrap gap-3 mb-4 animate__animated animate__fadeInUp" style="animation-delay: 1.2s">
@@ -1867,10 +1868,9 @@
                 <div class="row">
                     <div class="col-lg-4 mb-5 mb-lg-0">
                         <a href="#" class="footer-logo" @click.prevent="scrollToTop">
-                            <!-- Your Logo Here -->
-                            <div class="brand-logo default-logo">
-                                <!-- Replace this with your logo -->
-                                <i class="fas fa-shield-check"></i>
+                            <!-- Your Logo Here - Same logo as navigation -->
+                            <div class="brand-logo">
+                                <img src="logo.png" alt="SpazaSure Logo">
                             </div>
                             <span class="brand-name">SpazaSure</span>
                         </a>
