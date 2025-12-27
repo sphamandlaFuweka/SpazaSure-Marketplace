@@ -446,24 +446,17 @@
             background-color: var(--light);
             padding-top: 0;
         }
-        
-       .hero-bg {
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    z-index: -1;
-    opacity: 0.12;                   /* tweak for light overlay; lower -> subtler */
-    background-image: url(SpazaSure-marketpalce/Background.jpg);
-    background-size: cover;         /* cover entire area */
-    background-position: center;    /* center the focal point */
-    background-repeat: no-repeat;
-    background-attachment: scroll;  /* use `fixed` for parallax on desktop (mobile can misbehave) */
-    /*optional: add a color overlay if you want to tint the image  */
-       background-color: rgba(78,204,196,0.15); 
-       background-blend-mode: overlay;
-    */
+     /* simple hero background image — replace existing .hero-bg */
+.hero-bg {
+  position: absolute;
+  inset: 0;                             /* top:0; right:0; bottom:0; left:0 */
+  z-index: -1;
+  background-color: var(--green-lighter); /* fallback color while image loads */
+  background-image: url("SpazaSure-Marketplace/Background.jpg"); /* <-- put your file here */
+  background-size: cover;               /* cover the whole area */
+  background-position: center;          /* center the focal point */
+  background-repeat: no-repeat;
+  opacity: 0.12;                         /* tweak: lower = subtler, higher = stronger */
 }
         
         .hero-content {
