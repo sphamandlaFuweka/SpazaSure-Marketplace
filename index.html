@@ -9,10 +9,69 @@
     <!-- Favicon -->
     <link rel="icon" type="image/x-icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🛒</text></svg>">
     
-    <!-- Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Poppins:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <!-- Fonts - Nourd Custom Font -->
+    <style>
+        @font-face {
+            font-family: 'Nourd';
+            src: url('fonts/Nourd-Regular.woff2') format('woff2'),
+                 url('fonts/Nourd-Regular.woff') format('woff');
+            font-weight: 400;
+            font-style: normal;
+            font-display: swap;
+        }
+        @font-face {
+            font-family: 'Nourd';
+            src: url('fonts/Nourd-Medium.woff2') format('woff2'),
+                 url('fonts/Nourd-Medium.woff') format('woff');
+            font-weight: 500;
+            font-style: normal;
+            font-display: swap;
+        }
+        @font-face {
+            font-family: 'Nourd';
+            src: url('fonts/Nourd-SemiBold.woff2') format('woff2'),
+                 url('fonts/Nourd-SemiBold.woff') format('woff');
+            font-weight: 600;
+            font-style: normal;
+            font-display: swap;
+        }
+        @font-face {
+            font-family: 'Nourd';
+            src: url('fonts/Nourd-Bold.woff2') format('woff2'),
+                 url('fonts/Nourd-Bold.woff') format('woff');
+            font-weight: 700;
+            font-style: normal;
+            font-display: swap;
+        }
+        @font-face {
+            font-family: 'Nourd';
+            src: url('fonts/Nourd-ExtraBold.woff2') format('woff2'),
+                 url('fonts/Nourd-ExtraBold.woff') format('woff');
+            font-weight: 800;
+            font-style: normal;
+            font-display: swap;
+        }
+        @font-face {
+            font-family: 'Nourd';
+            src: url('fonts/Nourd-Black.woff2') format('woff2'),
+                 url('fonts/Nourd-Black.woff') format('woff');
+            font-weight: 900;
+            font-style: normal;
+            font-display: swap;
+        }
+        
+        /* If you have Light or Thin weights, add them here */
+        /*
+        @font-face {
+            font-family: 'Nourd';
+            src: url('fonts/Nourd-Light.woff2') format('woff2'),
+                 url('fonts/Nourd-Light.woff') format('woff');
+            font-weight: 300;
+            font-style: normal;
+            font-display: swap;
+        }
+        */
+    </style>
     
     <!-- Icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
@@ -79,6 +138,9 @@
             /* Layout */
             --container-max: 1200px;
             --section-spacing: 5rem;
+            
+            /* Font Family */
+            --font-primary: 'Nourd', 'Segoe UI', system-ui, -apple-system, sans-serif;
         }
         
         * {
@@ -93,7 +155,7 @@
         }
 
         body {
-            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            font-family: var(--font-primary);
             color: var(--gray-800);
             background-color: var(--light);
             background-image: url("./Background.jpg");
@@ -172,11 +234,12 @@
         }
         
         h1, h2, h3, h4, h5, h6 {
-            font-family: 'Poppins', sans-serif;
-            font-weight: 700;
+            font-family: var(--font-primary);
+            font-weight: 800;
             line-height: 1.2;
             color: var(--dark);
             position: relative;
+            letter-spacing: -0.025em;
         }
         
         h1 {
@@ -221,6 +284,7 @@
             font-size: 1.25rem;
             color: var(--gray-600);
             line-height: 1.7;
+            font-weight: 400;
         }
         
         section {
@@ -330,17 +394,20 @@
         }
         
         .navbar-brand .brand-name {
-            font-family: 'Poppins', sans-serif;
-            font-size: 1.2rem;
-            font-weight: 600;
+            font-family: var(--font-primary);
+            font-size: 1.3rem;
+            font-weight: 900;
             line-height: 1;
             color: var(--primary-green);
+            letter-spacing: -0.02em;
         }
         
         .navbar-brand .brand-tagline {
-            font-size: 0.50rem;
-            color: var(--gray-300);
+            font-size: 0.65rem;
+            color: var(--gray-500);
             line-height: 1;
+            font-weight: 500;
+            letter-spacing: 0.02em;
         }
         
         /* Navigation Menu - Horizontal */
@@ -360,12 +427,14 @@
         
         .nav-link {
             color: var(--gray-700) !important;
-            font-weight: 500;
+            font-weight: 600;
             padding: 0.75rem 1.25rem !important;
             transition: color var(--transition-fast);
             position: relative;
             text-decoration: none;
             white-space: nowrap;
+            font-family: var(--font-primary);
+            letter-spacing: 0.01em;
         }
         
         .nav-link:hover {
@@ -374,7 +443,7 @@
         
         .nav-link.active {
             color: var(--primary-green) !important;
-            font-weight: 600;
+            font-weight: 700;
         }
         
         .nav-link.active::after {
@@ -397,14 +466,15 @@
         
         /* Buttons */
         .btn {
-            font-family: 'Poppins', sans-serif;
-            font-weight: 600;
+            font-family: var(--font-primary);
+            font-weight: 700;
             padding: 0.75rem 2rem;
             border-radius: var(--radius-lg);
             transition: all var(--transition-normal);
             border: none;
             position: relative;
             overflow: hidden;
+            letter-spacing: 0.02em;
         }
         
         .btn:hover {
@@ -489,6 +559,8 @@
         .hero-title {
             font-size: 3.5rem;
             margin-bottom: 1.5rem;
+            font-weight: 900;
+            letter-spacing: -0.03em;
         }
         
         .hero-title span {
@@ -508,11 +580,12 @@
             border-radius: var(--radius-full);
             box-shadow: var(--shadow-sm);
             font-size: 0.875rem;
-            font-weight: 500;
+            font-weight: 600;
             display: flex;
             align-items: center;
             gap: 0.5rem;
             border: 1px solid var(--gray-200);
+            font-family: var(--font-primary);
         }
         
         .badge-red {
@@ -584,6 +657,7 @@
             border: 2px solid;
             transition: transform 200ms var(--transition-fast), right 200ms var(--transition-fast), top 200ms var(--transition-fast), bottom 200ms var(--transition-fast);
             will-change: transform, top, bottom, right;
+            font-family: var(--font-primary);
         }
 
         @keyframes float {
@@ -662,14 +736,17 @@
             color: var(--primary-green);
             line-height: 1;
             margin-bottom: 0.5rem;
+            font-family: var(--font-primary);
+            letter-spacing: -0.05em;
         }
         
         .stat-label {
             color: var(--gray-600);
             font-size: 0.875rem;
-            font-weight: 600;
+            font-weight: 700;
             text-transform: uppercase;
             letter-spacing: 0.05em;
+            font-family: var(--font-primary);
         }
         
         /* Features Section */
@@ -756,9 +833,10 @@
             align-items: center;
             justify-content: center;
             font-size: 1.5rem;
-            font-weight: 700;
+            font-weight: 900;
             margin: 0 auto 1.5rem;
             color: var(--primary-green);
+            font-family: var(--font-primary);
         }
         
         /* Testimonials */
@@ -797,6 +875,7 @@
             font-style: italic;
             position: relative;
             z-index: 1;
+            font-family: var(--font-primary);
         }
         
         .testimonial-author {
@@ -814,9 +893,10 @@
             align-items: center;
             justify-content: center;
             color: var(--white);
-            font-weight: 600;
+            font-weight: 700;
             font-size: 1.25rem;
             flex-shrink: 0;
+            font-family: var(--font-primary);
         }
         
         /* Pricing */
@@ -858,7 +938,8 @@
             padding: 0.5rem 2rem;
             border-radius: var(--radius-full);
             font-size: 0.875rem;
-            font-weight: 600;
+            font-weight: 700;
+            font-family: var(--font-primary);
         }
         
         .price {
@@ -866,6 +947,8 @@
             font-weight: 900;
             color: var(--primary-green);
             margin: 1.5rem 0;
+            font-family: var(--font-primary);
+            letter-spacing: -0.05em;
         }
         
         .price span {
@@ -884,6 +967,7 @@
             align-items: center;
             justify-content: center;
             gap: 0.5rem;
+            font-family: var(--font-primary);
         }
         
         .pricing-features i.fa-check {
@@ -914,10 +998,11 @@
             padding: 1rem;
             border: 2px solid var(--gray-300);
             border-radius: var(--radius-lg);
-            font-family: 'Inter', sans-serif;
+            font-family: var(--font-primary);
             transition: all var(--transition-fast);
             background: var(--white);
             font-size: 1rem;
+            font-weight: 500;
         }
         
         .form-control-custom:focus {
@@ -934,6 +1019,7 @@
             cursor: pointer;
             transition: all var(--transition-normal);
             background: var(--gray-100);
+            font-family: var(--font-primary);
         }
         
         .file-upload-area:hover {
@@ -968,10 +1054,11 @@
         }
         
         .footer-logo .brand-name {
-            font-family: 'Poppins', sans-serif;
+            font-family: var(--font-primary);
             font-size: 1.75rem;
-            font-weight: 800;
+            font-weight: 900;
             color: var(--white);
+            letter-spacing: -0.02em;
         }
         
         .footer-links h5 {
@@ -980,6 +1067,8 @@
             font-size: 1.125rem;
             position: relative;
             padding-bottom: 0.5rem;
+            font-family: var(--font-primary);
+            font-weight: 800;
         }
         
         .footer-links h5::after {
@@ -998,6 +1087,8 @@
             display: block;
             margin-bottom: 0.75rem;
             transition: all var(--transition-fast);
+            font-family: var(--font-primary);
+            font-weight: 500;
         }
         
         .footer-links a:hover {
@@ -1427,19 +1518,25 @@
                                 <div class="col-4">
                                     <div class="stat-item">
                                         <div class="stat-number" data-count="500">05</div>
-                                        <div class="stat-label">Active Shops</div>
+                                        <div class="stat-label">
+                                            <i class="fas fa-store text-green me-1"></i> Active Shops
+                                        </div>
                                     </div>
                                 </div>
                                 <div class="col-4">
                                     <div class="stat-item">
                                         <div class="stat-number" data-count="50">02</div>
-                                        <div class="stat-label">Verified Suppliers</div>
+                                        <div class="stat-label">
+                                            <i class="fas fa-check-circle text-green me-1"></i> Verified Suppliers
+                                        </div>
                                     </div>
                                 </div>
                                 <div class="col-4">
                                     <div class="stat-item">
                                         <div class="stat-number" data-count="100">100</div>
-                                        <div class="stat-label">Products Verified</div>
+                                        <div class="stat-label">
+                                            <i class="fas fa-shield-check text-green me-1"></i> Products Verified
+                                        </div>
                                     </div>
                                 </div>
                             </div>
@@ -1458,7 +1555,7 @@
                                 
                                 <!-- Floating Elements -->
                                 <div class="floating-element floating-element-1">
-                                    <i class="fas fa-shield-alt text-red"></i>
+                                    <i class="fas fa-check-circle text-red"></i>
                                     <div>
                                         <strong class="text-red">100% Verified</strong>
                                         <div class="small text-muted">Product Safety</div>
@@ -1494,25 +1591,33 @@
                     <div class="col-md-3 col-6">
                         <div class="stat-item">
                             <div class="stat-number" data-count="30">0</div>
-                            <div class="stat-label">Cost Savings</div>
+                            <div class="stat-label">
+                                <i class="fas fa-percentage text-green me-1"></i> Cost Savings
+                            </div>
                         </div>
                     </div>
                     <div class="col-md-3 col-6">
                         <div class="stat-item">
                             <div class="stat-number" data-count="24">0</div>
-                            <div class="stat-label">Hour Delivery</div>
+                            <div class="stat-label">
+                                <i class="fas fa-clock text-green me-1"></i> Hour Delivery
+                            </div>
                         </div>
                     </div>
                     <div class="col-md-3 col-6">
                         <div class="stat-item">
                             <div class="stat-number" data-count="100">100</div>
-                            <div class="stat-label">Product Safety</div>
+                            <div class="stat-label">
+                                <i class="fas fa-shield-check text-green me-1"></i> Product Safety
+                            </div>
                         </div>
                     </div>
                     <div class="col-md-3 col-6">
                         <div class="stat-item">
                             <div class="stat-number" data-count="02">02</div>
-                            <div class="stat-label">Townships Served</div>
+                            <div class="stat-label">
+                                <i class="fas fa-map-marker-alt text-green me-1"></i> Townships Served
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -1543,7 +1648,7 @@
                     <div class="col-md-4" data-aos="fade-up" data-aos-delay="100">
                         <div class="feature-card">
                             <div class="feature-icon">
-                                <i class="fas fa-shield-check"></i>
+                                <i class="fas fa-check-circle"></i>
                             </div>
                             <h4 class="mb-3">Verified Products</h4>
                             <p class="text-muted">Every product undergoes rigorous safety checks. Protect your customers and your business from counterfeit goods.</p>
