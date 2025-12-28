@@ -3,2438 +3,327 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SpazaSure | Verified Supply Chains for Township Retailers</title>
-    <meta name="description" content="South Africa's trusted platform connecting spaza shops with verified suppliers. Bulk buying, product verification, and seamless delivery for township businesses.">
+    <title>SpazaSure | Empowering Township Retailers</title>
     
-    <!-- Favicon -->
-    <link rel="icon" type="image/x-icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🛒</text></svg>">
-    
-    <!-- Fonts - Nourd Custom Font -->
-    <style>
-        @font-face {
-            font-family: 'Nourd';
-            src: url('fonts/Nourd-Regular.woff2') format('woff2'),
-                 url('fonts/Nourd-Regular.woff') format('woff');
-            font-weight: 400;
-            font-style: normal;
-            font-display: swap;
-        }
-        @font-face {
-            font-family: 'Nourd';
-            src: url('fonts/Nourd-Medium.woff2') format('woff2'),
-                 url('fonts/Nourd-Medium.woff') format('woff');
-            font-weight: 500;
-            font-style: normal;
-            font-display: swap;
-        }
-        @font-face {
-            font-family: 'Nourd';
-            src: url('fonts/Nourd-SemiBold.woff2') format('woff2'),
-                 url('fonts/Nourd-SemiBold.woff') format('woff');
-            font-weight: 600;
-            font-style: normal;
-            font-display: swap;
-        }
-        @font-face {
-            font-family: 'Nourd';
-            src: url('fonts/Nourd-Bold.woff2') format('woff2'),
-                 url('fonts/Nourd-Bold.woff') format('woff');
-            font-weight: 700;
-            font-style: normal;
-            font-display: swap;
-        }
-        @font-face {
-            font-family: 'Nourd';
-            src: url('fonts/Nourd-ExtraBold.woff2') format('woff2'),
-                 url('fonts/Nourd-ExtraBold.woff') format('woff');
-            font-weight: 800;
-            font-style: normal;
-            font-display: swap;
-        }
-        @font-face {
-            font-family: 'Nourd';
-            src: url('fonts/Nourd-Black.woff2') format('woff2'),
-                 url('fonts/Nourd-Black.woff') format('woff');
-            font-weight: 900;
-            font-style: normal;
-            font-display: swap;
-        }
-    </style>
-    
-    <!-- Icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    
-    <!-- Bootstrap 5 -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-    
-    <!-- Animate CSS -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
-    
-    <!-- AOS Animation -->
     <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet">
     
-    <!-- Custom CSS -->
     <style>
         :root {
-            /* Brand Colors: Green (dominant) and Red (accent) */
-            --primary-green: #04793E;    /* Teal Green - Dominant */
-            --primary-red: #ED1C24;      /* Vibrant Red - Accent */
-            
-            /* Color Variations */
-            --green-light: #4ECDC4;
-            --green-lighter: #E8F6F5;
-            --green-dark: #1A7F7A;
-            --red-light: #FF6B6B;
-            --red-lighter: #FFE8E8;
-            --red-dark: #C1121F;
-            
-            /* Neutral Colors */
+            --primary-green: #04793E;
+            --primary-red: #ED1C24;
+            --dark: #1A1A1A;
+            --light-bg: #F8F9FA;
             --white: #FFFFFF;
-            --dark: #2B2B2B;
-            --darker: #121212;
-            --light: #F8F9FA;
-            --gray-100: #F1F3F5;
-            --gray-200: #E9ECEF;
-            --gray-300: #DEE2E6;
-            --gray-400: #CED4DA;
-            --gray-500: #ADB5BD;
-            --gray-600: #6C757D;
-            --gray-700: #495057;
-            --gray-800: #343A40;
-            --gray-900: #212529;
-            
-            /* Shadows */
-            --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.08);
-            --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
-            --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
-            --shadow-xl: 0 20px 25px -5px rgba(0, 0, 0, 0.1);
-            --shadow-2xl: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
-            
-            /* Transitions */
-            --transition-fast: 150ms cubic-bezier(0.4, 0, 0.2, 1);
-            --transition-normal: 300ms cubic-bezier(0.4, 0, 0.2, 1);
-            --transition-slow: 500ms cubic-bezier(0.4, 0, 0.2, 1);
-            
-            /* Border Radius */
-            --radius-sm: 0.375rem;
-            --radius-md: 0.5rem;
-            --radius-lg: 0.75rem;
-            --radius-xl: 1rem;
-            --radius-2xl: 1.5rem;
-            --radius-full: 9999px;
-            
-            /* Layout */
-            --container-max: 1200px;
-            --section-spacing: 5rem;
-            
-            /* Font Family */
-            --font-primary: 'Nourd', 'Segoe UI', system-ui, -apple-system, sans-serif;
-        }
-        
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-        
-        html {
-            scroll-behavior: smooth;
-            overflow-x: hidden;
         }
 
-        body {
-            font-family: var(--font-primary);
-            color: var(--gray-800);
-            background-color: var(--light);
-            background-image: url("./Background.jpg");
-            background-size: cover;
-            background-position: center;
-            background-attachment: fixed;
-            background-repeat: no-repeat;
-            line-height: 1.6;
-            overflow-x: hidden;
-            -webkit-font-smoothing: antialiased;
-            -moz-osx-font-smoothing: grayscale;
-            position: relative;
-            padding-top: 80px;
-        }
+        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background-color: var(--light-bg); padding-top: 80px; overflow-x: hidden; }
 
-        /* White overlay with reduced opacity to show background image */
-        body::before {
-            content: '';
-            position: fixed;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background-color: rgba(255, 255, 255, 0.5);
-            z-index: -2;
-        }
+        /* BRANDING & BUTTONS */
+        .text-green { color: var(--primary-green) !important; }
+        .text-red { color: var(--primary-red) !important; }
+        .bg-green { background-color: var(--primary-green) !important; color: white; }
         
-        /* Optional gradient overlay for visual enhancement */
-        body::after {
-            content: '';
-            position: fixed;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: linear-gradient(
-                135deg,
-                rgba(4, 121, 62, 0.05) 0%,
-                rgba(237, 28, 36, 0.05) 100%
-            );
-            z-index: -1;
-            pointer-events: none;
+        .btn-vibrant { 
+            background: linear-gradient(45deg, var(--primary-green), var(--primary-red));
+            border: none; color: white; font-weight: bold; border-radius: 50px;
+            padding: 12px 35px; transition: 0.3s;
+            text-decoration: none; display: inline-block;
         }
-        
-        /* South African Background Elements */
-        .sa-pattern {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            pointer-events: none;
-            z-index: -1;
-            opacity: 0.015;
-            background-color: var(--green-lighter);
-        }
-        
-        .sa-border-top {
-            position: fixed;
-            top: 0;
-            left: 0;
-            right: 0;
-            height: 4px;
-            background-color: var(--primary-green);
-            z-index: 1001;
-        }
-        
-        .sa-border-bottom {
-            position: fixed;
-            bottom: 0;
-            left: 0;
-            right: 0;
-            height: 4px;
-            background-color: var(--primary-red);
-            z-index: 1001;
-        }
-        
-        h1, h2, h3, h4, h5, h6 {
-            font-family: var(--font-primary);
-            font-weight: 800;
-            line-height: 1.2;
-            color: var(--dark);
-            position: relative;
-            letter-spacing: -0.025em;
-        }
-        
-        h1 {
-            font-size: 3.5rem;
-            font-weight: 900;
-        }
-        
-        h2 {
-            font-size: 2.5rem;
-            margin-bottom: 1.5rem;
-        }
-        
-        h3 {
-            font-size: 1.75rem;
-        }
-        
-        .text-red {
-            color: var(--primary-red) !important;
-        }
-        
-        .text-green {
-            color: var(--primary-green) !important;
-        }
-        
-        .bg-red {
-            background-color: var(--primary-red) !important;
-        }
-        
-        .bg-green {
-            background-color: var(--primary-green) !important;
-        }
-        
-        .bg-red-light {
-            background-color: var(--red-lighter) !important;
-        }
-        
-        .bg-green-light {
-            background-color: var(--green-lighter) !important;
-        }
-        
-        .lead {
-            font-size: 1.25rem;
-            color: var(--gray-600);
-            line-height: 1.7;
-            font-weight: 400;
-        }
-        
-        section {
-            padding: var(--section-spacing) 0;
-            position: relative;
-        }
-        
-        .section-title {
-            position: relative;
-            margin-bottom: 3rem;
-            text-align: center;
-        }
-        
-        .section-title::after {
-            content: '';
-            position: absolute;
-            bottom: -10px;
-            left: 50%;
-            transform: translateX(-50%);
-            width: 60px;
-            height: 4px;
-            background-color: var(--primary-green);
-            border-radius: var(--radius-full);
-        }
-        
-        /* Container Improvements */
-        .container {
-            max-width: var(--container-max);
-            padding-left: 1.5rem;
-            padding-right: 1.5rem;
-            position: relative;
-        }
-        
-        /* Navigation - Horizontal Fixed Menu */
-        .navbar-main {
-            background-color: var(--white);
-            border-bottom: 1px solid var(--gray-200);
-            padding: 0.5rem 0;
-            transition: all var(--transition-normal);
-            z-index: 1000;
-            box-shadow: var(--shadow-md);
-            position: fixed;
-            top: 0;
-            left: 0;
-            right: 0;
-            height: 70px;
-            display: flex;
-            align-items: center;
-        }
-        
-        .navbar-main .container {
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-        }
-        
-        .navbar-main.scrolled {
-            box-shadow: var(--shadow-lg);
-        }
-        
-        /* Logo Styles - UPDATED: Removed containers, logo stands alone */
-        .navbar-brand {
-            display: flex;
-            align-items: center;
-            gap: 0.75rem;
-            font-weight: 800;
-            color: var(--dark);
-            text-decoration: none;
-            margin-right: 2rem;
-        }
-        
-        /* Logo image without containers */
-        .navbar-brand img {
-            height: 50px; /* Adjust height as needed */
-            width: auto; /* Maintain aspect ratio */
-            max-width: 200px; /* Prevent logo from being too wide */
-        }
-        
-        .navbar-brand .brand-text {
-            display: flex;
-            flex-direction: column;
-        }
-        
-        .navbar-brand .brand-name {
-            font-family: var(--font-primary);
-            font-size: 1.3rem;
-            font-weight: 900;
-            line-height: 1;
-            color: var(--primary-green);
-            letter-spacing: -0.02em;
-        }
-        
-        .navbar-brand .brand-tagline {
-            font-size: 0.65rem;
-            color: var(--gray-500);
-            line-height: 1;
-            font-weight: 500;
-            letter-spacing: 0.02em;
-        }
-        
-        /* Navigation Menu - Horizontal */
-        .navbar-nav {
-            display: flex;
-            flex-direction: row;
-            align-items: center;
-            margin: 0;
-            padding: 0;
-            list-style: none;
-        }
-        
-        .nav-item {
-            margin: 0;
-            padding: 0;
-        }
-        
-        .nav-link {
-            color: var(--gray-700) !important;
-            font-weight: 600;
-            padding: 0.75rem 1.25rem !important;
-            transition: color var(--transition-fast);
-            position: relative;
-            text-decoration: none;
-            white-space: nowrap;
-            font-family: var(--font-primary);
-            letter-spacing: 0.01em;
-        }
-        
-        .nav-link:hover {
-            color: var(--primary-green) !important;
-        }
-        
-        .nav-link.active {
-            color: var(--primary-green) !important;
-            font-weight: 700;
-        }
-        
-        .nav-link.active::after {
-            content: '';
-            position: absolute;
-            bottom: 0;
-            left: 1.25rem;
-            right: 1.25rem;
-            height: 3px;
-            background-color: var(--primary-green);
-            border-radius: var(--radius-full);
-        }
-        
-        /* Get Started Button */
-        .nav-item .btn-green {
-            padding: 0.75rem 1.5rem;
-            margin-left: 1rem;
-            white-space: nowrap;
-        }
-        
-        /* Buttons */
-        .btn {
-            font-family: var(--font-primary);
-            font-weight: 700;
-            padding: 0.75rem 2rem;
-            border-radius: var(--radius-lg);
-            transition: all var(--transition-normal);
-            border: none;
-            position: relative;
-            overflow: hidden;
-            letter-spacing: 0.02em;
-        }
-        
-        .btn:hover {
-            transform: translateY(-2px);
-            box-shadow: var(--shadow-lg);
-        }
-        
-        .btn-red {
-            background-color: var(--primary-red);
-            color: var(--white);
-            box-shadow: var(--shadow-md);
-        }
-        
-        .btn-red:hover {
-            background-color: var(--red-dark);
-            color: var(--white);
-        }
-        
-        .btn-green {
-            background-color: var(--primary-green);
-            color: var(--white);
-            box-shadow: var(--shadow-md);
-        }
-        
-        .btn-green:hover {
-            background-color: var(--green-dark);
-            color: var(--white);
-        }
-        
-        .btn-outline-red {
-            background-color: transparent;
-            border: 2px solid var(--primary-red);
-            color: var(--primary-red);
-        }
-        
-        .btn-outline-red:hover {
-            background-color: var(--primary-red);
-            color: var(--white);
-        }
-        
-        .btn-outline-green {
-            background-color: transparent;
-            border: 2px solid var(--primary-green);
-            color: var(--primary-green);
-        }
-        
-        .btn-outline-green:hover {
-            background-color: var(--primary-green);
-            color: var(--white);
-        }
-        
-        .btn-lg {
-            padding: 1rem 2.5rem;
-            font-size: 1.125rem;
-        }
-        
-        /* Hero Section */
-        .hero-section {
-            min-height: 100vh;
-            display: flex;
-            align-items: center;
-            position: relative;
-            overflow: hidden;
-            background-color: rgba(248, 249, 250, 0.7);
-            padding-top: 0;
-        }
+        .btn-vibrant:hover { transform: translateY(-3px); color: white; box-shadow: 0 10px 20px rgba(0,0,0,0.15); }
 
-        /* Update hero-bg for hero section only */
-        .hero-bg {
-            position: absolute;
-            inset: 0;
-            z-index: -1;
-            background-color: rgba(232, 246, 245, 0.5);
-            opacity: 1;
+        /* HERO SECTION */
+        .hero-section { 
+            background-color: var(--light-bg); /* Use light background now that image is inside */
+            padding: 80px 0; 
         }
-        
-        .hero-content {
+        .tuckshop-img-container {
+            position: relative;
+            padding: 20px;
+            background: linear-gradient(45deg, var(--primary-green), var(--primary-red));
+            border-radius: 20px;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+        }
+        .tuckshop-img {
+            max-width: 100%;
+            border-radius: 15px;
+            display: block;
             position: relative;
             z-index: 2;
+            box-shadow: 0 10px 20px rgba(0,0,0,0.2);
         }
-        
-        .hero-title {
-            font-size: 3.5rem;
-            margin-bottom: 1.5rem;
-            font-weight: 900;
-            letter-spacing: -0.03em;
-        }
-        
-        .hero-title span {
-            color: var(--primary-green);
-        }
-        
-        .hero-badges {
-            display: flex;
-            gap: 1rem;
-            margin-bottom: 2rem;
-            flex-wrap: wrap;
-        }
-        
-        .badge {
-            background: var(--white);
-            padding: 0.5rem 1rem;
-            border-radius: var(--radius-full);
-            box-shadow: var(--shadow-sm);
-            font-size: 0.875rem;
-            font-weight: 600;
-            display: flex;
-            align-items: center;
-            gap: 0.5rem;
-            border: 1px solid var(--gray-200);
-            font-family: var(--font-primary);
-        }
-        
-        .badge-red {
-            border-left: 4px solid var(--primary-red);
-        }
-        
-        .badge-green {
-            border-left: 4px solid var(--primary-green);
-        }
-        
-        .hero-image-container {
-            position: relative;
-            height: 100%;
-            min-height: 500px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
-        
-        .hero-visual {
-            position: relative;
-            width: 100%;
-            max-width: 500px;
-            margin: 0 auto;
-        }
-        
-        .sa-circle {
-            width: 300px;
-            height: 300px;
-            border-radius: 50%;
-            background-color: var(--primary-green);
-            margin: 0 auto;
-            position: relative;
-            box-shadow: var(--shadow-2xl);
-        }
-        
-        .sa-circle-inner {
+        .img-overlay-text {
             position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            width: 200px;
-            height: 200px;
-            background-color: var(--white);
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            box-shadow: var(--shadow-xl);
-        }
-        
-        .sa-circle-inner i {
-            font-size: 4rem;
-            color: var(--primary-green);
-        }
-        
-        /* Floating elements — improved spacing & mobile stacking */
-        .floating-element {
-            position: absolute;
-            background: var(--white);
-            padding: 1rem;
-            border-radius: var(--radius-lg);
-            box-shadow: var(--shadow-xl);
-            display: flex;
-            align-items: center;
-            gap: 0.5rem;
-            z-index: 3;
-            animation: float 6s ease-in-out infinite;
-            border: 2px solid;
-            transition: transform 200ms var(--transition-fast), right 200ms var(--transition-fast), top 200ms var(--transition-fast), bottom 200ms var(--transition-fast);
-            will-change: transform, top, bottom, right;
-            font-family: var(--font-primary);
-        }
-
-        @keyframes float {
-            0%, 100% { transform: translateY(0); }
-            50% { transform: translateY(-15px); }
-        }
-
-        /* Desktop / large screens: explicit non-overlapping vertical positions */
-        .floating-element-1 {
-            top: 10%;
-            right: 8%;
-            border-color: var(--primary-red);
-        }
-        .floating-element-2 {
-            top: 32%;             /* moved down to avoid overlap with item 1 */
-            right: 8%;
-            border-color: var(--primary-green);
-        }
-        .floating-element-3 {
-            top: 54%;             /* moved down to avoid overlap with item 2 */
-            right: 8%;
-            border-color: var(--primary-green);
-        }
-
-        /* Reduce size a bit so they fit together nicely */
-        .floating-element { transform-origin: center; }
-
-        /* Mobile: convert to fixed stacked buttons on the right, spaced vertically */
-        @media (max-width: 768px) {
-            .floating-element {
-                position: fixed;
-                right: 1rem;
-                width: auto;
-                min-width: 48px;
-                max-width: 320px;
-                padding: 0.75rem 1rem;
-                border-radius: 0.75rem;
-                animation: none; /* disable float animation on mobile for clarity */
-            }
-
-            /* Stack from top -> bottom by setting bottom offsets (leave room for other fixed UI like whatsapp) */
-            .floating-element-1 { bottom: 14rem; top: auto; }
-            .floating-element-2 { bottom: 10.5rem; top: auto; }
-            .floating-element-3 { bottom: 7rem; top: auto; }
-
-            /* Smaller text/icons on very small screens */
-            @media (max-width: 420px) {
-                .floating-element { padding: 0.6rem 0.8rem; font-size: 0.95rem; }
-                .floating-element-1 { bottom: 12.5rem; }
-                .floating-element-2 { bottom: 9rem; }
-                .floating-element-3 { bottom: 5.5rem; }
-            }
-        }
-        
-        /* Stats Section */
-        .stats-section {
-            background-color: rgba(255, 255, 255, 0.9);
-            padding: 3rem 0;
-            border-radius: var(--radius-2xl);
-            margin-top: -3rem;
-            position: relative;
-            z-index: 10;
-            box-shadow: var(--shadow-xl);
-            border: 1px solid var(--gray-200);
-            border-top: 4px solid var(--primary-green);
-        }
-        
-        .stat-item {
-            text-align: center;
-            padding: 1rem;
-        }
-        
-        .stat-number {
-            font-size: 3rem;
-            font-weight: 900;
-            color: var(--primary-green);
-            line-height: 1;
-            margin-bottom: 0.5rem;
-            font-family: var(--font-primary);
-            letter-spacing: -0.05em;
-        }
-        
-        .stat-label {
-            color: var(--gray-600);
-            font-size: 0.875rem;
-            font-weight: 700;
-            text-transform: uppercase;
-            letter-spacing: 0.05em;
-            font-family: var(--font-primary);
-        }
-        
-        /* Features Section */
-        .features-section {
-            background: rgba(248, 249, 250, 0.7);
-            position: relative;
-        }
-        
-        .feature-card {
-            background: rgba(255, 255, 255, 0.95);
-            border-radius: var(--radius-xl);
-            padding: 2.5rem 2rem;
-            height: 100%;
-            transition: all var(--transition-normal);
-            border: 1px solid var(--gray-200);
-            position: relative;
-            overflow: hidden;
-            text-align: center;
-        }
-        
-        .feature-card:hover {
-            transform: translateY(-8px);
-            box-shadow: var(--shadow-xl);
-            border-color: var(--primary-green);
-            background: var(--white);
-        }
-        
-        .feature-card::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            height: 4px;
-            background-color: var(--primary-green);
-        }
-        
-        .feature-icon {
-            width: 70px;
-            height: 70px;
-            border-radius: var(--radius-xl);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            margin: 0 auto 1.5rem;
-            font-size: 1.75rem;
-            color: var(--white);
-            background-color: var(--primary-green);
-        }
-        
-        /* How It Works */
-        .how-it-works {
-            background-color: var(--primary-green);
-            color: var(--white);
-            position: relative;
-            overflow: hidden;
-        }
-        
-        .how-it-works .section-title::after {
-            background-color: var(--white);
-        }
-        
-        .step-card {
-            background-color: rgba(255, 255, 255, 0.1);
-            border-radius: var(--radius-xl);
-            padding: 2rem;
-            height: 100%;
-            border: 1px solid rgba(255, 255, 255, 0.2);
-            transition: all var(--transition-normal);
-            text-align: center;
-        }
-        
-        .step-card:hover {
-            background-color: rgba(255, 255, 255, 0.15);
-            transform: translateY(-4px);
-        }
-        
-        .step-number {
-            width: 60px;
-            height: 60px;
-            background-color: var(--white);
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 1.5rem;
-            font-weight: 900;
-            margin: 0 auto 1.5rem;
-            color: var(--primary-green);
-            font-family: var(--font-primary);
-        }
-        
-        /* Testimonials */
-        .testimonials-section {
-            background: rgba(241, 243, 245, 0.7);
-            position: relative;
-        }
-        
-        .testimonial-card {
-            background: rgba(255, 255, 255, 0.95);
-            border-radius: var(--radius-xl);
-            padding: 2.5rem 2rem;
-            box-shadow: var(--shadow-lg);
-            position: relative;
-            height: 100%;
-            border: 1px solid var(--gray-200);
-            border-top: 4px solid var(--primary-green);
-        }
-        
-        .testimonial-card::before {
-            content: '"';
-            position: absolute;
-            top: 1rem;
-            left: 1rem;
-            font-size: 4rem;
-            color: var(--gray-200);
-            font-family: Georgia, serif;
-            line-height: 1;
-            opacity: 0.5;
-        }
-        
-        .testimonial-text {
-            font-size: 1.125rem;
-            color: var(--gray-700);
-            margin-bottom: 1.5rem;
-            font-style: italic;
-            position: relative;
-            z-index: 1;
-            font-family: var(--font-primary);
-        }
-        
-        .testimonial-author {
-            display: flex;
-            align-items: center;
-            gap: 1rem;
-        }
-        
-        .author-avatar {
-            width: 50px;
-            height: 50px;
-            background-color: var(--primary-green);
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: var(--white);
-            font-weight: 700;
-            font-size: 1.25rem;
-            flex-shrink: 0;
-            font-family: var(--font-primary);
-        }
-        
-        /* Pricing */
-        .pricing-section {
-            background: var(--white);
-            position: relative;
-        }
-        
-        .pricing-card {
-            background: rgba(255, 255, 255, 0.95);
-            border-radius: var(--radius-xl);
-            padding: 2.5rem 2rem;
-            border: 2px solid var(--gray-200);
-            transition: all var(--transition-normal);
-            height: 100%;
-            position: relative;
-            text-align: center;
-        }
-        
-        .pricing-card.featured {
-            border-color: var(--primary-green);
-            transform: scale(1.05);
-            box-shadow: var(--shadow-xl);
-        }
-        
-        .pricing-card:hover:not(.featured) {
-            border-color: var(--primary-green);
-            transform: translateY(-8px);
-            box-shadow: var(--shadow-xl);
-        }
-        
-        .pricing-badge {
-            position: absolute;
-            top: -12px;
+            bottom: 30px;
             left: 50%;
             transform: translateX(-50%);
-            background-color: var(--primary-green);
-            color: var(--white);
-            padding: 0.5rem 2rem;
-            border-radius: var(--radius-full);
-            font-size: 0.875rem;
-            font-weight: 700;
-            font-family: var(--font-primary);
+            background-color: rgba(0,0,0,0.6);
+            color: white;
+            padding: 8px 20px;
+            border-radius: 8px;
+            font-weight: bold;
+            font-size: 1.1rem;
+            white-space: nowrap;
+            z-index: 3;
         }
-        
-        .price {
-            font-size: 3rem;
-            font-weight: 900;
-            color: var(--primary-green);
-            margin: 1.5rem 0;
-            font-family: var(--font-primary);
-            letter-spacing: -0.05em;
+
+
+        /* FEATURE CARDS */
+        .feature-card {
+            background: white; border-radius: 20px; padding: 40px 30px; height: 100%;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.05); border-top: 6px solid var(--primary-green);
+            transition: 0.3s; text-align: center;
         }
-        
-        .price span {
-            font-size: 1rem;
-            color: var(--gray-500);
+        .feature-card:hover { transform: translateY(-10px); border-top-color: var(--primary-red); }
+
+        /* HOW IT WORKS STEPS */
+        .step-circle {
+            width: 60px; height: 60px; background: var(--primary-green); color: white;
+            border-radius: 50%; display: flex; align-items: center; justify-content: center;
+            font-size: 24px; font-weight: bold; margin: 0 auto 20px;
         }
-        
-        .pricing-features {
-            margin: 2rem 0;
+
+        /* MAP */
+        #map { height: 500px; width: 100%; border-radius: 20px; border: 4px solid white; box-shadow: 0 15px 35px rgba(0,0,0,0.1); }
+
+        /* WHATSAPP FLOAT */
+        .whatsapp-float { 
+            position: fixed; bottom: 30px; left: 30px; width: 65px; height: 65px; 
+            background: #25D366; color: white; border-radius: 50%; display: flex; 
+            align-items: center; justify-content: center; font-size: 35px; 
+            z-index: 1000; box-shadow: 0 10px 25px rgba(0,0,0,0.3); 
+            text-decoration: none; transition: 0.3s;
         }
-        
-        .pricing-features li {
-            padding: 0.5rem 0;
-            color: var(--gray-700);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 0.5rem;
-            font-family: var(--font-primary);
-        }
-        
-        .pricing-features i.fa-check {
-            color: var(--primary-green);
-        }
-        
-        .pricing-features i.fa-times {
-            color: var(--primary-red);
-            opacity: 0.7;
-        }
-        
-        /* Contact Forms */
-        .contact-section {
-            background: rgba(241, 243, 245, 0.7);
-            position: relative;
-        }
-        
-        .contact-card {
-            background: rgba(255, 255, 255, 0.95);
-            border-radius: var(--radius-xl);
-            padding: 3rem;
-            box-shadow: var(--shadow-lg);
-            border: 1px solid var(--gray-200);
-            border-top: 4px solid var(--primary-green);
-        }
-        
-        .form-control-custom {
-            padding: 1rem;
-            border: 2px solid var(--gray-300);
-            border-radius: var(--radius-lg);
-            font-family: var(--font-primary);
-            transition: all var(--transition-fast);
-            background: var(--white);
-            font-size: 1rem;
-            font-weight: 500;
-        }
-        
-        .form-control-custom:focus {
-            border-color: var(--primary-green);
-            box-shadow: 0 0 0 3px rgba(42, 157, 143, 0.1);
-            background: var(--white);
-        }
-        
-        .file-upload-area {
-            border: 2px dashed var(--gray-400);
-            border-radius: var(--radius-lg);
-            padding: 2.5rem;
-            text-align: center;
-            cursor: pointer;
-            transition: all var(--transition-normal);
-            background: var(--gray-100);
-            font-family: var(--font-primary);
-        }
-        
-        .file-upload-area:hover {
-            border-color: var(--primary-green);
-            background: var(--green-lighter);
-        }
-        
-        /* Footer */
-        .footer-main {
-            background-color: var(--primary-green);
-            color: var(--white);
-            padding: 4rem 0 2rem;
-            position: relative;
-        }
-        
-        .footer-main::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            height: 4px;
-            background-color: var(--primary-red);
-        }
-        
-        /* Footer logo - UPDATED: Removed containers */
-        .footer-logo {
-            display: flex;
-            align-items: center;
-            gap: 0.75rem;
-            margin-bottom: 1.5rem;
-            text-decoration: none;
-        }
-        
-        .footer-logo img {
-            height: 60px; /* Slightly larger for footer */
-            width: auto;
-            max-width: 200px;
-        }
-        
-        .footer-logo .brand-name {
-            font-family: var(--font-primary);
-            font-size: 1.75rem;
-            font-weight: 900;
-            color: var(--white);
-            letter-spacing: -0.02em;
-        }
-        
-        .footer-links h5 {
-            color: var(--white);
-            margin-bottom: 1.5rem;
-            font-size: 1.125rem;
-            position: relative;
-            padding-bottom: 0.5rem;
-            font-family: var(--font-primary);
-            font-weight: 800;
-        }
-        
-        .footer-links h5::after {
-            content: '';
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            width: 30px;
-            height: 2px;
-            background-color: var(--primary-red);
-        }
-        
-        .footer-links a {
-            color: rgba(255, 255, 255, 0.8);
-            text-decoration: none;
-            display: block;
-            margin-bottom: 0.75rem;
-            transition: all var(--transition-fast);
-            font-family: var(--font-primary);
-            font-weight: 500;
-        }
-        
-        .footer-links a:hover {
-            color: var(--white);
-            padding-left: 5px;
-        }
-        
-        .footer-contact i {
-            color: var(--white);
-            width: 20px;
-        }
-        
-        .social-icon {
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            width: 40px;
-            height: 40px;
-            background-color: rgba(255, 255, 255, 0.1);
-            border-radius: 50%;
-            color: var(--white);
-            transition: all var(--transition-normal);
-        }
-        
-        .social-icon:hover {
-            background-color: var(--primary-red);
-            transform: translateY(-2px);
-        }
-        
-        .footer-bottom {
-            border-top: 1px solid rgba(255, 255, 255, 0.2);
-            padding-top: 2rem;
-            margin-top: 3rem;
-        }
-        
-        /* WhatsApp Button */
-        .whatsapp-float {
-            position: fixed;
-            bottom: 2rem;
-            right: 2rem;
-            width: 60px;
-            height: 60px;
-            background-color: #25D366;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: var(--white);
-            font-size: 1.75rem;
-            box-shadow: var(--shadow-lg);
-            z-index: 1000;
-            text-decoration: none;
-            transition: all var(--transition-normal);
-        }
-        
-        .whatsapp-float:hover {
-            transform: scale(1.1);
-            box-shadow: var(--shadow-xl);
-        }
-        
-        /* Animations */
-        .fade-in {
-            opacity: 0;
-            transform: translateY(30px);
-            transition: opacity 0.6s ease, transform 0.6s ease;
-        }
-        
-        .fade-in.visible {
-            opacity: 1;
-            transform: translateY(0);
-        }
-        
-        /* Enhanced Alignment */
-        .row.g-4 {
-            --bs-gutter-x: 1.5rem;
-            --bs-gutter-y: 1.5rem;
-        }
-        
-        .align-items-center {
-            align-items: center !important;
-        }
-        
-        .justify-content-center {
-            justify-content: center !important;
-        }
-        
-        .text-center {
-            text-align: center !important;
-        }
-        
-        /* Responsive Design for Horizontal Menu */
-        @media (max-width: 1199.98px) {
-            :root {
-                --section-spacing: 4rem;
-            }
-            
-            h1 {
-                font-size: 3rem;
-            }
-            
-            h2 {
-                font-size: 2.25rem;
-            }
-            
-            .nav-link {
-                padding: 0.75rem 1rem !important;
-            }
-            
-            .pricing-card {
-                padding: 2rem 1.5rem;
-            }
-            
-            .sa-circle {
-                width: 250px;
-                height: 250px;
-            }
-            
-            .sa-circle-inner {
-                width: 160px;
-                height: 160px;
-            }
-        }
-        
-        @media (max-width: 991.98px) {
-            .hero-title {
-                font-size: 2.75rem;
-            }
-            
-            .pricing-card.featured {
-                transform: none;
-                margin: 2rem 0;
-            }
-            
-            .step-card, .feature-card, .testimonial-card {
-                margin-bottom: 1.5rem;
-            }
-            
-            .floating-element {
-                position: relative;
-                margin: 1rem 0;
-                max-width: 100%;
-                animation: none;
-                top: auto;
-                right: auto;
-                bottom: auto;
-                left: auto;
-            }
-            
-            .hero-image-container {
-                min-height: 400px;
-                margin-top: 3rem;
-            }
-            
-            .sa-circle {
-                width: 200px;
-                height: 200px;
-            }
-            
-            .sa-circle-inner {
-                width: 130px;
-                height: 130px;
-            }
-            
-            .sa-circle-inner i {
-                font-size: 3rem;
-            }
-            
-            /* Logo adjustments for medium screens */
-            .navbar-brand img {
-                height: 45px;
-            }
-            
-            .footer-logo img {
-                height: 50px;
-            }
-        }
-        
-        @media (max-width: 767.98px) {
-            :root {
-                --section-spacing: 3rem;
-            }
-            
-            h1 {
-                font-size: 2.5rem;
-            }
-            
-            h2 {
-                font-size: 2rem;
-            }
-            
-            h3 {
-                font-size: 1.5rem;
-            }
-            
-            .hero-title {
-                font-size: 2.25rem;
-            }
-            
-            .lead {
-                font-size: 1.125rem;
-            }
-            
-            .container {
-                padding-left: 1rem;
-                padding-right: 1rem;
-            }
-            
-            .contact-card {
-                padding: 2rem 1.5rem;
-            }
-            
-            .stats-section {
-                margin-top: 0;
-                border-radius: 0;
-            }
-            
-            .btn-lg {
-                padding: 0.875rem 2rem;
-                font-size: 1rem;
-            }
-            
-            .hero-badges {
-                flex-direction: column;
-                align-items: stretch;
-            }
-            
-            .badge {
-                justify-content: center;
-            }
-            
-            .pricing-card {
-                margin-bottom: 2rem;
-            }
-            
-            /* Logo adjustments for small screens */
-            .navbar-brand img {
-                height: 40px;
-            }
-            
-            .footer-logo img {
-                height: 45px;
-            }
-        }
-        
-        @media (max-width: 575.98px) {
-            h1 {
-                font-size: 2rem;
-            }
-            
-            h2 {
-                font-size: 1.75rem;
-            }
-            
-            .hero-title {
-                font-size: 2rem;
-            }
-            
-            .btn {
-                padding: 0.625rem 1.5rem;
-                width: 100%;
-            }
-            
-            .stat-number {
-                font-size: 2.5rem;
-            }
-            
-            .price {
-                font-size: 2.5rem;
-            }
-            
-            .sa-circle {
-                width: 150px;
-                height: 150px;
-            }
-            
-            .sa-circle-inner {
-                width: 100px;
-                height: 100px;
-            }
-            
-            .sa-circle-inner i {
-                font-size: 2rem;
-            }
-            
-            /* Logo adjustments for extra small screens */
-            .navbar-brand img {
-                height: 35px;
-            }
-            
-            .footer-logo img {
-                height: 40px;
-            }
-        }
-        
-        /* Responsive adjustments for horizontal menu */
-        @media (max-width: 992px) {
-            .navbar-main {
-                height: auto;
-                padding: 1rem 0;
-            }
-            
-            .navbar-nav {
-                flex-wrap: wrap;
-                justify-content: center;
-            }
-            
-            .nav-item {
-                margin: 0.25rem;
-            }
-            
-            .nav-link {
-                padding: 0.5rem 0.75rem !important;
-                font-size: 0.9rem;
-            }
-            
-            .nav-item .btn-green {
-                margin-left: 0;
-                margin-top: 0.5rem;
-                width: 100%;
-                text-align: center;
-            }
-            
-            .navbar-brand .brand-name {
-                font-size: 1.3rem;
-            }
-            
-            .navbar-brand .brand-tagline {
-                font-size: 0.7rem;
-            }
-        }
-        
-        @media (max-width: 768px) {
-            .navbar-brand {
-                margin-right: 1rem;
-            }
-            
-            .nav-link {
-                padding: 0.5rem !important;
-                font-size: 0.85rem;
-            }
-            
-            .navbar-brand .brand-text {
-                display: none;
-            }
-        }
-        
-        @media (max-width: 480px) {
-            .navbar-main {
-                padding: 0.75rem 0;
-            }
-            
-            .nav-link {
-                font-size: 0.8rem;
-                padding: 0.4rem !important;
-            }
-        }
+        .whatsapp-float:hover { transform: scale(1.1) rotate(10deg); color: white; }
+
+        .form-control-custom { border: 2px solid #eef0f2; padding: 15px; border-radius: 12px; }
+        .form-control-custom:focus { border-color: var(--primary-green); box-shadow: none; }
     </style>
 </head>
 <body>
-    <!-- South African Background Elements -->
-    <div class="sa-pattern"></div>
-    <div class="sa-border-top"></div>
-    <div class="sa-border-bottom"></div>
 
-    <!-- Vue.js App -->
-    <div id="app">
-        <!-- Navigation - Horizontal Fixed Menu -->
-        <nav class="navbar-main" :class="{ 'scrolled': isScrolled }">
-            <div class="container">
-                <a class="navbar-brand" href="#" @click.prevent="scrollToTop">
-                    <!-- Logo without container - just the image -->
-                    <img src="logo1.png" alt="SpazaSure Logo">
-                    <div class="brand-text">
-                        <span class="brand-name">SpazaSure</span>
-                        <span class="brand-tagline">"Buy Smart. Verify Fast. Grow Together."</span>
-                    </div>
-                </a>
+<div id="app">
+    <a :href="whatsappLink" class="whatsapp-float" target="_blank">
+        <i class="fab fa-whatsapp"></i>
+    </a>
 
-                <!-- Horizontal Menu (no hamburger) -->
+    <nav class="navbar navbar-expand-lg fixed-top bg-white border-bottom border-success border-3 shadow-sm">
+        <div class="container">
+            <a class="navbar-brand d-flex align-items-center" href="#">
+                <img src="logo1.png" alt="SpazaSure" height="55">
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav ms-auto align-items-center">
-                    <li class="nav-item">
-                        <a class="nav-link" href="#" @click.prevent="scrollToSection('home')" :class="{ 'active': activeSection === 'home' }">Home</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#" @click.prevent="scrollToSection('features')" :class="{ 'active': activeSection === 'features' }">Features</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#" @click.prevent="scrollToSection('how-it-works')" :class="{ 'active': activeSection === 'how-it-works' }">How It Works</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#" @click.prevent="scrollToSection('pricing')" :class="{ 'active': activeSection === 'pricing' }">Pricing</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#" @click.prevent="scrollToSection('contact')" :class="{ 'active': activeSection === 'contact' }">Contact</a>
-                    </li>
-                    <li class="nav-item ms-lg-3">
-                        <a class="btn btn-green" href="#" @click.prevent="showRegistration('shop')">
-                            Get Started
-                        </a>
-                    </li>
+                    <li class="nav-item"><a class="nav-link fw-bold text-dark" href="#features">Features</a></li>
+                    <li class="nav-item"><a class="nav-link fw-bold text-dark" href="#how-it-works">How it Works</a></li>
+                    <li class="nav-item"><a class="nav-link fw-bold text-dark me-3" href="#network">Network</a></li>
+                    <li class="nav-item"><a :href="whatsappLink" class="btn btn-vibrant">Request a Demo</a></li>
                 </ul>
             </div>
-        </nav>
+        </div>
+    </nav>
 
-        <!-- Hero Section -->
-        <section id="home" class="hero-section">
-            <div class="hero-bg"></div>
-            <div class="container">
-                <div class="row align-items-center">
-                    <div class="col-lg-6">
-                        <div class="hero-content">
-                            <div class="hero-badges">
-                                <span class="badge badge-red animate__animated animate__fadeInUp" style="animation-delay: 0.2s">
-                                    <i class="fas fa-check-circle text-red"></i> Verified Products
-                                </span>
-                                <span class="badge badge-green animate__animated animate__fadeInUp" style="animation-delay: 0.4s">
-                                    <i class="fas fa-tags text-green"></i> Bulk Discounts
-                                </span>
-                                <span class="badge badge-green animate__animated animate__fadeInUp" style="animation-delay: 0.6s">
-                                    <i class="fas fa-truck text-green"></i> Township Delivery
-                                </span>
-                            </div>
-                            
-                            <h1 class="hero-title animate__animated animate__fadeInUp" style="animation-delay: 0.8s">
-                                Empowering Township <span>Retailers</span> with Smart Supply Chains
-                            </h1>
-                            
-                            <p class="lead mb-4 animate__animated animate__fadeInUp" style="animation-delay: 1s">
-                                Connect with verified suppliers, access bulk buying discounts, and ensure product safety, all through one seamless platform designed for township businesses.
-                            </p>
-                            
-                            <div class="d-flex flex-wrap gap-3 mb-4 animate__animated animate__fadeInUp" style="animation-delay: 1.2s">
-                                <button class="btn btn-green btn-lg" @click="showRegistration('shop')">
-                                    <i class="fas fa-store me-2"></i> Join as Spaza Shop
-                                </button>
-                                <button class="btn btn-outline-green btn-lg" @click="showRegistration('supplier')">
-                                    <i class="fas fa-handshake me-2"></i> Become a Supplier
-                                </button>
-                            </div>
-                            
-                            <div class="row mt-5 animate__animated animate__fadeInUp" style="animation-delay: 1.4s">
-                                <div class="col-4">
-                                    <div class="stat-item">
-                                        <div class="stat-number" data-count="500">05</div>
-                                        <div class="stat-label">
-                                            <i class="fas fa-store text-green me-1"></i> Active Shops
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-4">
-                                    <div class="stat-item">
-                                        <div class="stat-number" data-count="50">02</div>
-                                        <div class="stat-label">
-                                            <i class="fas fa-check-circle text-green me-1"></i> Verified Suppliers
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-4">
-                                    <div class="stat-item">
-                                        <div class="stat-number" data-count="100">100</div>
-                                        <div class="stat-label">
-                                            <i class="fas fa-shield-check text-green me-1"></i> Products Verified
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <div class="col-lg-6">
-                        <div class="hero-image-container">
-                            <div class="hero-visual">
-                                <!-- South African Inspired Visual -->
-                                <div class="sa-circle">
-                                    <div class="sa-circle-inner">
-                                        <i class="fas fa-store-alt"></i>
-                                    </div>
-                                </div>
-                                
-                                <!-- Floating Elements -->
-                                <div class="floating-element floating-element-1">
-                                    <i class="fas fa-check-circle text-red"></i>
-                                    <div>
-                                        <strong class="text-red">100% Verified</strong>
-                                        <div class="small text-muted">Product Safety</div>
-                                    </div>
-                                </div>
-                                
-                                <div class="floating-element floating-element-2">
-                                    <i class="fas fa-money-bill-wave text-green"></i>
-                                    <div>
-                                        <strong class="text-green">Save 30%</strong>
-                                        <div class="small text-muted">On Stock Costs</div>
-                                    </div>
-                                </div>
-                                
-                                <div class="floating-element floating-element-3">
-                                    <i class="fas fa-truck-fast text-green"></i>
-                                    <div>
-                                        <strong class="text-green">Fast Delivery</strong>
-                                        <div class="small text-muted">To Your Doorstep</div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
+    <section class="hero-section">
+        <div class="container">
+            <div class="row align-items-center flex-column-reverse flex-lg-row">
+                <div class="col-lg-7 text-center text-lg-start mt-5 mt-lg-0" data-aos="fade-right">
+                    <h1 class="display-3 fw-bold mb-4">Empowering <span class="text-green">Township Retailers</span> with Smart Supply Chains</h1>
+                    <p class="lead mb-4 text-dark fs-4">Connect with verified suppliers, access bulk buying discounts, and ensure product safety, all through one seamless platform designed for township businesses.</p>
+                    <div class="d-flex flex-column flex-sm-row gap-3 justify-content-center justify-content-lg-start">
+                        <a href="#buying-group" class="btn btn-vibrant btn-lg shadow">Join a Buying Group</a>
+                        <a :href="whatsappLink" class="btn btn-outline-success btn-lg rounded-pill px-4 fw-bold">Chat with an Agent</a>
                     </div>
                 </div>
-            </div>
-        </section>
-
-        <!-- Stats Bar -->
-        <section class="stats-section">
-            <div class="container">
-                <div class="row g-4">
-                    <div class="col-md-3 col-6">
-                        <div class="stat-item">
-                            <div class="stat-number" data-count="30">0</div>
-                            <div class="stat-label">
-                                <i class="fas fa-percentage text-green me-1"></i> Cost Savings
-                            </div>
-                        </div>
+                <div class="col-lg-5" data-aos="fade-left">
+                    <div class="tuckshop-img-container">
+                        <img src="tuckshop.jpg" alt="Vibrant Township Tuckshop" class="tuckshop-img">
+                        <span class="img-overlay-text">Your Spaza, Powered by SpazaSure!</span>
                     </div>
-                    <div class="col-md-3 col-6">
-                        <div class="stat-item">
-                            <div class="stat-number" data-count="24">0</div>
-                            <div class="stat-label">
-                                <i class="fas fa-clock text-green me-1"></i> Hour Delivery
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-3 col-6">
-                        <div class="stat-item">
-                            <div class="stat-number" data-count="100">100</div>
-                            <div class="stat-label">
-                                <i class="fas fa-shield-check text-green me-1"></i> Product Safety
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-3 col-6">
-                        <div class="stat-item">
-                            <div class="stat-number" data-count="02">02</div>
-                            <div class="stat-label">
-                                <i class="fas fa-map-marker-alt text-green me-1"></i> Townships Served
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Features -->
-        <section id="features" class="features-section">
-            <div class="container">
-                <div class="section-title">
-                    <h2 class="mb-3">Why Choose <span class="text-green">SpazaSure</span>?</h2>
-                    <p class="lead">
-                        Comprehensive solutions designed specifically for township retail businesses
-                    </p>
-                </div>
-                
-                <div class="row g-4">
-                    <div class="col-md-4" data-aos="fade-up" data-aos-delay="0">
-                        <div class="feature-card">
-                            <div class="feature-icon">
-                                <i class="fas fa-boxes"></i>
-                            </div>
-                            <h4 class="mb-3">Bulk Buying Power</h4>
-                            <p class="text-muted">Join buying groups to access wholesale prices previously unavailable to small retailers. Save up to 30% on your stock costs.</p>
-                        </div>
-                    </div>
-                    
-                    <div class="col-md-4" data-aos="fade-up" data-aos-delay="100">
-                        <div class="feature-card">
-                            <div class="feature-icon">
-                                <i class="fas fa-check-circle"></i>
-                            </div>
-                            <h4 class="mb-3">Verified Products</h4>
-                            <p class="text-muted">Every product undergoes rigorous safety checks. Protect your customers and your business from counterfeit goods.</p>
-                        </div>
-                    </div>
-                    
-                    <div class="col-md-4" data-aos="fade-up" data-aos-delay="200">
-                        <div class="feature-card">
-                            <div class="feature-icon">
-                                <i class="fas fa-truck"></i>
-                            </div>
-                            <h4 class="mb-3">Township Delivery</h4>
-                            <p class="text-muted">Reliable delivery designed for township logistics. Get your stock delivered directly to your shop on schedule.</p>
-                        </div>
-                    </div>
-                    
-                    <div class="col-md-4" data-aos="fade-up" data-aos-delay="0">
-                        <div class="feature-card">
-                            <div class="feature-icon">
-                                <i class="fas fa-chart-line"></i>
-                            </div>
-                            <h4 class="mb-3">Business Insights</h4>
-                            <p class="text-muted">Access analytics and tools to optimize your inventory, track expenses, and grow your spaza business smarter.</p>
-                        </div>
-                    </div>
-                    
-                    <div class="col-md-4" data-aos="fade-up" data-aos-delay="100">
-                        <div class="feature-card">
-                            <div class="feature-icon">
-                                <i class="fab fa-whatsapp"></i>
-                            </div>
-                            <h4 class="mb-3">WhatsApp Ordering</h4>
-                            <p class="text-muted">Simple ordering through WhatsApp. No complicated apps needed. Works on any smartphone.</p>
-                        </div>
-                    </div>
-                    
-                    <div class="col-md-4" data-aos="fade-up" data-aos-delay="200">
-                        <div class="feature-card">
-                            <div class="feature-icon">
-                                <i class="fas fa-handshake"></i>
-                            </div>
-                            <h4 class="mb-3">Trusted Network</h4>
-                            <p class="text-muted">Connect with verified suppliers and other spaza shops. Build relationships in a secure, trusted marketplace.</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- How It Works -->
-        <section id="how-it-works" class="how-it-works">
-            <div class="container">
-                <div class="section-title">
-                    <h2 class="mb-3 text-white">How SpazaSure Works</h2>
-                    <p class="lead text-white">Simple, transparent, and designed for township businesses</p>
-                </div>
-                
-                <div class="row g-4">
-                    <div class="col-md-3" data-aos="fade-up" data-aos-delay="0">
-                        <div class="step-card">
-                            <div class="step-number">1</div>
-                            <h4 class="mb-3 text-white">Register</h4>
-                            <p class="text-white">Sign up as a spaza shop or supplier. It's free and takes just 5 minutes.</p>
-                        </div>
-                    </div>
-                    
-                    <div class="col-md-3" data-aos="fade-up" data-aos-delay="100">
-                        <div class="step-card">
-                            <div class="step-number">2</div>
-                            <h4 class="mb-3 text-white">Browse & Order</h4>
-                            <p class="text-white">Access verified product catalogs and place orders via WhatsApp or our app.</p>
-                        </div>
-                    </div>
-                    
-                    <div class="col-md-3" data-aos="fade-up" data-aos-delay="200">
-                        <div class="step-card">
-                            <div class="step-number">3</div>
-                            <h4 class="mb-3 text-white">Verification</h4>
-                            <p class="text-white">Our system verifies product authenticity and processes your order.</p>
-                        </div>
-                    </div>
-                    
-                    <div class="col-md-3" data-aos="fade-up" data-aos-delay="300">
-                        <div class="step-card">
-                            <div class="step-number">4</div>
-                            <h4 class="mb-3 text-white">Delivery</h4>
-                            <p class="text-white">Receive your order with township-friendly delivery and transparent pricing.</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Testimonials -->
-        <section class="testimonials-section">
-            <div class="container">
-                <div class="section-title">
-                    <h2 class="mb-3">Trusted by Township Retailers</h2>
-                    <p class="lead">See what spaza shop owners and suppliers are saying</p>
-                </div>
-                
-                <div class="row g-4">
-                    <div class="col-md-4" data-aos="fade-up" data-aos-delay="0">
-                        <div class="testimonial-card">
-                            <div class="testimonial-text">
-                                "SpazaSure cut my monthly stock costs by R500. The bulk buying system is a game-changer for small businesses like mine."
-                            </div>
-                            <div class="testimonial-author">
-                                <div class="author-avatar">TS</div>
-                                <div>
-                                    <h6 class="mb-1">Thabo Sibiya</h6>
-                                    <p class="text-muted mb-0">Spaza Shop Owner, Soweto</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <div class="col-md-4" data-aos="fade-up" data-aos-delay="100">
-                        <div class="testimonial-card">
-                            <div class="testimonial-text">
-                                "As a supplier, the my product have reached to new communities. My clients trust our products more when they're SpazaSure verified."
-                            </div>
-                            <div class="testimonial-author">
-                                <div class="author-avatar">NM</div>
-                                <div>
-                                    <h6 class="mb-1">Busisiwe Mbanda</h6>
-                                    <p class="text-muted mb-0">Verified Supplier, Durban</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <div class="col-md-4" data-aos="fade-up" data-aos-delay="200">
-                        <div class="testimonial-card">
-                            <div class="testimonial-text">
-                                "The WhatsApp ordering is perfect for township businesses. Simple, fast, and works on any phone without using much data."
-                            </div>
-                            <div class="testimonial-author">
-                                <div class="author-avatar">JM</div>
-                                <div>
-                                    <h6 class="mb-1">Sipho Gabhisa</h6>
-                                    <p class="text-muted mb-0">Shop Owner, Umlazi</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Pricing - Now in 3 columns -->
-        <section id="pricing" class="pricing-section">
-            <div class="container">
-                <div class="section-title">
-                    <h2 class="mb-3">Simple, Transparent Pricing</h2>
-                    <p class="lead">Choose the plan that fits your business needs</p>
-                </div>
-                
-                <div class="row g-4">
-                    <!-- Basic Plan -->
-                    <div class="col-md-4" data-aos="fade-up" data-aos-delay="0">
-                        <div class="pricing-card">
-                            <h4 class="mb-3">Basic</h4>
-                            <div class="price">Free</div>
-                            <p class="text-muted mb-4">For new spaza shops</p>
-                            <ul class="pricing-features list-unstyled mb-4">
-                                <li><i class="fas fa-check"></i> Basic bulk ordering</li>
-                                <li><i class="fas fa-check"></i> Access to verified suppliers</li>
-                                <li><i class="fas fa-check"></i> Product verification</li>
-                                <li><i class="fas fa-times"></i> Advanced analytics</li>
-                                <li><i class="fas fa-times"></i> Priority support</li>
-                                <li><i class="fas fa-times"></i> WhatsApp integration</li>
-                            </ul>
-                            <button class="btn btn-outline-green w-100" @click="showRegistration('shop')">
-                                Get Started Free
-                            </button>
-                        </div>
-                    </div>
-                    
-                    <!-- Pro Plan -->
-                    <div class="col-md-4" data-aos="fade-up" data-aos-delay="100">
-                        <div class="pricing-card featured">
-                            <div class="pricing-badge">Most Popular</div>
-                            <h4 class="mb-3">Pro</h4>
-                            <div class="price">R129<span>/month</span></div>
-                            <p class="text-muted mb-4">For growing businesses</p>
-                            <ul class="pricing-features list-unstyled mb-4">
-                                <li><i class="fas fa-check"></i> Enhanced bulk discounts</li>
-                                <li><i class="fas fa-check"></i> Priority supplier access</li>
-                                <li><i class="fas fa-check"></i> Advanced verification</li>
-                                <li><i class="fas fa-check"></i> Business analytics</li>
-                                <li><i class="fas fa-check"></i> WhatsApp integration</li>
-                                <li><i class="fas fa-times"></i> Dedicated account manager</li>
-                            </ul>
-                            <button class="btn btn-green w-100" @click="showRegistration('shop')">
-                                Upgrade Now
-                            </button>
-                        </div>
-                    </div>
-                    
-                    <!-- Enterprise Plan -->
-                    <div class="col-md-4" data-aos="fade-up" data-aos-delay="200">
-                        <div class="pricing-card">
-                            <h4 class="mb-3">Enterprise</h4>
-                            <div class="price">R299<span>/month</span></div>
-                            <p class="text-muted mb-4">For multiple shops</p>
-                            <ul class="pricing-features list-unstyled mb-4">
-                                <li><i class="fas fa-check"></i> Maximum bulk discounts</li>
-                                <li><i class="fas fa-check"></i> Premium supplier network</li>
-                                <li><i class="fas fa-check"></i> Complete verification suite</li>
-                                <li><i class="fas fa-check"></i> Advanced analytics dashboard</li>
-                                <li><i class="fas fa-check"></i> WhatsApp integration</li>
-                                <li><i class="fas fa-check"></i> Dedicated support team</li>
-                            </ul>
-                            <button class="btn btn-outline-red w-100" @click="showRegistration('supplier')">
-                                Get Enterprise
-                            </button>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Contact/Registration -->
-        <section id="contact" class="contact-section">
-            <div class="container">
-                <div class="section-title">
-                    <h2 class="mb-3">{{ registrationType === 'shop' ? 'Register Your Spaza Shop' : 'Become a Supplier Partner' }}</h2>
-                    <p class="lead">
-                        {{ registrationType === 'shop' ? 'Join thousands of retailers growing their businesses with SpazaSure' : 'Reach hundreds of township retailers through our verified marketplace' }}
-                    </p>
-                </div>
-                
-                <div class="row justify-content-center">
-                    <div class="col-lg-8">
-                        <div class="contact-card" data-aos="zoom-in">
-                            <!-- Registration Type Selector -->
-                            <div class="d-flex mb-4 border rounded overflow-hidden">
-                                <button class="btn flex-fill rounded-0" 
-                                        :class="registrationType === 'shop' ? 'btn-green' : 'btn-light'"
-                                        @click="registrationType = 'shop'">
-                                    <i class="fas fa-store me-2"></i> Spaza Shop
-                                </button>
-                                <button class="btn flex-fill rounded-0" 
-                                        :class="registrationType === 'supplier' ? 'btn-green' : 'btn-light'"
-                                        @click="registrationType = 'supplier'">
-                                    <i class="fas fa-truck me-2"></i> Supplier
-                                </button>
-                            </div>
-                            
-                            <!-- Spaza Shop Form -->
-                            <form v-if="registrationType === 'shop'" @submit.prevent="submitShopForm" v-show="registrationType === 'shop'">
-                                <div class="row g-3">
-                                    <div class="col-md-6">
-                                        <label class="form-label">Business Name *</label>
-                                        <input type="text" class="form-control form-control-custom" v-model="shopForm.businessName" required>
-                                    </div>
-                                    <div class="col-md-6">
-                                        <label class="form-label">Owner Name *</label>
-                                        <input type="text" class="form-control form-control-custom" v-model="shopForm.ownerName" required>
-                                    </div>
-                                    <div class="col-md-6">
-                                        <label class="form-label">Location *</label>
-                                        <input type="text" class="form-control form-control-custom" v-model="shopForm.location" placeholder="Township, City" required>
-                                    </div>
-                                    <div class="col-md-6">
-                                        <label class="form-label">WhatsApp Number *</label>
-                                        <input type="tel" class="form-control form-control-custom" v-model="shopForm.whatsapp" required>
-                                    </div>
-                                    <div class="col-12">
-                                        <label class="form-label">Main Products Needed</label>
-                                        <textarea class="form-control form-control-custom" v-model="shopForm.products" rows="3" placeholder="e.g., Maize meal, Cooking oil, Rice, Sugar, Snacks..."></textarea>
-                                    </div>
-                                    <div class="col-12">
-                                        <div class="file-upload-area" @click="triggerFileUpload('shop')" @dragover.prevent @drop.prevent="handleFileDrop($event, 'shop')">
-                                            <i class="fas fa-cloud-upload-alt fa-3x text-green mb-3"></i>
-                                            <h5 class="text-green">Upload Business Documents (Optional)</h5>
-                                            <p class="text-muted">Drag & drop or click to upload ID, Business licence, etc.</p>
-                                            <input type="file" id="shopFiles" class="d-none" @change="handleFileUpload($event, 'shop')" multiple>
-                                            <div v-if="shopForm.files.length > 0" class="mt-3">
-                                                <div v-for="(file, index) in shopForm.files" :key="index" 
-                                                     class="d-flex align-items-center justify-content-between bg-light p-2 rounded mb-2">
-                                                    <span class="small">{{ file.name }}</span>
-                                                    <button type="button" class="btn btn-sm btn-outline-green" @click.stop="removeFile(index, 'shop')">
-                                                        <i class="fas fa-times"></i>
-                                                    </button>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="col-12">
-                                        <button type="submit" class="btn btn-green btn-lg w-100" :disabled="isSubmitting">
-                                            <span v-if="isSubmitting">
-                                                <span class="spinner-border spinner-border-sm me-2" role="status"></span>
-                                                Processing...
-                                            </span>
-                                            <span v-else>
-                                                <i class="fas fa-store me-2"></i> Register Spaza Shop
-                                            </span>
-                                        </button>
-                                    </div>
-                                </div>
-                            </form>
-                            
-                            <!-- Supplier Form -->
-                            <form v-else @submit.prevent="submitSupplierForm" v-show="registrationType === 'supplier'">
-                                <div class="row g-3">
-                                    <div class="col-md-6">
-                                        <label class="form-label">Company Name *</label>
-                                        <input type="text" class="form-control form-control-custom" v-model="supplierForm.companyName" required>
-                                    </div>
-                                    <div class="col-md-6">
-                                        <label class="form-label">Contact Person *</label>
-                                        <input type="text" class="form-control form-control-custom" v-model="supplierForm.contactPerson" required>
-                                    </div>
-                                    <div class="col-md-6">
-                                        <label class="form-label">Business Email *</label>
-                                        <input type="email" class="form-control form-control-custom" v-model="supplierForm.email" required>
-                                    </div>
-                                    <div class="col-md-6">
-                                        <label class="form-label">Business Phone *</label>
-                                        <input type="tel" class="form-control form-control-custom" v-model="supplierForm.phone" required>
-                                    </div>
-                                    <div class="col-12">
-                                        <label class="form-label">Product Categories *</label>
-                                        <select class="form-control form-control-custom" v-model="supplierForm.categories" multiple required style="height: 120px;">
-                                            <option value="food">Food & Groceries</option>
-                                            <option value="beverages">Beverages</option>
-                                            <option value="snacks">Snacks & Confectionery</option>
-                                            <option value="personal">Personal Care</option>
-                                            <option value="household">Household Products</option>
-                                            <option value="baby">Baby Products</option>
-                                            <option value="other">Other FMCG</option>
-                                        </select>
-                                        <small class="text-muted">Hold Ctrl/Cmd to select multiple categories</small>
-                                    </div>
-                                    <div class="col-12">
-                                        <div class="file-upload-area" @click="triggerFileUpload('supplier')" @dragover.prevent @drop.prevent="handleFileDrop($event, 'supplier')">
-                                            <i class="fas fa-file-contract fa-3x text-green mb-3"></i>
-                                            <h5 class="text-green">Upload Compliance Documents *</h5>
-                                            <p class="text-muted">Drag & drop or click to upload CIPC registration, Tax certificate, Product certifications</p>
-                                            <input type="file" id="supplierFiles" class="d-none" @change="handleFileUpload($event, 'supplier')" multiple required>
-                                            <div v-if="supplierForm.files.length > 0" class="mt-3">
-                                                <div v-for="(file, index) in supplierForm.files" :key="index" 
-                                                     class="d-flex align-items-center justify-content-between bg-light p-2 rounded mb-2">
-                                                    <span class="small">{{ file.name }}</span>
-                                                    <button type="button" class="btn btn-sm btn-outline-green" @click.stop="removeFile(index, 'supplier')">
-                                                        <i class="fas fa-times"></i>
-                                                    </button>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="col-12">
-                                        <div class="form-check">
-                                            <input class="form-check-input" type="checkbox" v-model="supplierForm.terms" id="terms" required>
-                                            <label class="form-check-label" for="terms">
-                                                I agree to SpazaSure's supplier terms and compliance requirements *
-                                            </label>
-                                        </div>
-                                    </div>
-                                    <div class="col-12">
-                                        <button type="submit" class="btn btn-green btn-lg w-100" :disabled="isSubmitting">
-                                            <span v-if="isSubmitting">
-                                                <span class="spinner-border spinner-border-sm me-2" role="status"></span>
-                                                Processing...
-                                            </span>
-                                            <span v-else>
-                                                <i class="fas fa-handshake me-2"></i> Apply as Supplier Partner
-                                            </span>
-                                        </button>
-                                    </div>
-                                </div>
-                            </form>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Footer -->
-        <footer class="footer-main">
-            <div class="container">
-                <div class="row">
-                    <div class="col-lg-4 mb-5 mb-lg-0">
-                        <a href="#" class="footer-logo" @click.prevent="scrollToTop">
-                            <!-- Logo without container - just the image -->
-                            <img src="logo.png" alt="SpazaSure Logo">
-                            <span class="brand-name">SpazaSure</span>
-                        </a>
-                        <p class="mt-3 opacity-75">
-                            Building South Africa's most trusted marketplace for township retailers. Verified products, fair prices, and reliable delivery.
-                        </p>
-                        <div class="d-flex gap-3 mt-4">
-                            <a href="https://web.facebook.com/Spazasure/" class="social-icon"><i class="fab fa-facebook-f"></i></a>
-                            <a href="#" class="social-icon"><i class="fab fa-twitter"></i></a>
-                            <a href="#" class="social-icon"><i class="fab fa-linkedin-in"></i></a>
-                            <a href="#" class="social-icon"><i class="fab fa-instagram"></i></a>
-                        </div>
-                    </div>
-                    
-                    <div class="col-lg-8">
-                        <div class="row">
-                            <div class="col-md-4 mb-4">
-                                <div class="footer-links">
-                                    <h5>For Businesses</h5>
-                                    <a href="#" @click.prevent="showRegistration('shop')">For Spaza Shops</a>
-                                    <a href="#" @click.prevent="showRegistration('supplier')">For Suppliers</a>
-                                    <a href="#" @click.prevent="scrollToSection('features')">Our Features</a>
-                                    <a href="#" @click.prevent="scrollToSection('pricing')">Pricing</a>
-                                </div>
-                            </div>
-                            
-                            <div class="col-md-4 mb-4">
-                                <div class="footer-links">
-                                    <h5>Resources</h5>
-                                    <a href="#" @click.prevent="showVerificationInfo()">Product Verification</a>
-                                    <a href="#" @click.prevent="showFaq()">FAQ</a>
-                                    <a href="#" @click.prevent="showLegal()">Legal Documents</a>
-                                    <a href="#" @click.prevent="scrollToSection('contact')">Contact Us</a>
-                                </div>
-                            </div>
-                            
-                            <div class="col-md-4 mb-4">
-                                <div class="footer-contact">
-                                    <h5 class="mb-3">Contact Info</h5>
-                                    <div class="d-flex align-items-start mb-3">
-                                        <i class="fas fa-phone mt-1 me-3"></i>
-                                        <div>
-                                            <a href="tel:+27686071465" class="text-decoration-none opacity-75">076 440 3803</a>
-                                            <div class="small opacity-75">Mon-Fri: 8AM-5PM</div>
-                                        </div>
-                                    </div>
-                                    <div class="d-flex align-items-start mb-3">
-                                        <i class="fas fa-envelope mt-1 me-3"></i>
-                                        <div>
-                                            <a href="mailto:info@spazasure.co.za" class="text-decoration-none opacity-75">info@spazasure.co.za</a>
-                                            <div class="small opacity-75">General inquiries</div>
-                                        </div>
-                                    </div>
-                                    <div class="d-flex align-items-start">
-                                        <i class="fas fa-map-marker-alt mt-1 me-3"></i>
-                                        <div class="opacity-75">
-                                            Durban, KwaZulu-Natal<br>
-                                            South Africa
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="footer-bottom">
-                    <div class="row align-items-center">
-                        <div class="col-md-6">
-                            <p class="mb-0 opacity-75">&copy; {{ currentYear }} SpazaSure. All rights reserved.</p>
-                        </div>
-                        <div class="col-md-6 text-md-end">
-                            <a href="#" class="opacity-75 me-3 text-decoration-none" @click.prevent="showLegal()">Privacy Policy</a>
-                            <a href="#" class="opacity-75 me-3 text-decoration-none" @click.prevent="showLegal()">Terms of Service</a>
-                            <a href="#" class="opacity-75 text-decoration-none" @click.prevent="showLegal()">Cookie Policy</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </footer>
-
-        <!-- WhatsApp Button -->
-        <a href="https://wa.me/+27686071465" class="whatsapp-float" target="_blank">
-            <i class="fab fa-whatsapp"></i>
-        </a>
-
-        <!-- Toast Container -->
-        <div class="position-fixed bottom-0 end-0 p-3" style="z-index: 1050">
-            <div v-for="(toast, index) in toasts" :key="index" 
-                 class="toast show" 
-                 :class="`bg-${toast.type === 'error' ? 'danger' : toast.type === 'warning' ? 'warning' : toast.type === 'info' ? 'info' : 'success'}`"
-                 role="alert">
-                <div class="toast-header">
-                    <i :class="toast.icon" class="me-2"></i>
-                    <strong class="me-auto">{{ toast.title }}</strong>
-                    <button type="button" class="btn-close" @click="removeToast(index)"></button>
-                </div>
-                <div class="toast-body text-white">
-                    {{ toast.message }}
                 </div>
             </div>
         </div>
-    </div>
+    </section>
 
-    <!-- JavaScript Libraries -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
-    <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+    <section id="features" class="py-5 bg-white">
+        <div class="container">
+            <div class="text-center mb-5" data-aos="fade-up">
+                <h2 class="display-5 fw-bold">Why Choose <span class="text-green">SpazaSure?</span></h2>
+                <p class="lead text-muted">Comprehensive solutions for the modern Spaza Shop.</p>
+            </div>
+            <div class="row g-4">
+                <div class="col-md-4" data-aos="fade-up" data-aos-delay="100">
+                    <div class="feature-card">
+                        <i class="fas fa-layer-group fa-4x text-green mb-4"></i>
+                        <h4 class="fw-bold">Bulk Buying Power</h4>
+                        <p class="text-muted">Join local buying groups to access wholesale prices. <strong>Save up to 30%</strong> on stock every single month.</p>
+                    </div>
+                </div>
+                <div class="col-md-4" data-aos="fade-up" data-aos-delay="200">
+                    <div class="feature-card" style="border-top-color: var(--primary-red) !important;">
+                        <i class="fas fa-file-shield fa-4x text-red mb-4"></i>
+                        <h4 class="fw-bold">Verified Products</h4>
+                        <p class="text-muted">Avoid fake and expired stock. Every supplier on our platform is 100% verified for safety and quality.</p>
+                    </div>
+                </div>
+                <div class="col-md-4" data-aos="fade-up" data-aos-delay="300">
+                    <div class="feature-card">
+                        <i class="fas fa-truck-fast fa-4x text-green mb-4"></i>
+                        <h4 class="fw-bold">Township Delivery</h4>
+                        <p class="text-muted">We understand township logistics. Reliable, scheduled delivery right to your shop door.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 
-    <script>
-        // Initialize AOS
-        AOS.init({
-            duration: 800,
-            once: true,
-            offset: 100
-        });
+    <section id="how-it-works" class="py-5 bg-light">
+        <div class="container text-center">
+            <h2 class="display-6 fw-bold mb-5">Getting Started is <span class="text-red">Simple</span></h2>
+            <div class="row g-4">
+                <div class="col-md-4" data-aos="fade-up">
+                    <div class="step-circle">1</div>
+                    <h5 class="fw-bold">Register Your Shop</h5>
+                    <p class="text-muted">Submit your shop details for verification via our simple form.</p>
+                </div>
+                <div class="col-md-4" data-aos="fade-up" data-aos-delay="100">
+                    <div class="step-circle">2</div>
+                    <h5 class="fw-bold">Join a Group</h5>
+                    <p class="text-muted">We link you with nearby retailers to unlock massive bulk discounts.</p>
+                </div>
+                <div class="col-md-4" data-aos="fade-up" data-aos-delay="200">
+                    <div class="step-circle">3</div>
+                    <h5 class="fw-bold">Stock Up & Grow</h5>
+                    <p class="text-muted">Receive your verified stock and watch your profit margins increase.</p>
+                </div>
+            </div>
+        </div>
+    </section>
 
-        // Create Vue App
-        const { createApp, ref, reactive, computed, onMounted, watch } = Vue;
+    <section id="network" class="py-5 bg-white">
+        <div class="container">
+            <div class="text-center mb-5" data-aos="fade-up">
+                <h2 class="fw-bold">Our <span class="text-red">South African</span> Network</h2>
+                <p class="lead">Serving retail hubs across Gauteng, Western Cape, and KZN.</p>
+            </div>
+            <div id="map" data-aos="zoom-in"></div>
+        </div>
+    </section>
 
-        createApp({
-            setup() {
-                // State
-                const isScrolled = ref(false);
-                const activeSection = ref('home');
-                const registrationType = ref('shop');
-                const isSubmitting = ref(false);
-                const currentYear = ref(new Date().getFullYear());
-                
-                // Forms
-                const shopForm = reactive({
-                    businessName: '',
-                    ownerName: '',
-                    location: '',
-                    whatsapp: '',
-                    products: '',
-                    files: []
-                });
-                
-                const supplierForm = reactive({
-                    companyName: '',
-                    contactPerson: '',
-                    email: '',
-                    phone: '',
-                    categories: [],
-                    files: [],
-                    terms: false
-                });
-                
-                const toasts = ref([]);
-                
-                // Methods
-                const addToast = (title, message, type = 'success') => {
-                    const icons = {
-                        success: 'fas fa-check-circle',
-                        error: 'fas fa-exclamation-circle',
-                        warning: 'fas fa-exclamation-triangle',
-                        info: 'fas fa-info-circle'
-                    };
-                    
-                    toasts.value.push({
-                        title,
-                        message,
-                        type,
-                        icon: icons[type]
+    <section id="buying-group" class="py-5 bg-light">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-lg-7">
+                    <div class="bg-white p-4 p-md-5 rounded-4 shadow-lg border-top border-5 border-success" data-aos="fade-up">
+                        <div class="text-center mb-4">
+                            <h2 class="fw-bold">Join a <span class="text-green">Buying Group</span></h2>
+                            <p class="text-muted">Fill in your details and we will WhatsApp you to finalize your setup.</p>
+                        </div>
+                        <form @submit.prevent="handleFormSubmit">
+                            <div class="mb-3">
+                                <label class="fw-bold small">Shop Name</label>
+                                <input type="text" v-model="form.shopName" class="form-control form-control-custom" placeholder="e.g. Mama D's Spaza" required>
+                            </div>
+                            <div class="mb-3">
+                                <label class="fw-bold small">Area / Township</label>
+                                <input type="text" v-model="form.location" class="form-control form-control-custom" placeholder="e.g. Alexandra, Ward 2" required>
+                            </div>
+                            <div class="mb-4">
+                                <label class="fw-bold small">WhatsApp Number</label>
+                                <input type="tel" v-model="form.phone" class="form-control form-control-custom" placeholder="068 607 1465" required>
+                            </div>
+                            <button type="submit" class="btn btn-vibrant w-100 btn-lg shadow-sm" :disabled="loading">
+                                <span v-if="!loading">Join Now via WhatsApp <i class="fab fa-whatsapp ms-2"></i></span>
+                                <span v-else>Connecting...</span>
+                            </button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="py-5 bg-dark text-white text-center">
+        <div class="container">
+            <img src="logo1.png" height="50" class="mb-4" style="filter: brightness(0) invert(1);">
+            <div class="d-flex justify-content-center gap-4 mb-4 fs-4">
+                <a :href="whatsappLink" class="text-white"><i class="fab fa-whatsapp"></i></a>
+                <a href="#" class="text-white"><i class="fab fa-facebook"></i></a>
+                <a href="#" class="text-white"><i class="fab fa-instagram"></i></a>
+            </div>
+            <p class="mb-0 text-muted">&copy; 2025 SpazaSure South Africa. Buy Smart. Verify Fast. Grow Together.</p>
+        </div>
+    </footer>
+</div>
+
+<script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+<script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+<script>
+    (g=>{var h,a,k,p="The Google Maps JavaScript API",c="google",l="importLibrary",q="__ib__",m=document,b=window;b=b[c]||(b[c]={});var d=b.maps||(b.maps={}),r=new Set,e=new URLSearchParams,u=()=>h||(h=new Promise(async(f,n)=>{await (a=m.createElement("script"));e.set("libraries",[...r]+"");for(k in g)e.set(k.replace(/[A-Z]/g,t=>"_"+t[0].toLowerCase()),g[k]);e.set("callback",c+".maps."+q);a.src=`https://maps.${c}apis.com/maps/api/js?`+e;d[q]=f;a.onerror=()=>h=n(Error(p+" could not load."));a.nonce=m.querySelector("script[nonce]")?.nonce||"";m.head.append(a)}));d[l]?console.warn(p+" only loads once. Re-using existing library."):d[l]=(f,...n)=>r.add(f)&&u().then(()=>d[l](f,...n))})({
+        key: "YOUR_API_KEY_HERE", // IMPORTANT: Add your real API Key here for the map to work
+        v: "weekly"
+    });
+</script>
+
+<script>
+    const { createApp, ref, onMounted } = Vue;
+
+    createApp({
+        setup() {
+            const businessNumber = "27686071465"; 
+            const whatsappLink = `https://wa.me/${businessNumber}?text=Hi%20SpazaSure!%20I'm%20interested%20in%20learning%20more%20about%20the%20platform.`;
+
+            const loading = ref(false);
+            const form = ref({ shopName: '', location: '', phone: '' });
+
+            async function initMap() {
+                try {
+                    const { Map } = await google.maps.importLibrary("maps");
+                    const map = new Map(document.getElementById("map"), {
+                        center: { lat: -28.4793, lng: 24.6727 },
+                        zoom: 6,
+                        styles: [{ "featureType": "water", "stylers": [{ "color": "#bde3e1" }] }]
                     });
                     
-                    setTimeout(() => {
-                        toasts.value.shift();
-                    }, 5000);
-                };
-                
-                const removeToast = (index) => {
-                    toasts.value.splice(index, 1);
-                };
-                
-                const scrollToTop = () => {
-                    window.scrollTo({ top: 0, behavior: 'smooth' });
-                    activeSection.value = 'home';
-                };
-                
-                const scrollToSection = (sectionId) => {
-                    const element = document.getElementById(sectionId);
-                    if (element) {
-                        const offset = 80;
-                        const elementPosition = element.offsetTop - offset;
-                        window.scrollTo({
-                            top: elementPosition,
-                            behavior: 'smooth'
-                        });
-                        activeSection.value = sectionId;
-                    }
-                };
-                
-                const showRegistration = (type) => {
-                    registrationType.value = type;
-                    scrollToSection('contact');
-                };
-                
-                const triggerFileUpload = (type) => {
-                    const inputId = type === 'shop' ? 'shopFiles' : 'supplierFiles';
-                    document.getElementById(inputId).click();
-                };
-                
-                const handleFileDrop = (event, type) => {
-                    event.preventDefault();
-                    const files = event.dataTransfer.files;
-                    handleFiles(files, type);
-                };
-                
-                const handleFileUpload = (event, type) => {
-                    const files = event.target.files;
-                    handleFiles(files, type);
-                };
-                
-                const handleFiles = (files, type) => {
-                    const fileArray = Array.from(files);
-                    if (type === 'shop') {
-                        shopForm.files = [...shopForm.files, ...fileArray];
-                    } else {
-                        supplierForm.files = [...supplierForm.files, ...fileArray];
-                    }
-                };
-                
-                const removeFile = (index, type) => {
-                    if (type === 'shop') {
-                        shopForm.files.splice(index, 1);
-                    } else {
-                        supplierForm.files.splice(index, 1);
-                    }
-                };
-                
-                const validateEmail = (email) => {
-                    const re = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-                    return re.test(email);
-                };
-                
-                const validatePhone = (phone) => {
-                    const re = /^[\d\s\+\-\(\)]{10,}$/;
-                    return re.test(phone);
-                };
-                
-                const submitShopForm = async () => {
-                    if (!shopForm.businessName || !shopForm.ownerName || !shopForm.location || !shopForm.whatsapp) {
-                        addToast('Error', 'Please fill in all required fields', 'error');
-                        return;
-                    }
-                    
-                    if (!validatePhone(shopForm.whatsapp)) {
-                        addToast('Error', 'Please enter a valid WhatsApp number', 'error');
-                        return;
-                    }
-                    
-                    isSubmitting.value = true;
-                    
-                    // Simulate API call
-                    setTimeout(() => {
-                        isSubmitting.value = false;
-                        addToast('Success', 'Your spaza shop registration has been submitted! We will contact you within 24 hours.');
-                        
-                        // Reset form
-                        Object.assign(shopForm, {
-                            businessName: '',
-                            ownerName: '',
-                            location: '',
-                            whatsapp: '',
-                            products: '',
-                            files: []
-                        });
-                    }, 1500);
-                };
-                
-                const submitSupplierForm = async () => {
-                    if (!supplierForm.companyName || !supplierForm.contactPerson || !supplierForm.email || 
-                        !supplierForm.phone || supplierForm.categories.length === 0 || !supplierForm.terms) {
-                        addToast('Error', 'Please fill in all required fields', 'error');
-                        return;
-                    }
-                    
-                    if (!validateEmail(supplierForm.email)) {
-                        addToast('Error', 'Please enter a valid email address', 'error');
-                        return;
-                    }
-                    
-                    if (!validatePhone(supplierForm.phone)) {
-                        addToast('Error', 'Please enter a valid phone number', 'error');
-                        return;
-                    }
-                    
-                    isSubmitting.value = true;
-                    
-                    // Simulate API call
-                    setTimeout(() => {
-                        isSubmitting.value = false;
-                        addToast('Success', 'Your supplier application has been submitted! Our team will review it within 48 hours.');
-                        
-                        // Reset form
-                        Object.assign(supplierForm, {
-                            companyName: '',
-                            contactPerson: '',
-                            email: '',
-                            phone: '',
-                            categories: [],
-                            files: [],
-                            terms: false
-                        });
-                    }, 1500);
-                };
-                
-                const showVerificationInfo = () => {
-                    addToast('Product Verification', 'All products undergo rigorous safety checks and authentication. Learn more in our documentation.', 'info');
-                };
-                
-                const showFaq = () => {
-                    addToast('FAQ', 'Frequently asked questions will be available soon. For now, please contact us directly.', 'info');
-                };
-                
-                const showLegal = () => {
-                    addToast('Legal Information', 'Our legal documents are being prepared. Contact legal@spazasure.co.za for immediate legal inquiries.', 'info');
-                };
-                
-                // Animate counters
-                const animateCounters = () => {
-                    const counters = document.querySelectorAll('.stat-number');
-                    counters.forEach(counter => {
-                        const target = parseInt(counter.getAttribute('data-count'));
-                        const duration = 2000;
-                        const increment = target / (duration / 16);
-                        
-                        let current = 0;
-                        const timer = setInterval(() => {
-                            current += increment;
-                            if (current >= target) {
-                                counter.textContent = target;
-                                clearInterval(timer);
-                            } else {
-                                counter.textContent = Math.floor(current);
-                            }
-                        }, 16);
+                    const hubs = [
+                        { lat: -26.2041, lng: 28.0473, title: "Gauteng Region" },
+                        { lat: -33.9249, lng: 18.4241, title: "Western Cape Region" },
+                        { lat: -29.8587, lng: 31.0218, title: "KZN Region" }
+                    ];
+
+                    hubs.forEach(h => {
+                        new google.maps.Marker({ position: {lat: h.lat, lng: h.lng}, map: map, title: h.title });
                     });
-                };
-                
-                // Lifecycle hooks
-                onMounted(() => {
-                    // Scroll event for sticky nav
-                    window.addEventListener('scroll', () => {
-                        isScrolled.value = window.scrollY > 50;
-                        
-                        // Update active section based on scroll position
-                        const sections = ['home', 'features', 'how-it-works', 'pricing', 'contact'];
-                        for (const section of sections) {
-                            const element = document.getElementById(section);
-                            if (element) {
-                                const rect = element.getBoundingClientRect();
-                                if (rect.top <= 100 && rect.bottom >= 100) {
-                                    activeSection.value = section;
-                                    break;
-                                }
-                            }
-                        }
-                    });
-                    
-                    // Animate counters when in view
-                    const observer = new IntersectionObserver((entries) => {
-                        entries.forEach(entry => {
-                            if (entry.isIntersecting) {
-                                animateCounters();
-                                observer.unobserve(entry.target);
-                            }
-                        });
-                    }, { threshold: 0.5 });
-                    
-                    const statElements = document.querySelectorAll('.stats-section');
-                    statElements.forEach(el => observer.observe(el));
-                    
-                    // Add fade-in animation on scroll
-                    const fadeElements = document.querySelectorAll('.fade-in');
-                    const fadeObserver = new IntersectionObserver((entries) => {
-                        entries.forEach(entry => {
-                            if (entry.isIntersecting) {
-                                entry.target.classList.add('visible');
-                            }
-                        });
-                    }, { threshold: 0.1 });
-                    
-                    fadeElements.forEach(el => fadeObserver.observe(el));
-                });
-                
-                return {
-                    isScrolled,
-                    activeSection,
-                    registrationType,
-                    isSubmitting,
-                    currentYear,
-                    shopForm,
-                    supplierForm,
-                    toasts,
-                    scrollToTop,
-                    scrollToSection,
-                    showRegistration,
-                    triggerFileUpload,
-                    handleFileDrop,
-                    handleFileUpload,
-                    removeFile,
-                    submitShopForm,
-                    submitSupplierForm,
-                    addToast,
-                    removeToast,
-                    showVerificationInfo,
-                    showFaq,
-                    showLegal
-                };
+                } catch (e) {
+                    console.error("Google Maps failed to load. Please check your API Key and internet connection.");
+                }
             }
-        }).mount('#app');
-    </script>
+
+            const handleFormSubmit = () => {
+                loading.value = true;
+                const message = encodeURIComponent(`Hi SpazaSure! I'd like to join a Buying Group.\n\nShop Name: ${form.value.shopName}\nLocation: ${form.value.location}\nWhatsApp: ${form.value.phone}`);
+                const finalUrl = `https://wa.me/${businessNumber}?text=${message}`;
+                
+                setTimeout(() => {
+                    window.open(finalUrl, '_blank');
+                    form.value = { shopName: '', location: '', phone: '' };
+                    loading.value = false;
+                }, 1000);
+            };
+
+            onMounted(() => {
+                AOS.init({ duration: 800, once: true });
+                if (typeof google !== 'undefined') initMap(); // Ensure Google Maps is available
+            });
+
+            return { whatsappLink, form, loading, handleFormSubmit };
+        }
+    }).mount('#app');
+</script>
 </body>
 </html>
