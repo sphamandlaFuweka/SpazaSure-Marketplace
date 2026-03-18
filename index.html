@@ -1,49 +1,262 @@
-<div class="nav-item" onclick="showPage('verify')"><i class="fas fa-shield-check"></i>Verify</div>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SpazaSure | Enterprise Digital Ecosystem</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            /* Exact Color Palette from Logo */
+            --navy: #0d1b3e;       /* Deep Corporate Blue */
+            --sky: #0ea5e9;        /* Tech & Verification Blue */
+            --orange: #f97316;     /* Action & Scanner Orange */
+            --white: #ffffff;
+            --light-gray: #f8fafc;
+            --border: #e2e8f0;
+        }
 
-<section id="verifyPage" style="display:none; padding: 20px;">
-    <div style="text-align:center; margin-bottom: 25px;">
-        <i class="fas fa-certificate fa-3x" style="color: var(--secondary);"></i>
-        <h2 style="margin-top:10px;">Product Verification</h2>
-        <p style="color: var(--gray-600); font-size: 0.9rem;">Scan or enter the SpazaSure ID on your packaging.</p>
+        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Inter', -apple-system, sans-serif; }
+        body { background-color: var(--light-gray); color: var(--navy); line-height: 1.6; }
+
+        /* Navbar */
+        nav {
+            background: var(--white);
+            padding: 1.2rem 8%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 15px rgba(0,0,0,0.05);
+            border-bottom: 4px solid var(--sky);
+        }
+        .logo-container { display: flex; align-items: center; gap: 10px; text-decoration: none; }
+        .logo-text { font-size: 1.7rem; font-weight: 900; color: var(--navy); letter-spacing: -1px; }
+        .logo-text span { color: var(--orange); }
+
+        .nav-links a { text-decoration: none; color: var(--navy); margin-left: 2.5rem; font-weight: 700; font-size: 0.95rem; transition: 0.3s; }
+        .nav-links a:hover { color: var(--sky); }
+        .btn-cta { background: var(--orange); color: white !important; padding: 12px 24px; border-radius: 6px; box-shadow: 0 4px 10px rgba(249, 115, 22, 0.3); }
+
+        /* Hero System Overview */
+        .hero {
+            padding: 100px 8%;
+            background: linear-gradient(135deg, var(--navy) 0%, #1e293b 100%);
+            color: white;
+            display: flex;
+            align-items: center;
+            gap: 50px;
+        }
+        .hero-content { flex: 1; }
+        .hero h1 { font-size: 3.8rem; line-height: 1.1; margin-bottom: 25px; }
+        .hero p { font-size: 1.2rem; margin-bottom: 35px; opacity: 0.9; max-width: 600px; }
+        .system-pill { display: inline-block; padding: 6px 15px; background: var(--sky); color: white; border-radius: 50px; font-weight: 800; font-size: 0.75rem; margin-bottom: 20px; text-transform: uppercase; }
+
+        /* System Nodes Grid */
+        .section { padding: 100px 8%; }
+        .section-header { text-align: center; margin-bottom: 60px; }
+        .section-header h2 { font-size: 2.5rem; color: var(--navy); }
+        .accent-line { width: 80px; height: 5px; background: var(--orange); margin: 15px auto; border-radius: 10px; }
+
+        .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 30px; }
+        .node-card {
+            background: var(--white);
+            padding: 50px;
+            border-radius: 20px;
+            border: 1px solid var(--border);
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+        .node-card::after { content: ''; position: absolute; top: 0; left: 0; width: 100%; height: 5px; background: var(--sky); }
+        .node-card:hover { transform: translateY(-10px); box-shadow: 0 20px 40px rgba(0,0,0,0.08); border-color: var(--sky); }
+        .node-card i { font-size: 3rem; color: var(--navy); margin-bottom: 25px; display: block; }
+        .node-card h3 { font-size: 1.5rem; margin-bottom: 15px; color: var(--navy); }
+        .node-card p { color: #64748b; font-size: 1rem; }
+
+        /* Verification Terminal Styling */
+        .verification-terminal {
+            background: var(--white);
+            border-radius: 30px;
+            border: 2px solid var(--navy);
+            display: flex;
+            overflow: hidden;
+            box-shadow: 0 30px 60px rgba(0,0,0,0.1);
+        }
+        .v-info { background: var(--navy); color: white; padding: 60px; flex: 1; }
+        .v-action { padding: 60px; flex: 1; background: var(--white); }
+        .v-action h3 { color: var(--navy); margin-bottom: 20px; }
+        
+        .sys-input {
+            width: 100%;
+            padding: 18px;
+            border: 2px solid var(--border);
+            border-radius: 10px;
+            margin-bottom: 20px;
+            font-size: 1.1rem;
+            color: var(--navy);
+            outline: none;
+        }
+        .sys-input:focus { border-color: var(--sky); }
+        .btn-scan { 
+            width: 100%; 
+            padding: 18px; 
+            background: var(--orange); 
+            color: white; 
+            border: none; 
+            border-radius: 10px; 
+            font-weight: 800; 
+            font-size: 1.1rem; 
+            cursor: pointer; 
+            display: flex; 
+            align-items: center; 
+            justify-content: center; 
+            gap: 10px;
+        }
+
+        /* Footer */
+        footer { background: var(--navy); color: white; padding: 80px 8% 40px; }
+        .footer-grid { display: grid; grid-template-columns: 2fr 1fr 1fr 1fr; gap: 40px; }
+        .footer-logo { font-size: 1.8rem; font-weight: 900; margin-bottom: 20px; }
+        .footer-logo span { color: var(--orange); }
+        .footer-col h4 { margin-bottom: 25px; color: var(--sky); text-transform: uppercase; font-size: 0.8rem; letter-spacing: 1px; }
+        .footer-col ul { list-style: none; }
+        .footer-col li { margin-bottom: 12px; opacity: 0.8; font-size: 0.9rem; }
+
+        @media (max-width: 968px) {
+            .hero, .verification-terminal { flex-direction: column; text-align: center; }
+            .hero h1 { font-size: 2.8rem; }
+            .v-info, .v-action { padding: 40px 20px; }
+        }
+    </style>
+</head>
+<body>
+
+<nav>
+    <a href="#" class="logo-container">
+        <div class="logo-text">SPAZA<span>SURE</span></div>
+    </a>
+    <div class="nav-links">
+        <a href="#system">The Ecosystem</a>
+        <a href="#verify">Verification Tech</a>
+        <a href="#compliance">Compliance</a>
+        <a href="mailto:info@spazasure.co.za" class="btn-cta">Request System Access</a>
     </div>
+</nav>
 
-    <div class="search-box" style="background: var(--gray-100); color: var(--dark); border: 1px solid var(--gray-200);">
-        <i class="fas fa-barcode"></i>
-        <input type="text" id="verifyInput" placeholder="Enter Serial Number (e.g. SZ-2026-001)">
-        <button onclick="verifyProduct()" style="background: var(--primary); color:white; border:none; padding:8px 15px; border-radius:8px;">Check</button>
-    </div>
-
-    <div id="verifyResult" style="margin-top: 20px; display:none;">
+<header class="hero">
+    <div class="hero-content">
+        <span class="system-pill">Institutional Infrastructure</span>
+        <h1>Secure. Verified. Connected.</h1>
+        <p>SpazaSure is a multi-node digital ecosystem formalizing the informal economy. We provide the infrastructure for direct-to-retail wholesale with built-in product authentication.</p>
+        <div style="display:flex; gap:20px; flex-wrap:wrap;">
+            <button class="btn-cta" style="border:none; cursor:pointer; font-size: 1.1rem; padding: 18px 40px;">Launch System</button>
+            <button style="background:transparent; border: 2px solid var(--sky); color: var(--sky); padding: 18px 40px; border-radius:6px; font-weight:bold; cursor:pointer;">Technical Brief</button>
         </div>
+    </div>
+    <div style="flex:0.8; text-align:center;">
+        <i class="fas fa-project-diagram fa-10x" style="color: var(--sky); opacity:0.3;"></i>
+    </div>
+</header>
+
+<section class="section" id="system">
+    <div class="section-header">
+        <h2>System Architecture</h2>
+        <div class="accent-line"></div>
+        <p>Three integrated systems, one seamless wholesale solution.</p>
+    </div>
+    <div class="grid">
+        <div class="node-card">
+            <i class="fas fa-industry"></i>
+            <h3>Supplier Node</h3>
+            <p>A high-volume portal for manufacturers to manage catalog data, batch-tracking, and direct distribution to certified retailers.</p>
+        </div>
+        <div class="node-card">
+            <i class="fas fa-fingerprint"></i>
+            <h3>Verification Layer</h3>
+            <p>Our core IP. A secure authentication system that verifies product origin and safety using encrypted batch identification.</p>
+        </div>
+        <div class="node-card">
+            <i class="fas fa-calculator"></i>
+            <h3>Retail Terminal</h3>
+            <p>The business hub for Spaza Shop operators. Manage compliant ordering, group-buying, and digital document storage (POPIA/Permits).</p>
+        </div>
+    </div>
 </section>
 
+<section class="section" id="verify" style="background:#f1f5f9;">
+    <div class="verification-terminal">
+        <div class="v-info">
+            <h2 style="font-size: 2.5rem; margin-bottom:20px;">Verification Engine v2.0</h2>
+            <p style="opacity:0.8; font-size:1.1rem;">Combatting the counterfeit market through real-time traceability. Every pallet of Ace Maize and Allsome Rice is logged within our secure ledger.</p>
+            <div style="margin-top:40px; border-top:1px solid rgba(255,255,255,0.1); padding-top:20px;">
+                <p><i class="fas fa-check-circle" style="color:var(--sky);"></i> POPIA Compliant Architecture</p>
+                <p><i class="fas fa-check-circle" style="color:var(--sky);"></i> 256-bit Encryption Protocols</p>
+            </div>
+        </div>
+        <div class="v-action">
+            <h3>System Authentication</h3>
+            <p style="color:#64748b; font-size:0.85rem; margin-bottom:10px;">ENTER PRODUCT SERIAL NUMBER</p>
+            <input type="text" id="scanID" class="sys-input" placeholder="e.g. SZ-2026-X">
+            <button class="btn-scan" onclick="runCheck()">
+                <i class="fas fa-qrcode"></i> AUTHENTICATE STOCK
+            </button>
+            <div id="status" style="margin-top:25px; text-align:center; font-weight:800;"></div>
+        </div>
+    </div>
+</section>
+
+<footer>
+    <div class="footer-grid">
+        <div class="footer-col">
+            <div class="footer-logo">SPAZA<span>SURE</span></div>
+            <p style="opacity:0.7;">Modernizing the heart of South African commerce through verification and connectivity.</p>
+        </div>
+        <div class="footer-col">
+            <h4>The System</h4>
+            <ul>
+                <li>Supplier Node</li>
+                <li>Retailer Hub</li>
+                <li>Consumer Verification</li>
+            </ul>
+        </div>
+        <div class="footer-col">
+            <h4>Compliance</h4>
+            <ul>
+                <li>POPIA Protocols</li>
+                <li>Permit Verification</li>
+                <li>Privacy Policy</li>
+            </ul>
+        </div>
+        <div class="footer-col">
+            <h4>HQ Durban</h4>
+            <ul>
+                <li>info@spazasure.co.za</li>
+                <li>+27 76 440 3803</li>
+                <li style="color:var(--orange); font-weight:bold;">Quarry Heights, 4359</li>
+            </ul>
+        </div>
+    </div>
+    <div style="text-align:center; margin-top:50px; opacity:0.5; font-size:0.8rem; border-top:1px solid rgba(255,255,255,0.1); padding-top:20px;">
+        &copy; 2026 SpazaSure (Pty) Ltd. | Registered Technology Ecosystem
+    </div>
+</footer>
+
 <script>
-    // Verification Logic
-    const validSerials = {
-        "SZ-2026-001": { name: "Ace Super Maize 10kg", batch: "B-992", origin: "Durban Mill", status: "Verified Genuine" },
-        "SZ-2026-005": { name: "Selati Sugar 10kg", batch: "S-104", origin: "Nkwaleni Valley", status: "Verified Genuine" }
-    };
-
-    function verifyProduct() {
-        const id = document.getElementById('verifyInput').value;
-        const resultDiv = document.getElementById('verifyResult');
-        const data = validSerials[id];
-
-        if (data) {
-            resultDiv.innerHTML = `
-                <div style="background: #ecfdf5; border: 1px solid var(--secondary); padding: 15px; border-radius: 12px;">
-                    <div style="color: var(--secondary); font-weight: 800; margin-bottom: 10px;">
-                        <i class="fas fa-check-circle"></i> ${data.status}
-                    </div>
-                    <div style="font-size: 0.85rem;">
-                        <p><strong>Product:</strong> ${data.name}</p>
-                        <p><strong>Batch:</strong> ${data.batch}</p>
-                        <p><strong>Origin:</strong> ${data.origin}</p>
-                    </div>
-                </div>`;
+    function runCheck() {
+        const id = document.getElementById('scanID').value.toUpperCase();
+        const stat = document.getElementById('status');
+        if(id.startsWith("SZ")) {
+            stat.style.color = "var(--sky)";
+            stat.innerHTML = "✓ SYSTEM CONFIRMED: Genuine Batch (March 2026 Production)";
         } else {
-            resultDiv.innerHTML = `<div style="color: var(--danger); text-align:center;">Invalid Code. Please contact SpazaSure support.</div>`;
+            stat.style.color = "#ef4444";
+            stat.innerHTML = "⚠ ALERT: Unverified ID. Potential Counterfeit.";
         }
-        resultDiv.style.display = 'block';
     }
 </script>
+
+</body>
+</html>
