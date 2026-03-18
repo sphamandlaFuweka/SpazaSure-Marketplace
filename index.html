@@ -3,257 +3,238 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SpazaSure | Enterprise Digital Ecosystem</title>
+    <title>SpazaSure | Integrated Commerce System</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
         :root {
-            /* Exact Color Palette from Logo */
-            --navy: #0d1b3e;       /* Deep Corporate Blue */
-            --sky: #0ea5e9;        /* Tech & Verification Blue */
-            --orange: #f97316;     /* Action & Scanner Orange */
+            /* Your Specific Color Palette */
+            --blue-main: #003399;   /* Primary: Trust & System */
+            --red-alert: #e60000;   /* Secondary: Counterfeit Alerts */
+            --green-safe: #008000;  /* Secondary: Verified Status */
+            --yellow-warn: #ffcc00; /* Secondary: Pending/Warning */
+            
             --white: #ffffff;
-            --light-gray: #f8fafc;
-            --border: #e2e8f0;
+            --off-white: #f1f4f9;
+            --text-dark: #1a1a1a;
+            --navy: #001a4d;
         }
 
-        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Inter', -apple-system, sans-serif; }
-        body { background-color: var(--light-gray); color: var(--navy); line-height: 1.6; }
+        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Inter', sans-serif; }
+        body { background-color: var(--off-white); color: var(--text-dark); line-height: 1.6; }
 
-        /* Navbar */
+        /* Navigation */
         nav {
             background: var(--white);
-            padding: 1.2rem 8%;
+            padding: 1rem 8%;
             display: flex;
             justify-content: space-between;
             align-items: center;
             position: sticky;
             top: 0;
             z-index: 1000;
-            box-shadow: 0 2px 15px rgba(0,0,0,0.05);
-            border-bottom: 4px solid var(--sky);
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            border-bottom: 4px solid var(--blue-main);
         }
-        .logo-container { display: flex; align-items: center; gap: 10px; text-decoration: none; }
-        .logo-text { font-size: 1.7rem; font-weight: 900; color: var(--navy); letter-spacing: -1px; }
-        .logo-text span { color: var(--orange); }
+        .logo-box { display: flex; align-items: center; gap: 12px; text-decoration: none; }
+        .logo-img { height: 45px; width: auto; } /* Placeholder for Logo1.png */
+        
+        .nav-links a { text-decoration: none; color: var(--navy); margin-left: 2rem; font-weight: 700; font-size: 0.9rem; }
+        .btn-system { background: var(--blue-main); color: white !important; padding: 10px 20px; border-radius: 4px; transition: 0.3s; }
+        .btn-system:hover { background: var(--navy); }
 
-        .nav-links a { text-decoration: none; color: var(--navy); margin-left: 2.5rem; font-weight: 700; font-size: 0.95rem; transition: 0.3s; }
-        .nav-links a:hover { color: var(--sky); }
-        .btn-cta { background: var(--orange); color: white !important; padding: 12px 24px; border-radius: 6px; box-shadow: 0 4px 10px rgba(249, 115, 22, 0.3); }
-
-        /* Hero System Overview */
+        /* Hero Section */
         .hero {
-            padding: 100px 8%;
-            background: linear-gradient(135deg, var(--navy) 0%, #1e293b 100%);
+            padding: 80px 8%;
+            background: var(--navy);
             color: white;
             display: flex;
             align-items: center;
-            gap: 50px;
-        }
-        .hero-content { flex: 1; }
-        .hero h1 { font-size: 3.8rem; line-height: 1.1; margin-bottom: 25px; }
-        .hero p { font-size: 1.2rem; margin-bottom: 35px; opacity: 0.9; max-width: 600px; }
-        .system-pill { display: inline-block; padding: 6px 15px; background: var(--sky); color: white; border-radius: 50px; font-weight: 800; font-size: 0.75rem; margin-bottom: 20px; text-transform: uppercase; }
-
-        /* System Nodes Grid */
-        .section { padding: 100px 8%; }
-        .section-header { text-align: center; margin-bottom: 60px; }
-        .section-header h2 { font-size: 2.5rem; color: var(--navy); }
-        .accent-line { width: 80px; height: 5px; background: var(--orange); margin: 15px auto; border-radius: 10px; }
-
-        .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 30px; }
-        .node-card {
-            background: var(--white);
-            padding: 50px;
-            border-radius: 20px;
-            border: 1px solid var(--border);
-            transition: all 0.3s ease;
+            justify-content: space-between;
             position: relative;
             overflow: hidden;
         }
-        .node-card::after { content: ''; position: absolute; top: 0; left: 0; width: 100%; height: 5px; background: var(--sky); }
-        .node-card:hover { transform: translateY(-10px); box-shadow: 0 20px 40px rgba(0,0,0,0.08); border-color: var(--sky); }
-        .node-card i { font-size: 3rem; color: var(--navy); margin-bottom: 25px; display: block; }
-        .node-card h3 { font-size: 1.5rem; margin-bottom: 15px; color: var(--navy); }
-        .node-card p { color: #64748b; font-size: 1rem; }
-
-        /* Verification Terminal Styling */
-        .verification-terminal {
-            background: var(--white);
-            border-radius: 30px;
-            border: 2px solid var(--navy);
-            display: flex;
-            overflow: hidden;
-            box-shadow: 0 30px 60px rgba(0,0,0,0.1);
+        .hero::after {
+            content: ""; position: absolute; top: 0; right: 0; width: 30%; height: 100%;
+            background: linear-gradient(45deg, transparent, rgba(255, 204, 0, 0.1));
         }
-        .v-info { background: var(--navy); color: white; padding: 60px; flex: 1; }
-        .v-action { padding: 60px; flex: 1; background: var(--white); }
-        .v-action h3 { color: var(--navy); margin-bottom: 20px; }
+        .hero-content { flex: 1.5; z-index: 2; }
+        .hero h1 { font-size: 3.5rem; line-height: 1.1; margin-bottom: 20px; }
+        .hero h1 span { color: var(--yellow-warn); }
+        .hero p { font-size: 1.2rem; margin-bottom: 30px; opacity: 0.9; }
+
+        /* Status Bar (Ticker) */
+        .status-ticker {
+            background: var(--white);
+            padding: 15px 8%;
+            display: flex;
+            justify-content: space-between;
+            border-bottom: 1px solid #ddd;
+            font-size: 0.85rem;
+            font-weight: 600;
+        }
+        .status-item { display: flex; align-items: center; gap: 8px; }
+        .dot-green { width: 10px; height: 10px; background: var(--green-safe); border-radius: 50%; }
+
+        /* System Nodes Grid */
+        .section { padding: 80px 8%; }
+        .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; }
+        
+        .node-card {
+            background: var(--white);
+            padding: 40px;
+            border-radius: 8px;
+            border-left: 6px solid var(--blue-main);
+            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+            transition: 0.3s;
+        }
+        .node-card:hover { transform: translateY(-5px); box-shadow: 0 10px 25px rgba(0,0,0,0.1); }
+        .node-card.alert { border-left-color: var(--red-alert); }
+        .node-card.verify { border-left-color: var(--green-safe); }
+        
+        .node-card i { font-size: 2.5rem; margin-bottom: 20px; }
+        .node-card h3 { color: var(--navy); margin-bottom: 15px; }
+
+        /* Verification Console */
+        .console-container {
+            background: var(--navy);
+            border-radius: 12px;
+            margin: 40px 8%;
+            display: flex;
+            color: white;
+            overflow: hidden;
+            border: 1px solid var(--blue-main);
+        }
+        .console-info { padding: 60px; flex: 1; border-right: 1px solid rgba(255,255,255,0.1); }
+        .console-action { padding: 60px; flex: 1; background: rgba(255,255,255,0.03); }
         
         .sys-input {
             width: 100%;
-            padding: 18px;
-            border: 2px solid var(--border);
-            border-radius: 10px;
+            padding: 15px;
+            background: #001133;
+            border: 1px solid var(--blue-main);
+            border-radius: 4px;
+            color: white;
             margin-bottom: 20px;
-            font-size: 1.1rem;
-            color: var(--navy);
-            outline: none;
+            font-family: 'Courier New', monospace;
         }
-        .sys-input:focus { border-color: var(--sky); }
-        .btn-scan { 
-            width: 100%; 
-            padding: 18px; 
-            background: var(--orange); 
-            color: white; 
-            border: none; 
-            border-radius: 10px; 
-            font-weight: 800; 
-            font-size: 1.1rem; 
-            cursor: pointer; 
-            display: flex; 
-            align-items: center; 
-            justify-content: center; 
-            gap: 10px;
+        .btn-action {
+            width: 100%;
+            padding: 15px;
+            background: var(--green-safe);
+            color: white;
+            border: none;
+            border-radius: 4px;
+            font-weight: bold;
+            cursor: pointer;
+            text-transform: uppercase;
         }
 
-        /* Footer */
-        footer { background: var(--navy); color: white; padding: 80px 8% 40px; }
+        footer { background: #000b21; color: white; padding: 60px 8% 30px; }
         .footer-grid { display: grid; grid-template-columns: 2fr 1fr 1fr 1fr; gap: 40px; }
-        .footer-logo { font-size: 1.8rem; font-weight: 900; margin-bottom: 20px; }
-        .footer-logo span { color: var(--orange); }
-        .footer-col h4 { margin-bottom: 25px; color: var(--sky); text-transform: uppercase; font-size: 0.8rem; letter-spacing: 1px; }
-        .footer-col ul { list-style: none; }
-        .footer-col li { margin-bottom: 12px; opacity: 0.8; font-size: 0.9rem; }
+        .footer-bottom { border-top: 1px solid rgba(255,255,255,0.1); margin-top: 40px; padding-top: 20px; text-align: center; font-size: 0.8rem; }
 
-        @media (max-width: 968px) {
-            .hero, .verification-terminal { flex-direction: column; text-align: center; }
-            .hero h1 { font-size: 2.8rem; }
-            .v-info, .v-action { padding: 40px 20px; }
+        @media (max-width: 768px) {
+            .hero, .console-container { flex-direction: column; text-align: center; }
         }
     </style>
 </head>
 <body>
 
 <nav>
-    <a href="#" class="logo-container">
-        <div class="logo-text">SPAZA<span>SURE</span></div>
+    <a href="#" class="logo-box">
+        <img src="Logo1.png" alt="SpazaSure Logo" class="logo-img">
+        <div style="font-size: 1.5rem; font-weight: 900; color: var(--blue-main);">SPAZA<span style="color: var(--red-alert);">SURE</span></div>
     </a>
     <div class="nav-links">
-        <a href="#system">The Ecosystem</a>
-        <a href="#verify">Verification Tech</a>
-        <a href="#compliance">Compliance</a>
-        <a href="mailto:info@spazasure.co.za" class="btn-cta">Request System Access</a>
+        <a href="#nodes">System Nodes</a>
+        <a href="#console">Verification</a>
+        <a href="mailto:info@spazasure.co.za" class="btn-system">System Access</a>
     </div>
 </nav>
 
 <header class="hero">
     <div class="hero-content">
-        <span class="system-pill">Institutional Infrastructure</span>
-        <h1>Secure. Verified. Connected.</h1>
-        <p>SpazaSure is a multi-node digital ecosystem formalizing the informal economy. We provide the infrastructure for direct-to-retail wholesale with built-in product authentication.</p>
-        <div style="display:flex; gap:20px; flex-wrap:wrap;">
-            <button class="btn-cta" style="border:none; cursor:pointer; font-size: 1.1rem; padding: 18px 40px;">Launch System</button>
-            <button style="background:transparent; border: 2px solid var(--sky); color: var(--sky); padding: 18px 40px; border-radius:6px; font-weight:bold; cursor:pointer;">Technical Brief</button>
+        <h1>Integrated <span>Verification</span> & Commerce System</h1>
+        <p>SpazaSure is a multi-stakeholder ecosystem connecting South African suppliers and retailers through a secure, document-verified infrastructure.</p>
+        <div style="display: flex; gap: 15px;">
+            <button class="btn-system" style="padding: 15px 30px; background: var(--yellow-warn); color: var(--navy) !important; font-weight: 800; border: none;">Login to System</button>
+            <button style="padding: 15px 30px; background: transparent; border: 2px solid white; color: white; border-radius: 4px; font-weight: bold; cursor: pointer;">View Analytics</button>
         </div>
-    </div>
-    <div style="flex:0.8; text-align:center;">
-        <i class="fas fa-project-diagram fa-10x" style="color: var(--sky); opacity:0.3;"></i>
     </div>
 </header>
 
-<section class="section" id="system">
-    <div class="section-header">
-        <h2>System Architecture</h2>
-        <div class="accent-line"></div>
-        <p>Three integrated systems, one seamless wholesale solution.</p>
-    </div>
+<div class="status-ticker">
+    <div class="status-item"><div class="dot-green"></div> Supplier Node: ONLINE</div>
+    <div class="status-item" style="color: var(--blue-main);">POPIA Compliance: ACTIVE</div>
+    <div class="status-item" style="color: var(--red-alert);">Alerts: 0 Counterfeits Detected (Last 24h)</div>
+</div>
+
+<section class="section" id="nodes">
     <div class="grid">
         <div class="node-card">
-            <i class="fas fa-industry"></i>
+            <i class="fas fa-warehouse" style="color: var(--blue-main);"></i>
             <h3>Supplier Node</h3>
-            <p>A high-volume portal for manufacturers to manage catalog data, batch-tracking, and direct distribution to certified retailers.</p>
+            <p>Direct-to-Retail gateway for bulk manufacturers to manage automated pricing and batch-origin data.</p>
         </div>
-        <div class="node-card">
-            <i class="fas fa-fingerprint"></i>
+        <div class="node-card verify">
+            <i class="fas fa-shield-check" style="color: var(--green-safe);"></i>
             <h3>Verification Layer</h3>
-            <p>Our core IP. A secure authentication system that verifies product origin and safety using encrypted batch identification.</p>
+            <p>Secure product authentication protocol ensuring every item in the supply chain is genuine and safe.</p>
         </div>
-        <div class="node-card">
-            <i class="fas fa-calculator"></i>
-            <h3>Retail Terminal</h3>
-            <p>The business hub for Spaza Shop operators. Manage compliant ordering, group-buying, and digital document storage (POPIA/Permits).</p>
+        <div class="node-card alert">
+            <i class="fas fa-exclamation-triangle" style="color: var(--red-alert);"></i>
+            <h3>Compliance Monitor</h3>
+            <p>Automated verification of Spaza Shop permits and business documentation to ensure regulatory alignment.</p>
         </div>
     </div>
 </section>
 
-<section class="section" id="verify" style="background:#f1f5f9;">
-    <div class="verification-terminal">
-        <div class="v-info">
-            <h2 style="font-size: 2.5rem; margin-bottom:20px;">Verification Engine v2.0</h2>
-            <p style="opacity:0.8; font-size:1.1rem;">Combatting the counterfeit market through real-time traceability. Every pallet of Ace Maize and Allsome Rice is logged within our secure ledger.</p>
-            <div style="margin-top:40px; border-top:1px solid rgba(255,255,255,0.1); padding-top:20px;">
-                <p><i class="fas fa-check-circle" style="color:var(--sky);"></i> POPIA Compliant Architecture</p>
-                <p><i class="fas fa-check-circle" style="color:var(--sky);"></i> 256-bit Encryption Protocols</p>
-            </div>
-        </div>
-        <div class="v-action">
-            <h3>System Authentication</h3>
-            <p style="color:#64748b; font-size:0.85rem; margin-bottom:10px;">ENTER PRODUCT SERIAL NUMBER</p>
-            <input type="text" id="scanID" class="sys-input" placeholder="e.g. SZ-2026-X">
-            <button class="btn-scan" onclick="runCheck()">
-                <i class="fas fa-qrcode"></i> AUTHENTICATE STOCK
-            </button>
-            <div id="status" style="margin-top:25px; text-align:center; font-weight:800;"></div>
-        </div>
+<section class="console-container" id="console">
+    <div class="console-info">
+        <h2 style="font-size: 2.5rem; margin-bottom: 20px;">Verification Console</h2>
+        <p>Our verification system utilizes encrypted batch IDs to provide a Digital Product Passport for every wholesale item. Combat the counterfeit market with real-time transparency.</p>
+    </div>
+    <div class="console-action">
+        <p style="font-size: 0.8rem; color: var(--yellow-warn); margin-bottom: 10px; font-weight: bold;">[ SYSTEM READY: INPUT TRACKING ID ]</p>
+        <input type="text" id="vID" class="sys-input" placeholder="e.g. SZ-VERIFY-2026">
+        <button class="btn-action" onclick="runCheck()">Authenticate Item</button>
+        <div id="vResult" style="margin-top: 20px; font-weight: bold; font-family: monospace;"></div>
     </div>
 </section>
 
 <footer>
     <div class="footer-grid">
-        <div class="footer-col">
-            <div class="footer-logo">SPAZA<span>SURE</span></div>
-            <p style="opacity:0.7;">Modernizing the heart of South African commerce through verification and connectivity.</p>
+        <div>
+            <div style="font-size: 1.5rem; font-weight: 900; margin-bottom: 20px;">SPAZA<span style="color: var(--red-alert);">SURE</span></div>
+            <p style="opacity: 0.7; font-size: 0.9rem;">Modernizing the informal economy through institutional-grade technology systems.</p>
         </div>
-        <div class="footer-col">
-            <h4>The System</h4>
-            <ul>
-                <li>Supplier Node</li>
-                <li>Retailer Hub</li>
-                <li>Consumer Verification</li>
-            </ul>
+        <div>
+            <h4 style="color: var(--yellow-warn); margin-bottom: 20px;">System Nodes</h4>
+            <p style="font-size: 0.85rem; margin-bottom: 10px;">Supplier Portal</p>
+            <p style="font-size: 0.85rem; margin-bottom: 10px;">Retail Terminal</p>
+            <p style="font-size: 0.85rem; margin-bottom: 10px;">Verification API</p>
         </div>
-        <div class="footer-col">
-            <h4>Compliance</h4>
-            <ul>
-                <li>POPIA Protocols</li>
-                <li>Permit Verification</li>
-                <li>Privacy Policy</li>
-            </ul>
-        </div>
-        <div class="footer-col">
-            <h4>HQ Durban</h4>
-            <ul>
-                <li>info@spazasure.co.za</li>
-                <li>+27 76 440 3803</li>
-                <li style="color:var(--orange); font-weight:bold;">Quarry Heights, 4359</li>
-            </ul>
+        <div>
+            <h4 style="color: var(--yellow-warn); margin-bottom: 20px;">HQ Durban</h4>
+            <p style="font-size: 0.85rem;">info@spazasure.co.za</p>
+            <p style="font-size: 0.85rem;">+27 76 440 3803</p>
         </div>
     </div>
-    <div style="text-align:center; margin-top:50px; opacity:0.5; font-size:0.8rem; border-top:1px solid rgba(255,255,255,0.1); padding-top:20px;">
-        &copy; 2026 SpazaSure (Pty) Ltd. | Registered Technology Ecosystem
+    <div class="footer-bottom">
+        &copy; 2026 SpazaSure (Pty) Ltd. | Registered Enterprise System
     </div>
 </footer>
 
 <script>
     function runCheck() {
-        const id = document.getElementById('scanID').value.toUpperCase();
-        const stat = document.getElementById('status');
+        const id = document.getElementById('vID').value.toUpperCase();
+        const res = document.getElementById('vResult');
         if(id.startsWith("SZ")) {
-            stat.style.color = "var(--sky)";
-            stat.innerHTML = "✓ SYSTEM CONFIRMED: Genuine Batch (March 2026 Production)";
+            res.style.color = "var(--green-safe)";
+            res.innerHTML = ">>> SYSTEM: VERIFIED_GENUINE_STOCK";
         } else {
-            stat.style.color = "#ef4444";
-            stat.innerHTML = "⚠ ALERT: Unverified ID. Potential Counterfeit.";
+            res.style.color = "var(--red-alert)";
+            res.innerHTML = ">>> ALERT: UNKNOWN_BATCH_ID_DETECTED";
         }
     }
 </script>
