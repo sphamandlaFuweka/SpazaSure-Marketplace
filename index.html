@@ -30,15 +30,15 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(255,255,255,
 .hero-blob1{position:absolute;width:500px;height:500px;background:rgba(255,255,255,0.04);border-radius:60% 40% 70% 30%/50% 60% 40% 50%;top:-100px;right:-80px;pointer-events:none}
 .hero-blob2{position:absolute;width:300px;height:300px;background:rgba(7,140,80,0.15);border-radius:40% 60% 30% 70%/60% 40% 60% 40%;bottom:40px;left:-60px;pointer-events:none}
 .hero-inner{max-width:1200px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:center;position:relative;z-index:1}
-.hero-pill{display:inline-flex;align-items:center;gap:8px;background:rgba(255,255,255,0.15);color:white;font-size:12px;font-weight:800;padding:7px 16px;border-radius:50px;letter-spacing:0.06em;text-transform:uppercase;margin-bottom:24px;border:1px solid rgba(255,255,255,0.2)}
+.hero-pill{display:inline-flex;align-items:center;gap:8px;background:rgba(255,255,255,0.15);color:white;font-size:12px;font-weight:800;padding:7px 16px;border-radius:50px;letter-spacing:0.06em;text-transform:uppercase}
 .hero-pill-dot{width:8px;height:8px;background:var(--yellow);border-radius:50%}
 h1{font-family:'Nunito',sans-serif;font-size:clamp(36px,4.5vw,58px);font-weight:900;line-height:1.07;color:white;margin-bottom:22px}
 h1 em{font-style:normal;color:var(--yellow)}
 .hero-sub{font-size:16px;line-height:1.75;color:rgba(255,255,255,0.75);max-width:460px;margin-bottom:36px;font-weight:400}
 .hero-btns{display:flex;gap:12px;flex-wrap:wrap}
-.btn-yellow{background:var(--yellow);color:var(--blue);padding:14px 28px;border-radius:50px;font-size:15px;font-weight:800;text-decoration:none;transition:all 0.2s;font-family:'Nunito',sans-serif;border:none;cursor:pointer}
+.btn-yellow{background:var(--yellow);color:var(--blue);padding:14px 28px;border-radius:50px;font-size:15px;font-weight:800;text-decoration:none;transition:all 0.2s;font-family:'Nunito',sans-serif;border:none}
 .btn-yellow:hover{background:#e8a510;transform:translateY(-2px)}
-.btn-outline{background:transparent;color:white;padding:14px 28px;border-radius:50px;font-size:15px;font-weight:700;text-decoration:none;border:2px solid rgba(255,255,255,0.35);cursor:pointer;font-family:'Nunito',sans-serif;transition:all 0.2s}
+.btn-outline{background:transparent;color:white;padding:14px 28px;border-radius:50px;font-size:15px;font-weight:700;text-decoration:none;border:2px solid rgba(255,255,255,0.35);cursor:pointer;font-family:'Nunito',sans-serif}
 .btn-outline:hover{border-color:white;background:rgba(255,255,255,0.1)}
 .hero-badges{display:flex;gap:20px;margin-top:40px;padding-top:36px;border-top:1px solid rgba(255,255,255,0.12)}
 .badge{display:flex;align-items:center;gap:10px}
@@ -91,7 +91,7 @@ h2{font-family:'Nunito',sans-serif;font-size:clamp(28px,3.5vw,42px);font-weight:
 .steps-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:0;margin-top:52px;position:relative}
 .steps-grid::before{content:'';position:absolute;top:38px;left:12.5%;right:12.5%;height:2px;background:repeating-linear-gradient(90deg,var(--blue) 0,var(--blue) 6px,transparent 6px,transparent 14px);z-index:0}
 .step{text-align:center;padding:20px 14px;z-index:1;position:relative}
-.step-circle{width:76px;height:76px;border-radius:50%;background:white;border:3px solid var(--blue-light);display:flex;align-items:center;justify-content:center;margin:0 auto 18px;font-family:'Nunito',sans-serif;font-size:26px;font-weight:900;color:var(--blue);transition:all 0.3s;box-shadow:0 4px 20px rgba(37,68,154,0.1);cursor:default}
+.step-circle{width:76px;height:76px;border-radius:50%;background:white;border:3px solid var(--blue-light);display:flex;align-items:center;justify-content:center;margin:0 auto 18px;font-family:'Nunito',sans-serif;font-weight:900;color:var(--blue);font-size:24px}
 .step:hover .step-circle{background:var(--blue);color:white;border-color:var(--blue);transform:scale(1.1)}
 .step-t{font-family:'Nunito',sans-serif;font-size:14px;font-weight:800;color:var(--ink);margin-bottom:7px}
 .step-d{font-size:12px;color:var(--ink3);line-height:1.6}
@@ -101,7 +101,7 @@ h2{font-family:'Nunito',sans-serif;font-size:clamp(28px,3.5vw,42px);font-weight:
 .feat-head{display:flex;justify-content:space-between;align-items:flex-end;margin-bottom:44px;flex-wrap:wrap;gap:20px}
 .feat-head h2{color:white}
 .feat-tabs-row{display:flex;gap:8px}
-.ftab{padding:9px 20px;border-radius:50px;font-size:13px;font-weight:800;cursor:pointer;border:2px solid rgba(255,255,255,0.2);color:rgba(255,255,255,0.5);background:transparent;font-family:'Nunito',sans-serif;transition:all 0.2s}
+.ftab{padding:9px 20px;border-radius:50px;font-size:13px;font-weight:800;cursor:pointer;border:2px solid rgba(255,255,255,0.2);color:rgba(255,255,255,0.5);background:transparent;font-family:'Nunito',sans-serif}
 .ftab.on{background:var(--yellow);color:var(--blue);border-color:var(--yellow)}
 .feat-cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:18px}
 .fc{background:rgba(255,255,255,0.07);border:1px solid rgba(255,255,255,0.1);border-radius:18px;padding:26px;transition:all 0.25s;cursor:default}
@@ -149,7 +149,7 @@ h2{font-family:'Nunito',sans-serif;font-size:clamp(28px,3.5vw,42px);font-weight:
 .form-sub{font-size:13px;color:var(--ink3);margin-bottom:26px;font-weight:400}
 .fg{margin-bottom:16px}
 .fg label{display:block;font-size:12px;font-weight:800;color:var(--ink2);margin-bottom:5px;letter-spacing:0.02em}
-.fg input,.fg select,.fg textarea{width:100%;padding:11px 14px;border:2px solid #e8ecf8;border-radius:10px;font-family:'Nunito',sans-serif;font-size:14px;color:var(--ink);background:var(--off);outline:none;transition:border-color 0.2s;font-weight:600}
+.fg input,.fg select,.fg textarea{width:100%;padding:11px 14px;border:2px solid #e8ecf8;border-radius:10px;font-family:'Nunito',sans-serif;font-size:14px;color:var(--ink);background:var(--off);outline:none}
 .fg input:focus,.fg select:focus,.fg textarea:focus{border-color:var(--blue)}
 .fg-row{display:grid;grid-template-columns:1fr 1fr;gap:12px}
 .btn-submit{width:100%;background:var(--blue);color:white;border:none;padding:14px;border-radius:50px;font-family:'Nunito',sans-serif;font-size:15px;font-weight:900;cursor:pointer;transition:all 0.2s}
@@ -174,6 +174,7 @@ footer{background:var(--blue);padding:56px 5% 32px}
 .footer-bottom{border-top:1px solid rgba(255,255,255,0.1);padding-top:24px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:12px}
 .footer-bottom p{font-size:12px;color:rgba(255,255,255,0.35);font-weight:400}
 .sa-badge{background:rgba(248,178,23,0.2);color:var(--yellow);font-size:11px;font-weight:800;padding:6px 14px;border-radius:50px;letter-spacing:0.04em}
+.logo-img{height:34px;width:auto}
 @keyframes fadeUp{from{opacity:0;transform:translateY(20px)}to{opacity:1;transform:translateY(0)}}
 .hero-content>*{animation:fadeUp 0.6s ease both}
 .hero-content>*:nth-child(1){animation-delay:0.05s}
@@ -197,13 +198,7 @@ footer{background:var(--blue);padding:56px 5% 32px}
 <nav>
   <div class="nav-inner">
     <a href="#" class="logo-mark">
-      <svg width="34" height="34" viewBox="0 0 60 60" fill="none" xmlns="http://www.w3.org/2000/svg">
-        <circle cx="30" cy="30" r="28" fill="#25449A" opacity="0.1"/>
-        <path d="M22 20 Q18 28 22 34 Q26 40 30 36 Q34 40 38 34 Q42 28 38 20 Q34 12 30 16 Q26 12 22 20Z" fill="#25449A"/>
-        <circle cx="22" cy="34" r="5" fill="#078C50"/>
-        <circle cx="38" cy="34" r="5" fill="#E02526"/>
-        <circle cx="30" cy="16" r="4" fill="#F8B217"/>
-      </svg>
+      <img src="logo.png" alt="SpazaSure" class="logo-img">
       <span class="logo-text">SPAZASURE</span>
     </a>
     <ul class="nav-links">
@@ -258,9 +253,9 @@ footer{background:var(--blue);padding:56px 5% 32px}
           </div>
           <div style="font-size:10px;font-weight:800;color:var(--ink3);letter-spacing:0.06em;text-transform:uppercase;margin-bottom:8px">Recent orders</div>
           <div class="order-list">
-            <div class="order-row"><div class="or-left"><div class="or-av" style="background:var(--blue)">MP</div><div><div class="or-name">Mama Phiri's Shop</div><div class="or-items">Maize, Sugar, Oil • 48 units</div></div></div><span class="or-status s-d">Delivered</span></div>
-            <div class="order-row"><div class="or-left"><div class="or-av" style="background:var(--green)">SB</div><div><div class="or-name">Sizwe's Bazaar</div><div class="or-items">Cold drinks, Bread • 32 units</div></div></div><span class="or-status s-t">In transit</span></div>
-            <div class="order-row"><div class="or-left"><div class="or-av" style="background:var(--red)">TK</div><div><div class="or-name">Thabo's Kiosk</div><div class="or-items">Snacks, Juice • 60 units</div></div></div><span class="or-status s-p">Pending</span></div>
+            <div class="order-row"><div class="or-left"><div class="or-av" style="background:var(--blue)">MP</div><div><div class="or-name">Mama Phiri's Shop</div><div class="or-items">Maize, Sugar, Oil</div></div></div><div class="or-status s-d">Delivered</div></div>
+            <div class="order-row"><div class="or-left"><div class="or-av" style="background:var(--green)">SB</div><div><div class="or-name">Sizwe's Bazaar</div><div class="or-items">Cold drinks, Bread</div></div></div><div class="or-status s-t">Transit</div></div>
+            <div class="order-row"><div class="or-left"><div class="or-av" style="background:var(--red)">TK</div><div><div class="or-name">Thabo's Kiosk</div><div class="or-items">Snacks, Juice • 60 items</div></div></div><div class="or-status s-p">Processing</div></div>
           </div>
         </div>
         <div class="mini-float mf1">
@@ -272,7 +267,7 @@ footer{background:var(--blue);padding:56px 5% 32px}
           <div class="mf-lbl">This week</div>
           <div class="mf-val">7 orders</div>
           <div class="mini-bars">
-            <span style="height:35%"></span><span style="height:55%" class="hi"></span><span style="height:75%" class="hi"></span><span style="height:45%"></span><span style="height:90%" class="hi"></span><span style="height:65%" class="hi"></span><span style="height:100%" class="hi"></span>
+            <span style="height:35%"></span><span style="height:55%" class="hi"></span><span style="height:75%" class="hi"></span><span style="height:45%"></span><span style="height:90%" class="hi"></span>
           </div>
         </div>
       </div>
@@ -285,8 +280,8 @@ footer{background:var(--blue);padding:56px 5% 32px}
     <h2>From your order to <span class="accent-underline">your door</span></h2>
     <p class="sub" style="margin:0 auto">Simple. Transparent. Reliable. Here's exactly how SpazaSure works for your shop.</p>
     <div class="steps-grid">
-      <div class="step"><div class="step-circle">01</div><div class="step-t">Place your order</div><p class="step-d">Browse the product catalog and order exactly what your shop needs — from maize to cold drinks.</p></div>
-      <div class="step"><div class="step-circle">02</div><div class="step-t">We aggregate orders</div><p class="step-d">SpazaSure combines your order with other spaza shops to unlock real wholesale pricing.</p></div>
+      <div class="step"><div class="step-circle">01</div><div class="step-t">Place your order</div><p class="step-d">Browse the product catalog and order exactly what your shop needs — from maize to cleaning supplies.</p></div>
+      <div class="step"><div class="step-circle">02</div><div class="step-t">We aggregate orders</div><p class="step-d">SpazaSure combines your order with other spaza shops to unlock real wholesale prices.</p></div>
       <div class="step"><div class="step-circle">03</div><div class="step-t">Verified & sourced</div><p class="step-d">Products come from vetted suppliers only — authenticity checked, expiry dates verified.</p></div>
       <div class="step"><div class="step-circle">04</div><div class="step-t">Delivered to you</div><p class="step-d">Track your delivery in real time. Stock arrives at your door, ready to sell and profit.</p></div>
     </div>
@@ -318,9 +313,9 @@ footer{background:var(--blue);padding:56px 5% 32px}
     <div class="tag tag-green">Who it's for</div>
     <h2>Built for everyone in the township retail ecosystem.</h2>
     <div class="who-cards">
-      <div class="wc r"><div class="wc-bg">01</div><div class="wc-tag">Spaza shop owners</div><h3>Grow your shop.<br>Keep more profit.</h3><p>Stop buying stock at retail prices alone. Pool buying power with other township shops for wholesale rates, delivered.</p><div class="wc-list"><div class="wc-item"><div class="wc-dot">✓</div>Place and track stock orders</div><div class="wc-item"><div class="wc-dot">✓</div>Download invoices and receipts</div><div class="wc-item"><div class="wc-dot">✓</div>Monthly spending reports</div><div class="wc-item"><div class="wc-dot">✓</div>Product authenticity scanning</div></div></div>
-      <div class="wc s"><div class="wc-bg">02</div><div class="wc-tag">Suppliers & wholesalers</div><h3>Reach thousands of retailers instantly.</h3><p>List your products on SpazaSure and connect with hundreds of township retailers through one trusted platform.</p><div class="wc-list"><div class="wc-item"><div class="wc-dot">✓</div>Manage products and inventory</div><div class="wc-item"><div class="wc-dot">✓</div>Receive aggregated bulk orders</div><div class="wc-item"><div class="wc-dot">✓</div>Sales analytics dashboard</div><div class="wc-item"><div class="wc-dot">✓</div>Verified supplier badge</div></div></div>
-      <div class="wc a"><div class="wc-bg">03</div><div class="wc-tag">Platform admins</div><h3>Full ecosystem oversight and control.</h3><p>Manage the entire SpazaSure network — suppliers, deliveries, financials, and every order across the platform.</p><div class="wc-list"><div class="wc-item"><div class="wc-dot">✓</div>Order approval workflow</div><div class="wc-item"><div class="wc-dot">✓</div>Delivery management</div><div class="wc-item"><div class="wc-dot">✓</div>Financial analytics dashboard</div><div class="wc-item"><div class="wc-dot">✓</div>User and supplier management</div></div></div>
+      <div class="wc r"><div class="wc-bg">01</div><div class="wc-tag">Spaza shop owners</div><h3>Grow your shop.<br>Keep more profit.</h3><p>Stop buying stock at retail prices alone. Pool buying power with thousands of shops to unlock real wholesale discounts on everything from maize to mobile airtime.</p></div>
+      <div class="wc s"><div class="wc-bg">02</div><div class="wc-tag">Suppliers & wholesalers</div><h3>Reach thousands of retailers instantly.</h3><p>List your products on SpazaSure and connect with thousands of spaza shops across South Africa. No middlemen. Direct relationships. More revenue.</p></div>
+      <div class="wc a"><div class="wc-bg">03</div><div class="wc-tag">Platform admins</div><h3>Full ecosystem oversight and control.</h3><p>Manage the entire SpazaSure network — suppliers, deliveries, verification, payments, and reporting — from one intelligent dashboard.</p></div>
     </div>
   </div>
 </section>
@@ -328,8 +323,8 @@ footer{background:var(--blue);padding:56px 5% 32px}
   <div class="mission-inner">
     <div class="tag" style="background:rgba(255,255,255,0.12);color:white;margin-bottom:24px">Our mission</div>
     <blockquote>"To build <em>safer, smarter,</em> and more profitable township retail ecosystems."</blockquote>
-    <p>Connecting spaza shops to <strong>trusted suppliers</strong>, <strong>affordable logistics</strong>, and <strong>digital tools</strong> — so informal retail becomes the economic backbone it was always meant to be. From Soweto to the Cape Flats, Khayelitsha to KwaMashu, Umlazi to Alexandra.</p>
-    <div class="mission-dots"><span style="background:var(--blue-light);opacity:0.6"></span><span style="background:var(--green)"></span><span style="background:var(--red)"></span><span style="background:var(--yellow)"></span><span style="background:white;opacity:0.3"></span></div>
+    <p>Connecting spaza shops to <strong>trusted suppliers</strong>, <strong>affordable logistics</strong>, and <strong>digital tools</strong> — so informal retail becomes the economic backbone it deserves to be.</p>
+    <div class="mission-dots"><span style="background:var(--blue-light);opacity:0.6"></span><span style="background:var(--green)"></span><span style="background:var(--red)"></span><span style="background:var(--yellow)"></span></div>
   </div>
 </section>
 <section class="contact" id="contact">
@@ -370,7 +365,7 @@ footer{background:var(--blue);padding:56px 5% 32px}
     <div class="footer-top">
       <div class="fb">
         <a href="#" class="logo-mark white">
-          <svg width="30" height="30" viewBox="0 0 60 60" fill="none"><circle cx="30" cy="30" r="28" fill="white" opacity="0.1"/><path d="M22 20 Q18 28 22 34 Q26 40 30 36 Q34 40 38 34 Q42 28 38 20 Q34 12 30 16 Q26 12 22 20Z" fill="white"/><circle cx="22" cy="34" r="5" fill="#078C50"/><circle cx="38" cy="34" r="5" fill="#E02526"/><circle cx="30" cy="16" r="4" fill="#F8B217"/></svg>
+          <img src="logo.png" alt="SpazaSure" class="logo-img" style="filter:brightness(0) invert(1);">
           <span class="logo-text">SPAZASURE</span>
         </a>
         <p>Digital infrastructure for township retail — connecting spaza shops to trusted supply chains, one order at a time.</p>
