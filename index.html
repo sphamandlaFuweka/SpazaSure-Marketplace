@@ -166,16 +166,16 @@ h2{font-family:'Nunito',sans-serif;font-size:clamp(28px,3.5vw,42px);font-weight:
 .store-soon{position:absolute;top:6px;right:8px;font-size:8px;font-weight:800;color:var(--yellow);background:rgba(248,178,23,0.2);padding:2px 7px;border-radius:20px;letter-spacing:0.06em;text-transform:uppercase}
 
 /* Phone mockups */
-.phones-wrap{position:relative;display:flex;justify-content:center;align-items:flex-end;gap:-20px;height:420px}
-.phone-mockup{position:absolute;border-radius:32px;overflow:hidden;box-shadow:0 24px 60px rgba(0,0,0,0.4);border:3px solid rgba(255,255,255,0.15);transition:transform 0.3s}
-.phone-mockup img{width:100%;height:100%;object-fit:cover;display:block}
-.phone-center{width:180px;height:360px;bottom:0;left:50%;transform:translateX(-50%);z-index:3}
-.phone-left{width:155px;height:310px;bottom:0;left:calc(50% - 160px);z-index:2;transform:rotate(-8deg) translateY(20px)}
-.phone-right{width:155px;height:310px;bottom:0;left:calc(50% + 20px);z-index:2;transform:rotate(8deg) translateY(20px)}
-.phone-mockup:hover{transform:translateY(-8px) !important}
-.phone-center:hover{transform:translateX(-50%) translateY(-8px) !important}
+.phones-wrap{display:flex;justify-content:center;align-items:flex-end;gap:16px;padding:20px 0 40px}
+.phone-mockup{border-radius:36px;overflow:hidden;box-shadow:0 24px 60px rgba(0,0,0,0.45);border:3px solid rgba(255,255,255,0.2);transition:transform 0.3s;flex-shrink:0;position:relative;background:#111}
+.phone-mockup img{width:100%;height:100%;object-fit:cover;display:block;border-radius:33px}
+.phone-center{width:185px;height:370px;z-index:3}
+.phone-left{width:160px;height:320px;z-index:2;transform:translateY(24px)}
+.phone-right{width:160px;height:320px;z-index:2;transform:translateY(24px)}
+.phone-mockup:hover{transform:translateY(-10px)}
+.phone-left:hover,.phone-right:hover{transform:translateY(14px)}
 /* Notch */
-.phone-notch{position:absolute;top:10px;left:50%;transform:translateX(-50%);width:60px;height:14px;background:rgba(0,0,0,0.7);border-radius:10px;z-index:10}
+.phone-notch{position:absolute;top:8px;left:50%;transform:translateX(-50%);width:50px;height:12px;background:rgba(0,0,0,0.75);border-radius:10px;z-index:10}
 /* Glow behind phones */
 .phones-glow{position:absolute;bottom:-40px;left:50%;transform:translateX(-50%);width:280px;height:100px;background:rgba(37,68,154,0.6);filter:blur(40px);border-radius:50%;z-index:0}
 
@@ -277,14 +277,14 @@ footer{background:var(--blue);padding:56px 5% 32px}
 .hero-content>*:nth-child(5){animation-delay:0.36s}
 .hero-visual{animation:fadeUp 0.7s 0.3s ease both}
 @keyframes float{0%,100%{transform:translateY(0)}50%{transform:translateY(-10px)}}
-.phone-center{animation:float 4s ease-in-out infinite}
+.phone-center{animation:float 4s ease-in-out infinite;transform-origin:center bottom}
 
 /* RESPONSIVE */
 @media(max-width:900px){
   .app-grid{grid-template-columns:1fr}
-  .phones-wrap{height:320px;margin-top:40px}
-  .phone-center{width:150px;height:300px}
-  .phone-left,.phone-right{width:130px;height:260px}
+  .phones-wrap{gap:10px;padding:16px 0 32px}
+  .phone-center{width:140px;height:280px}
+  .phone-left,.phone-right{width:120px;height:240px}
 }
 @media(max-width:768px){
   .hero-inner,.contact-grid{grid-template-columns:1fr}
@@ -398,7 +398,7 @@ footer{background:var(--blue);padding:56px 5% 32px}
     <div class="steps-grid">
       <div class="step"><div class="step-circle"><i class="fas fa-cart-shopping"></i></div><div class="step-t">Place your order</div><p class="step-d">Browse the product catalog and order exactly what your shop needs — from maize to cold drinks.</p></div>
       <div class="step"><div class="step-circle"><i class="fas fa-people-group"></i></div><div class="step-t">We aggregate orders</div><p class="step-d">SpazaSure combines your order with other spaza shops to unlock real wholesale pricing.</p></div>
-      <div class="step"><div class="step-circle" style="border-color:var(--red);color:var(--red)"><i class="fas fa-shield-check"></i></div><div class="step-t">Verified & sourced</div><p class="step-d">Products come from vetted suppliers only — authenticity checked, expiry dates verified.</p></div>
+      <div class="step"><div class="step-circle" style="border-color:var(--red);color:var(--red)"><i class="fas fa-circle-check"></i></div><div class="step-t">Verified & sourced</div><p class="step-d">Products come from vetted suppliers only — authenticity checked, expiry dates verified.</p></div>
       <div class="step"><div class="step-circle"><i class="fas fa-truck-fast"></i></div><div class="step-t">Delivered to you</div><p class="step-d">Track your delivery in real time. Stock arrives at your door, ready to sell and profit.</p></div>
     </div>
   </div>
@@ -563,8 +563,7 @@ footer{background:var(--blue);padding:56px 5% 32px}
       </div>
 
       <!-- Phone mockups -->
-      <div style="position:relative">
-        <div class="phones-glow"></div>
+      <div style="display:flex;justify-content:center">
         <div class="phones-wrap">
           <!-- Left phone -->
           <div class="phone-mockup phone-left">
