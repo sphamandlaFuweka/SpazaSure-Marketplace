@@ -134,6 +134,19 @@ h2{font-family:'Nunito',sans-serif;font-size:clamp(28px,3.5vw,42px);font-weight:
 .wc.r .wc-dot{background:var(--blue)}
 .wc.s .wc-dot{background:var(--yellow)}
 .wc.a .wc-dot{background:var(--green)}
+.awards-section{background:var(--blue);padding:80px 5%}
+.award-badge{background:rgba(255,255,255,0.1);border:2px solid var(--yellow);border-radius:16px;padding:28px;text-align:center;transition:all 0.3s}
+.award-badge:hover{background:rgba(248,178,23,0.15);transform:translateY(-5px)}
+.award-icon{font-size:48px;margin-bottom:16px}
+.award-title{font-family:'Nunito',sans-serif;font-size:18px;font-weight:900;color:white;margin-bottom:8px}
+.award-desc{font-size:13px;color:rgba(255,255,255,0.7);line-height:1.6}
+.partners-section{padding:80px 5%;background:var(--off)}
+.partners-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:28px;margin-top:48px}
+.partner-card{background:white;border-radius:20px;padding:36px 24px;text-align:center;box-shadow:0 8px 32px rgba(0,0,0,0.08);transition:all 0.3s;border-top:4px solid var(--blue)}
+.partner-card:hover{transform:translateY(-8px);box-shadow:0 16px 48px rgba(37,68,154,0.15)}
+.partner-logo{width:100%;height:120px;background:var(--blue-light);border-radius:12px;display:flex;align-items:center;justify-content:center;margin-bottom:16px;font-size:48px}
+.partner-name{font-family:'Nunito',sans-serif;font-size:16px;font-weight:900;color:var(--ink);margin-bottom:8px}
+.partner-desc{font-size:12px;color:var(--ink3);line-height:1.7}
 .mission{background:var(--blue);padding:80px 5%;position:relative;overflow:hidden}
 .mission::before{content:'';position:absolute;right:-5%;top:50%;transform:translateY(-50%);width:400px;height:400px;background:rgba(255,255,255,0.03);border-radius:50%}
 .mission-inner{max-width:820px;margin:0 auto;text-align:center;position:relative;z-index:1}
@@ -143,6 +156,9 @@ h2{font-family:'Nunito',sans-serif;font-size:clamp(28px,3.5vw,42px);font-weight:
 .mission-inner p strong{color:white}
 .mission-dots{display:flex;justify-content:center;gap:10px;margin-top:32px}
 .mission-dots span{width:10px;height:10px;border-radius:50%}
+.video-section{padding:80px 5%}
+.video-container{max-width:900px;margin:0 auto;border-radius:20px;overflow:hidden;box-shadow:0 16px 48px rgba(0,0,0,0.15)}
+.video-container iframe{width:100%;height:500px;border:none;display:block}
 .contact{padding:80px 5%;background:var(--off)}
 .contact-grid{max-width:1200px;margin:0 auto;display:grid;grid-template-columns:1fr 1.2fr;gap:72px;align-items:start}
 .form-card{background:white;border-radius:24px;padding:40px;box-shadow:0 8px 48px rgba(37,68,154,0.1);border-top:5px solid var(--blue)}
@@ -155,6 +171,7 @@ h2{font-family:'Nunito',sans-serif;font-size:clamp(28px,3.5vw,42px);font-weight:
 .fg-row{display:grid;grid-template-columns:1fr 1fr;gap:12px}
 .btn-submit{width:100%;background:var(--blue);color:white;border:none;padding:14px;border-radius:50px;font-family:'Nunito',sans-serif;font-size:15px;font-weight:900;cursor:pointer;transition:all 0.2s}
 .btn-submit:hover{background:var(--blue-dark);transform:translateY(-2px)}
+.btn-submit:disabled{background:var(--green);cursor:not-allowed;transform:none}
 .contact-info .sub{margin-bottom:36px}
 .info-items{display:flex;flex-direction:column;gap:18px}
 .info-item{display:flex;align-items:center;gap:16px}
@@ -188,12 +205,13 @@ footer{background:var(--blue);padding:56px 5% 32px}
 @media(max-width:768px){
   .hero-inner,.contact-grid{grid-template-columns:1fr}
   .hero-visual{display:none}
-  .steps-grid,.who-cards{grid-template-columns:1fr 1fr}
+  .steps-grid,.who-cards,.partners-grid{grid-template-columns:1fr 1fr}
   .steps-grid::before{display:none}
   .nav-links{display:none}
   .feat-head{flex-direction:column;align-items:flex-start}
+  .video-container iframe{height:300px}
 }
-@media(max-width:480px){.who-cards,.steps-grid{grid-template-columns:1fr}}
+@media(max-width:480px){.who-cards,.steps-grid,.partners-grid{grid-template-columns:1fr}}
 </style>
 </head>
 <body>
@@ -207,6 +225,7 @@ footer{background:var(--blue);padding:56px 5% 32px}
       <li><a href="#how">How it works</a></li>
       <li><a href="#platform">Platform</a></li>
       <li><a href="#who">For you</a></li>
+      <li><a href="#awards">Awards</a></li>
       <li><a href="#contact">Contact</a></li>
     </ul>
     <a href="#contact" class="nav-cta">Register your shop →</a>
@@ -232,7 +251,7 @@ footer{background:var(--blue);padding:56px 5% 32px}
       </div>
       <div class="hero-badges">
         <div class="badge"><div class="badge-icon g"><i class="fas fa-check"></i></div><div><div class="badge-val">100%</div><div class="badge-lbl">Verified suppliers</div></div></div>
-        <div class="badge"><div class="badge-icon y"><i class="fas fa-rand"></i></div><div><div class="badge-val">R0</div><div class="badge-lbl">Setup fee</div></div></div>
+        <div class="badge"><div class="badge-icon y">R</div><div><div class="badge-val">R0</div><div class="badge-lbl">Setup fee</div></div></div>
         <div class="badge"><div class="badge-icon r"><i class="fas fa-arrow-up"></i></div><div><div class="badge-val">3×</div><div class="badge-lbl">Buying power</div></div></div>
       </div>
     </div>
@@ -321,6 +340,63 @@ footer{background:var(--blue);padding:56px 5% 32px}
     </div>
   </div>
 </section>
+<section class="awards-section" id="awards">
+  <div class="si">
+    <div style="text-align:center;margin-bottom:52px">
+      <div class="tag" style="background:rgba(248,178,23,0.2);color:var(--yellow);margin-bottom:14px">Recognition & funding</div>
+      <h2 style="color:white">Awards & Recognition</h2>
+      <p class="sub" style="color:rgba(255,255,255,0.7);margin:0 auto">SpazaSure has been recognized by leading innovation and development organizations.</p>
+    </div>
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:24px;max-width:1200px;margin:0 auto">
+      <div class="award-badge">
+        <div class="award-icon">🏆</div>
+        <div class="award-title">Hollywood Foundation Early Bird Award</div>
+        <div class="award-desc">Recognized as an emerging innovator in township retail and digital infrastructure for informal economies.</div>
+      </div>
+      <div class="award-badge">
+        <div class="award-icon">⭐</div>
+        <div class="award-title">SAB Foundation Finalist</div>
+        <div class="award-desc">Selected as a finalist for the SAB Foundation Seed Grant Award in 2024 for sustainable impact innovation.</div>
+      </div>
+    </div>
+  </div>
+</section>
+<section class="partners-section" id="partners">
+  <div class="si">
+    <div style="text-align:center;margin-bottom:52px">
+      <div class="tag tag-blue">Our partners</div>
+      <h2>Supported by industry leaders</h2>
+      <p class="sub" style="margin:0 auto">We collaborate with organizations committed to township retail transformation and sustainable economic growth.</p>
+    </div>
+    <div class="partners-grid">
+      <div class="partner-card" style="border-top-color:var(--blue)">
+        <div class="partner-logo">🏢</div>
+        <div class="partner-name">SAB Foundation</div>
+        <div class="partner-desc">Seed grant award finalist 2024. Supporting innovation that creates sustainable livelihoods in township communities.</div>
+      </div>
+      <div class="partner-card" style="border-top-color:var(--green)">
+        <div class="partner-logo">📊</div>
+        <div class="partner-name">Further Impact</div>
+        <div class="partner-desc">Our impact measurement partner. Helping us track and maximize positive economic and social outcomes for spaza owners.</div>
+      </div>
+      <div class="partner-card" style="border-top-color:var(--yellow)">
+        <div class="partner-logo">💼</div>
+        <div class="partner-name">Imali Wealth Group</div>
+        <div class="partner-desc">2024 cohort graduate. A community of entrepreneurs and business leaders accelerating financial inclusion across Africa.</div>
+      </div>
+    </div>
+  </div>
+</section>
+<section class="video-section">
+  <div class="si" style="text-align:center;margin-bottom:40px">
+    <div class="tag tag-blue">See us in action</div>
+    <h2>SpazaSure in the townships</h2>
+    <p class="sub" style="margin:0 auto">Watch how SpazaSure is transforming retail and creating opportunity in township communities.</p>
+  </div>
+  <div class="video-container">
+    <iframe src="https://www.youtube.com/embed/lX_kxIuhm48" allowfullscreen="" loading="lazy"></iframe>
+  </div>
+</section>
 <section class="mission">
   <div class="mission-inner">
     <div class="tag" style="background:rgba(255,255,255,0.12);color:white;margin-bottom:24px">Our mission</div>
@@ -350,15 +426,17 @@ footer{background:var(--blue);padding:56px 5% 32px}
     <div class="form-card">
       <div class="form-title">Register your interest</div>
       <div class="form-sub">Free to join. No setup fees. We'll reach out to get you started.</div>
-      <div class="fg-row">
-        <div class="fg"><label>First name</label><input type="text" placeholder="Sipho"></div>
-        <div class="fg"><label>Last name</label><input type="text" placeholder="Dlamini"></div>
-      </div>
-      <div class="fg"><label>Phone number</label><input type="tel" placeholder="+27 71 000 0000"></div>
-      <div class="fg"><label>Email address</label><input type="email" placeholder="sipho@example.com"></div>
-      <div class="fg"><label>I am a...</label><select><option>Spaza shop owner</option><option>Supplier / wholesaler</option><option>Investor / partner</option><option>Government / NGO</option></select></div>
-      <div class="fg"><label>Town / township</label><input type="text" placeholder="e.g. Khayelitsha, Umlazi, Soweto"></div>
-      <button class="btn-submit" onclick="this.textContent='✓ Registered! We will be in touch.';this.style.background='var(--green)';this.disabled=true">Register now — it's free</button>
+      <form id="registrationForm" method="POST" action="https://formspree.io/f/xvgzqdjo">
+        <div class="fg-row">
+          <div class="fg"><label>First name</label><input type="text" name="firstName" placeholder="Sipho" required></div>
+          <div class="fg"><label>Last name</label><input type="text" name="lastName" placeholder="Dlamini" required></div>
+        </div>
+        <div class="fg"><label>Phone number</label><input type="tel" name="phone" placeholder="+27 71 000 0000" required></div>
+        <div class="fg"><label>Email address</label><input type="email" name="email" placeholder="sipho@example.com" required></div>
+        <div class="fg"><label>I am a...</label><select name="userType" required><option value="">Select an option</option><option value="Spaza shop owner">Spaza shop owner</option><option value="Supplier / wholesaler">Supplier / wholesaler</option><option value="Investor / partner">Investor / partner</option><option value="Government / NGO">Government / NGO</option></select></div>
+        <div class="fg"><label>Town / township</label><input type="text" name="township" placeholder="e.g. Khayelitsha, Umlazi, Soweto" required></div>
+        <button type="submit" class="btn-submit">Register now — it's free</button>
+      </form>
     </div>
   </div>
 </section>
@@ -373,7 +451,7 @@ footer{background:var(--blue);padding:56px 5% 32px}
         <p>Digital infrastructure for township retail — connecting spaza shops to trusted supply chains, one order at a time.</p>
       </div>
       <div class="fl"><h4>Platform</h4><ul><li><a href="#">Shop owner portal</a></li><li><a href="#">Supplier portal</a></li><li><a href="#">Product catalog</a></li><li><a href="#">Track my order</a></li></ul></div>
-      <div class="fl"><h4>Company</h4><ul><li><a href="#">About SpazaSure</a></li><li><a href="#">How it works</a></li><li><a href="#">Our impact</a></li><li><a href="#">Careers</a></li></ul></div>
+      <div class="fl"><h4>Company</h4><ul><li><a href="#">About SpazaSure</a></li><li><a href="#how">How it works</a></li><li><a href="#awards">Awards</a></li><li><a href="#">Careers</a></li></ul></div>
       <div class="fl"><h4>Contact</h4><ul><li><a href="#">info@spazasure.co.za</a></li><li><a href="#">+27 74 381 1256</a></li><li><a href="#">spazasure.co.za</a></li><li><a href="#">Durban, South Africa</a></li></ul></div>
     </div>
     <div class="footer-bottom">
@@ -385,29 +463,37 @@ footer{background:var(--blue);padding:56px 5% 32px}
 <script>
 const ftData={
   retailers:[
-    {icon:'fa-boxes-stacked',cl:'g',t:'Product catalog',d:'Browse hundreds of products with live pricing, pack sizes, and real-time availability from verified suppliers.',p:'Shop now'},
-    {icon:'fa-cart-plus',cl:'y',t:'Easy ordering',d:'Place orders in minutes, track deliveries, download receipts, and view your full order history.',p:'Order tracking'},
-    {icon:'fa-chart-line',cl:'b',t:'Spending analytics',d:'Know your monthly spend, top products, and exactly how much you\'ve saved through collective buying.',p:'Business insights'},
-    {icon:'fa-magnifying-glass',cl:'r',t:'Product verification',d:'Scan barcodes to verify authenticity, check expiry dates, and report counterfeit goods.',p:'Coming soon'}
+    {icon:'📦',cl:'g',t:'Product catalog',d:'Browse hundreds of products with live pricing, pack sizes, and real-time availability from verified suppliers.',p:'Shop now'},
+    {icon:'🛒',cl:'y',t:'Easy ordering',d:'Place orders in minutes, track deliveries, download receipts, and view your full order history.',p:'Order tracking'},
+    {icon:'📊',cl:'b',t:'Spending analytics',d:'Know your monthly spend, top products, and exactly how much you\'ve saved through collective buying.',p:'Business insights'},
+    {icon:'🔍',cl:'r',t:'Product verification',d:'Scan barcodes to verify authenticity, check expiry dates, and report counterfeit goods.',p:'Coming soon'}
   ],
   suppliers:[
-    {icon:'fa-shop',cl:'g',t:'Supplier portal',d:'List your products, update stock in real time, and receive aggregated orders from township retailers.',p:'List products'},
-    {icon:'fa-chart-line',cl:'y',t:'Sales analytics',d:'Track your sales performance, top-moving products, and revenue trends across all retailers.',p:'View reports'},
-    {icon:'fa-inbox',cl:'b',t:'Order management',d:'Receive and fulfil bulk orders from SpazaSure with automated notifications and status updates.',p:'Manage orders'},
-    {icon:'fa-badge-check',cl:'r',t:'Verified supplier badge',d:'Build trust with township retailers through SpazaSure\'s supplier verification and quality checks.',p:'Get verified'}
+    {icon:'🏪',cl:'g',t:'Supplier portal',d:'List your products, update stock in real time, and receive aggregated orders from township retailers.',p:'List products'},
+    {icon:'📈',cl:'y',t:'Sales analytics',d:'Track your sales performance, top-moving products, and revenue trends across all retailers.',p:'View reports'},
+    {icon:'📦',cl:'b',t:'Order management',d:'Receive and fulfil bulk orders from SpazaSure with automated notifications and status updates.',p:'Manage orders'},
+    {icon:'✅',cl:'r',t:'Verified supplier badge',d:'Build trust with township retailers through SpazaSure\'s supplier verification and quality checks.',p:'Get verified'}
   ],
   admin:[
-    {icon:'fa-sliders',cl:'b',t:'Order approval',d:'Review, approve, and manage all platform orders with a complete audit trail and status control.',p:'Control centre'},
-    {icon:'fa-truck',cl:'g',t:'Delivery management',d:'Assign drivers, set routes, and track deliveries across multiple townships in real time.',p:'Logistics'},
-    {icon:'fa-sack-dollar',cl:'y',t:'Financial analytics',d:'Track revenue, gross profit, net profit, and supplier spend with live-updating dashboards.',p:'Finance'},
-    {icon:'fa-users',cl:'r',t:'User management',d:'Manage retailer accounts, supplier profiles, and platform access with role-based permissions.',p:'Admin'}
+    {icon:'⚙️',cl:'b',t:'Order approval',d:'Review, approve, and manage all platform orders with a complete audit trail and status control.',p:'Control centre'},
+    {icon:'🚚',cl:'g',t:'Delivery management',d:'Assign drivers, set routes, and track deliveries across multiple townships in real time.',p:'Logistics'},
+    {icon:'💰',cl:'y',t:'Financial analytics',d:'Track revenue, gross profit, net profit, and supplier spend with live-updating dashboards.',p:'Finance'},
+    {icon:'👥',cl:'r',t:'User management',d:'Manage retailer accounts, supplier profiles, and platform access with role-based permissions.',p:'Admin'}
   ]
 };
 function swTab(btn,tab){
   document.querySelectorAll('.ftab').forEach(t=>t.classList.remove('on'));
   btn.classList.add('on');
-  document.getElementById('ftcards').innerHTML=ftData[tab].map(f=>`<div class="fc"><div class="fc-icon ${f.cl}"><i class="fas ${f.icon}"></i></div><h3>${f.t}</h3><p>${f.d}</p><span class="fc-pill">${f.p}</span></div>`).join('');
+  document.getElementById('ftcards').innerHTML=ftData[tab].map(f=>`<div class="fc"><div class="fc-icon ${f.cl}">${f.icon}</div><h3>${f.t}</h3><p>${f.d}</p><span class="fc-pill">${f.p}</span></div>`).join('');
 }
+document.getElementById('registrationForm').addEventListener('submit',function(e){
+  e.preventDefault();
+  const btn=document.querySelector('.btn-submit');
+  btn.textContent='✓ Submitted! Check your email.';
+  btn.style.background='var(--green)';
+  btn.disabled=true;
+  this.submit();
+});
 </script>
 </body>
 </html>
