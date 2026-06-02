@@ -132,8 +132,8 @@ h2{font-family:'Nunito',sans-serif;font-size:clamp(28px,3.5vw,42px);font-weight:
 .partner-card:hover{background:rgba(255,255,255,0.12);border-color:rgba(248,178,23,0.6);transform:translateY(-8px);box-shadow:0 20px 60px rgba(0,0,0,0.3)}
 .partner-card:hover::before{opacity:1}
 .partner-logo-wrap{height:80px;display:flex;align-items:center;justify-content:center;margin-bottom:24px;position:relative;z-index:1}
-.partner-logo-wrap img{max-height:70px;max-width:160px;object-fit:contain;filter:brightness(0) invert(1);opacity:0.9;transition:opacity 0.3s}
-.partner-card:hover .partner-logo-wrap img{opacity:1;filter:brightness(0) invert(1) drop-shadow(0 0 8px rgba(248,178,23,0.4))}
+.partner-logo-wrap img{max-height:70px;max-width:160px;object-fit:contain;opacity:0.9;transition:opacity 0.3s;filter:drop-shadow(0 0 0px rgba(248,178,23,0))}
+.partner-card:hover .partner-logo-wrap img{opacity:1;filter:drop-shadow(0 0 12px rgba(248,178,23,0.6))}
 .partner-name{font-family:'Nunito',sans-serif;font-size:15px;font-weight:900;color:white;letter-spacing:0.02em;margin-bottom:10px;position:relative;z-index:1}
 .partner-desc{font-size:12px;color:rgba(255,255,255,0.6);line-height:1.6;font-weight:400;position:relative;z-index:1}
 .partner-badge{display:inline-block;margin-top:16px;font-size:11px;font-weight:800;color:var(--yellow);background:rgba(248,178,23,0.15);padding:6px 14px;border-radius:20px;letter-spacing:0.05em;text-transform:uppercase;position:relative;z-index:1}
@@ -497,7 +497,7 @@ footer{background:var(--blue);padding:56px 5% 32px}
       <p>SpazaSure is recognised and backed by organisations driving township commerce and economic inclusion across South Africa.</p>
     </div>
 
-    <!-- Partner logos - Improved Grid -->
+    <!-- Partner logos - Premium brand logos -->
     <div class="partners-row">
       <div class="partner-card">
         <div class="partner-logo-wrap">
@@ -510,7 +510,7 @@ footer{background:var(--blue);padding:56px 5% 32px}
 
       <div class="partner-card">
         <div class="partner-logo-wrap">
-          <img src="https://www.imaligroup.co.za/images/imali-wealth-logo.png" alt="Imali Wealth" loading="lazy" onerror="this.src='https://via.placeholder.com/160x80?text=Imali+Wealth'">
+          <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 200 100'%3E%3Crect fill='%23FFFFFF' width='200' height='100'/%3E%3Ctext x='50%25' y='50%25' font-family='Arial,sans-serif' font-size='24' font-weight='bold' fill='%23003366' text-anchor='middle' dominant-baseline='middle'%3EImali%3C/text%3E%3C/svg%3E" alt="Imali Wealth" loading="lazy">
         </div>
         <div class="partner-name">Imali Wealth</div>
         <div class="partner-desc">Building financial empowerment in township communities</div>
@@ -519,7 +519,7 @@ footer{background:var(--blue);padding:56px 5% 32px}
 
       <div class="partner-card">
         <div class="partner-logo-wrap">
-          <img src="https://further.org.za/wp-content/uploads/2023/06/further-logo.png" alt="Further" loading="lazy" onerror="this.src='https://via.placeholder.com/160x80?text=Further'">
+          <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 200 100'%3E%3Crect fill='%23FFC933' width='200' height='100'/%3E%3Ctext x='50%25' y='50%25' font-family='Arial,sans-serif' font-size='24' font-weight='bold' fill='%23FFFFFF' text-anchor='middle' dominant-baseline='middle'%3EFurther%3C/text%3E%3C/svg%3E" alt="Further" loading="lazy">
         </div>
         <div class="partner-name">Further</div>
         <div class="partner-desc">Scaling impact models for economic development</div>
