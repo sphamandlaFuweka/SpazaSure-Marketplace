@@ -23,6 +23,29 @@ body{font-family:'Nunito',sans-serif;background:var(--white);color:var(--ink);ov
 .logo-img{height:50px;width:auto;min-width:50px}
 .logo-mark.white .logo-img{height:50px}
 
+
+
+  /* Ensure the container doesn't block clicks */
+.story-video {
+    position: relative;
+    z-index: 1;
+}
+
+/* Force the iframe to be on top and interactive */
+.story-video iframe {
+    position: relative;
+    z-index: 9999 !important;
+    pointer-events: auto !important;
+}
+
+/* IF there is a dark overlay or mask div inside your code, 
+   disable its pointer events so clicks pass right through it */
+.story-video::after, 
+.video-overlay, 
+.mask {
+    pointer-events: none !important;
+}
+
 /* NAV */
 nav{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(255,255,255,0.95);backdrop-filter:blur(10px);border-bottom:2px solid var(--blue-light);padding:0 5%}
 .nav-inner{max-width:1200px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;height:68px}
@@ -531,15 +554,16 @@ footer{background:var(--blue);padding:56px 5% 32px;position:relative}
         </div>
       </div>
 
-<div class="story-video">
+<div class="story-video" style="position: relative; pointer-events: auto;">
   <iframe 
-    src="https://www.youtube.com/embed/lX_kxIuhm48?autoplay=1&mute=1&controls=1&rel=0" 
+    src="https://www.youtube.com/embed/lX_kxIuhm48?autoplay=1&mute=1&controls=1&modestbranding=1&rel=0" 
     allow="autoplay; encrypted-media; fullscreen" 
     allowfullscreen="true"
     webkitallowfullscreen="true" 
     mozallowfullscreen="true"
     loading="lazy" 
-    title="SpazaSure - Township Retail Innovation">
+    title="SpazaSure - Township Retail Innovation"
+    style="position: relative; z-index: 10; pointer-events: auto; width: 100%; height: 100%; border: none;">
   </iframe>
 </div>
       
