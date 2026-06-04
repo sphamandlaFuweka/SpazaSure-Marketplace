@@ -36,7 +36,8 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(255,255,255,
 .color-strip span{flex:1}
 
 /* HERO */
-.hero{min-height:100vh;background:var(--blue);display:flex;align-items:center;padding:90px 5% 60px;position:relative;overflow:hidden}
+.hero{min-height:100vh;background:var(--blue);display:flex;align-items:center;padding:90px 5% 60px;position:relative;overflow:hidden;background-image:url('https://raw.githubusercontent.com/sphafuneka/spazasure-/main/1-1.png');background-size:cover;background-position:center;background-attachment:fixed}
+.hero::before{content:'';position:absolute;inset:0;background:rgba(37,68,154,0.85);z-index:0}
 .hero-blob1{position:absolute;width:500px;height:500px;background:rgba(255,255,255,0.04);border-radius:60% 40% 70% 30%/50% 60% 40% 50%;top:-100px;right:-80px;pointer-events:none}
 .hero-blob2{position:absolute;width:300px;height:300px;background:rgba(7,140,80,0.15);border-radius:40% 60% 30% 70%/60% 40% 60% 40%;bottom:40px;left:-60px;pointer-events:none}
 .hero-inner{max-width:1200px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:center;position:relative;z-index:1}
@@ -48,7 +49,7 @@ h1 em{font-style:normal;color:var(--yellow)}
 .hero-btns{display:flex;gap:12px;flex-wrap:wrap}
 .btn-yellow{background:var(--yellow);color:var(--blue);padding:14px 28px;border-radius:50px;font-size:15px;font-weight:800;text-decoration:none;transition:all 0.2s;font-family:'Nunito',sans-serif;border:none;cursor:pointer}
 .btn-yellow:hover{background:#e8a510;transform:translateY(-2px)}
-.btn-outline{background:transparent;color:white;padding:14px 28px;border-radius:50px;font-size:15px;font-weight:700;text-decoration:none;border:2px solid rgba(255,255,255,0.35);cursor:pointer;font-family:'Nunito',sans-serif}
+.btn-outline{background:transparent;color:white;padding:14px 28px;border-radius:50px;font-size:15px;font-weight:700;text-decoration:none;border:2px solid rgba(255,255,255,0.35);cursor:pointer;font-family:'Nunito',sans-serif;transition:all 0.2s}
 .btn-outline:hover{border-color:white;background:rgba(255,255,255,0.1)}
 .hero-badges{display:flex;gap:20px;margin-top:40px;padding-top:36px;border-top:1px solid rgba(255,255,255,0.12)}
 .badge{display:flex;align-items:center;gap:10px}
@@ -103,20 +104,22 @@ h2{font-family:'Nunito',sans-serif;font-size:clamp(28px,3.5vw,42px);font-weight:
 .accent-underline::after{content:'';position:absolute;left:0;right:0;bottom:-3px;height:3px;background:var(--yellow);border-radius:2px}
 
 /* HOW IT WORKS */
-.how-section{background:var(--off);padding:80px 5%}
+.how-section{background:var(--off);padding:80px 5%;background-image:url('https://raw.githubusercontent.com/sphafuneka/spazasure-/main/1-2.png');background-size:cover;background-position:center;background-attachment:fixed;position:relative}
+.how-section::before{content:'';position:absolute;inset:0;background:rgba(245,247,255,0.95);z-index:0}
+.how-section .si{position:relative;z-index:1}
 .steps-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:0;margin-top:52px;position:relative}
 .steps-grid::before{content:'';position:absolute;top:38px;left:12.5%;right:12.5%;height:2px;background:repeating-linear-gradient(90deg,var(--blue) 0,var(--blue) 6px,transparent 6px,transparent 14px);z-index:0}
 .step{text-align:center;padding:20px 14px;z-index:1;position:relative}
-.step-circle{width:76px;height:76px;border-radius:50%;background:white;border:3px solid var(--blue-light);display:flex;align-items:center;justify-content:center;margin:0 auto 18px;font-size:24px;color:var(--blue)}
+.step-circle{width:76px;height:76px;border-radius:50%;background:white;border:3px solid var(--blue-light);display:flex;align-items:center;justify-content:center;margin:0 auto 18px;font-size:24px;color:var(--blue);transition:all 0.3s}
 .step:hover .step-circle{background:var(--blue);color:white;border-color:var(--blue);transform:scale(1.1)}
 .step:nth-child(3):hover .step-circle{background:var(--red);color:white;border-color:var(--red);transform:scale(1.1)}
 .step-t{font-family:'Nunito',sans-serif;font-size:14px;font-weight:800;color:var(--ink);margin-bottom:7px}
 .step-d{font-size:12px;color:var(--ink3);line-height:1.6}
 
 /* SUPPORTED BY / PARTNERS + APP SECTION */
-.supported-section{background:var(--blue);padding:80px 5%;position:relative;overflow:hidden}
-.supported-section::before{content:'';position:absolute;top:-120px;right:-120px;width:400px;height:400px;background:rgba(255,255,255,0.04);border-radius:50%;pointer-events:none}
-.supported-section::after{content:'';position:absolute;bottom:-80px;left:-80px;width:300px;height:300px;background:rgba(7,140,80,0.1);border-radius:50%;pointer-events:none}
+.supported-section{background:var(--blue);padding:80px 5%;position:relative;overflow:hidden;background-image:url('https://raw.githubusercontent.com/sphafuneka/spazasure-/main/1-3.png');background-size:cover;background-position:center;background-attachment:fixed}
+.supported-section::before{content:'';position:absolute;inset:0;background:rgba(37,68,154,0.88);z-index:0}
+.supported-section::after{display:none}
 .supported-inner{max-width:1200px;margin:0 auto;position:relative;z-index:1}
 
 /* Header */
@@ -127,7 +130,7 @@ h2{font-family:'Nunito',sans-serif;font-size:clamp(28px,3.5vw,42px);font-weight:
 
 /* Partners row - Improved */
 .partners-row{display:grid;grid-template-columns:repeat(3,1fr);gap:32px;margin-bottom:80px}
-.partner-card{background:rgba(255,255,255,0.06);border:1.5px solid rgba(255,255,255,0.12);border-radius:24px;padding:48px 32px;text-align:center;transition:all 0.3s;backdrop-filter:blur(10px);position:relative}
+.partner-card{background:rgba(255,255,255,0.06);border:1.5px solid rgba(255,255,255,0.12);border-radius:24px;padding:48px 32px;text-align:center;transition:all 0.3s;backdrop-filter:blur(10px);position:relative;overflow:hidden}
 .partner-card::before{content:'';position:absolute;inset:0;background:linear-gradient(135deg,rgba(248,178,23,0.08) 0%,transparent 100%);opacity:0;transition:opacity 0.3s}
 .partner-card:hover{background:rgba(255,255,255,0.12);border-color:rgba(248,178,23,0.6);transform:translateY(-8px);box-shadow:0 20px 60px rgba(0,0,0,0.3)}
 .partner-card:hover::before{opacity:1}
@@ -160,7 +163,7 @@ h2{font-family:'Nunito',sans-serif;font-size:clamp(28px,3.5vw,42px);font-weight:
 .app-feat-desc{font-size:12px;color:rgba(255,255,255,0.5);line-height:1.5}
 .app-store-btns{display:flex;gap:12px;flex-wrap:wrap}
 .store-btn-wrapper{position:relative}
-.store-btn{display:flex;align-items:center;gap:10px;background:rgba(255,255,255,0.1);border:1.5px solid rgba(255,255,255,0.2);border-radius:14px;padding:12px 20px;text-decoration:none;transition:all 0.2s;font-family:'Nunito',sans-serif}
+.store-btn{display:flex;align-items:center;gap:10px;background:rgba(255,255,255,0.1);border:1.5px solid rgba(255,255,255,0.2);border-radius:14px;padding:12px 20px;text-decoration:none;transition:all 0.2s;color:white}
 .store-btn:hover{background:rgba(255,255,255,0.16);border-color:rgba(248,178,23,0.5)}
 .store-btn i{font-size:22px;color:white}
 .store-btn-text{display:flex;flex-direction:column}
@@ -173,9 +176,9 @@ h2{font-family:'Nunito',sans-serif;font-size:clamp(28px,3.5vw,42px);font-weight:
 .phone-frame{position:relative;flex-shrink:0}
 .phone-frame.primary{width:240px;height:480px}
 .phone-frame.secondary{width:220px;height:440px;opacity:0.85;transform:translateY(16px)}
-.phone-body{position:relative;width:100%;height:100%;background:#000;border-radius:50px;padding:12px;box-shadow:0 30px 60px rgba(0,0,0,0.4),inset 0 1px 0 rgba(255,255,255,0.1);border:1px solid rgba(255,255,255,0.05)}
-.phone-screen{width:100%;height:100%;background:linear-gradient(135deg,var(--blue) 0%,#1a3278 100%);border-radius:46px;padding:20px 16px;display:flex;flex-direction:column;justify-content:space-between;position:relative}
-.phone-notch{position:absolute;top:0;left:50%;transform:translateX(-50%);width:35%;height:24px;background:#000;border-radius:0 0 20px 20px;z-index:10}
+.phone-body{position:relative;width:100%;height:100%;background:#333;border-radius:50px;padding:12px;box-shadow:0 30px 60px rgba(0,0,0,0.4),inset 0 1px 0 rgba(255,255,255,0.1);border:1px solid rgba(255,255,255,0.2)}
+.phone-screen{width:100%;height:100%;background:linear-gradient(135deg,var(--blue) 0%,#1a3278 100%);border-radius:46px;padding:20px 16px;display:flex;flex-direction:column;justify-content:space-between}
+.phone-notch{position:absolute;top:0;left:50%;transform:translateX(-50%);width:35%;height:24px;background:#333;border-radius:0 0 20px 20px;z-index:10}
 .phone-content{position:relative;z-index:5;display:flex;flex-direction:column;gap:10px;margin-top:8px}
 .phone-header{display:flex;align-items:center;gap:8px}
 .phone-avatar{width:32px;height:32px;border-radius:8px;background:rgba(255,255,255,0.2);display:flex;align-items:center;justify-content:center;color:white;font-size:14px;font-weight:800}
@@ -187,11 +190,13 @@ h2{font-family:'Nunito',sans-serif;font-size:clamp(28px,3.5vw,42px);font-weight:
 .phone-action:hover{transform:translateY(-2px);box-shadow:0 8px 16px rgba(248,178,23,0.3)}
 
 /* FEATURES */
-.feat-section{background:var(--blue);padding:80px 5%}
+.feat-section{background:var(--blue);padding:80px 5%;background-image:url('https://raw.githubusercontent.com/sphafuneka/spazasure-/main/1-4.png');background-size:cover;background-position:center;background-attachment:fixed;position:relative}
+.feat-section::before{content:'';position:absolute;inset:0;background:rgba(37,68,154,0.87);z-index:0}
+.feat-section .si{position:relative;z-index:1}
 .feat-head{display:flex;justify-content:space-between;align-items:flex-end;margin-bottom:44px;flex-wrap:wrap;gap:20px}
 .feat-head h2{color:white}
 .feat-tabs-row{display:flex;gap:8px}
-.ftab{padding:9px 20px;border-radius:50px;font-size:13px;font-weight:800;cursor:pointer;border:2px solid rgba(255,255,255,0.2);color:rgba(255,255,255,0.5);background:transparent;font-family:'Nunito',sans-serif}
+.ftab{padding:9px 20px;border-radius:50px;font-size:13px;font-weight:800;cursor:pointer;border:2px solid rgba(255,255,255,0.2);color:rgba(255,255,255,0.5);background:transparent;font-family:'Nunito',sans-serif;transition:all 0.2s}
 .ftab.on{background:var(--yellow);color:var(--blue);border-color:var(--yellow)}
 .feat-cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:18px}
 .fc{background:rgba(255,255,255,0.07);border:1px solid rgba(255,255,255,0.1);border-radius:18px;padding:26px;transition:all 0.25s;cursor:default}
@@ -245,7 +250,7 @@ h2{font-family:'Nunito',sans-serif;font-size:clamp(28px,3.5vw,42px);font-weight:
 .form-sub{font-size:13px;color:var(--ink3);margin-bottom:26px;font-weight:400}
 .fg{margin-bottom:16px}
 .fg label{display:block;font-size:12px;font-weight:800;color:var(--ink2);margin-bottom:5px;letter-spacing:0.02em}
-.fg input,.fg select,.fg textarea{width:100%;padding:11px 14px;border:2px solid #e8ecf8;border-radius:10px;font-family:'Nunito',sans-serif;font-size:14px;color:var(--ink);background:var(--off);outline:none;transition:border 0.2s}
+.fg input,.fg select,.fg textarea{width:100%;padding:11px 14px;border:2px solid #e8ecf8;border-radius:10px;font-family:'Nunito',sans-serif;font-size:14px;color:var(--ink);background:var(--off);outline:none;transition:border-color 0.2s}
 .fg input:focus,.fg select:focus,.fg textarea:focus{border-color:var(--blue)}
 .fg-row{display:grid;grid-template-columns:1fr 1fr;gap:12px}
 .btn-submit{width:100%;background:var(--blue);color:white;border:none;padding:14px;border-radius:50px;font-family:'Nunito',sans-serif;font-size:15px;font-weight:900;cursor:pointer;transition:all 0.2s}
@@ -381,9 +386,9 @@ footer{background:var(--blue);padding:56px 5% 32px}
           </div>
           <div style="font-size:10px;font-weight:800;color:var(--ink3);letter-spacing:0.06em;text-transform:uppercase;margin-bottom:8px">Recent orders</div>
           <div class="order-list">
-            <div class="order-row"><div class="or-left"><div class="or-av" style="background:var(--blue)">MP</div><div><div class="or-name">Mama Phiri's Shop</div><div class="or-items">Maize, Sugar, Oil • R1,200</div></div></div><div class="or-status s-d">Delivered</div></div>
-            <div class="order-row"><div class="or-left"><div class="or-av" style="background:var(--green)">SB</div><div><div class="or-name">Sizwe's Bazaar</div><div class="or-items">Cold drinks, Bread • R800</div></div></div><div class="or-status s-t">Transit</div></div>
-            <div class="order-row"><div class="or-left"><div class="or-av" style="background:var(--red)">TK</div><div><div class="or-name">Thabo's Kiosk</div><div class="or-items">Snacks, Juice • R900</div></div></div><div class="or-status s-p">Pending</div></div>
+            <div class="order-row"><div class="or-left"><div class="or-av" style="background:var(--blue)">MP</div><div><div class="or-name">Mama Phiri's Shop</div><div class="or-items">Maize, Sugar, Oil</div></div></div><div class="or-status s-d">Delivered</div></div>
+            <div class="order-row"><div class="or-left"><div class="or-av" style="background:var(--green)">SB</div><div><div class="or-name">Sizwe's Bazaar</div><div class="or-items">Cold drinks, Bread</div></div></div><div class="or-status s-t">Transit</div></div>
+            <div class="order-row"><div class="or-left"><div class="or-av" style="background:var(--red)">TK</div><div><div class="or-name">Thabo's Kiosk</div><div class="or-items">Snacks, Juice • R950</div></div></div><div class="or-status s-p">Pending</div></div>
           </div>
         </div>
         <div class="mini-float mf1">
@@ -410,10 +415,10 @@ footer{background:var(--blue);padding:56px 5% 32px}
     <h2>From your order to <span class="accent-underline">your door</span></h2>
     <p class="sub" style="margin:0 auto">Simple. Transparent. Reliable. Here's exactly how SpazaSure works for your shop.</p>
     <div class="steps-grid">
-      <div class="step"><div class="step-circle"><i class="fas fa-cart-shopping"></i></div><div class="step-t">Place your order</div><p class="step-d">Browse the product catalog and order exactly what you need in minutes.</p></div>
-      <div class="step"><div class="step-circle"><i class="fas fa-people-group"></i></div><div class="step-t">We aggregate orders</div><p class="step-d">SpazaSure combines your order with other spaza shops for bulk power.</p></div>
-      <div class="step"><div class="step-circle" style="border-color:var(--red);color:var(--red)"><i class="fas fa-circle-check"></i></div><div class="step-t">Verified & sourced</div><p class="step-d">We source from verified suppliers at wholesale rates — no middlemen.</p></div>
-      <div class="step"><div class="step-circle"><i class="fas fa-truck-fast"></i></div><div class="step-t">Delivered to you</div><p class="step-d">Track your delivery in real time. Stock arrives at your shop door.</p></div>
+      <div class="step"><div class="step-circle"><i class="fas fa-cart-shopping"></i></div><div class="step-t">Place your order</div><p class="step-d">Browse the product catalog and order exactly what you need.</p></div>
+      <div class="step"><div class="step-circle"><i class="fas fa-people-group"></i></div><div class="step-t">We aggregate orders</div><p class="step-d">SpazaSure combines your order with other shops for bulk power.</p></div>
+      <div class="step"><div class="step-circle" style="border-color:var(--red);color:var(--red)"><i class="fas fa-circle-check"></i></div><div class="step-t">Verified & sourced</div><p class="step-d">All products verified authentic. Quality guaranteed.</p></div>
+      <div class="step"><div class="step-circle"><i class="fas fa-truck-fast"></i></div><div class="step-t">Delivered to you</div><p class="step-d">Track your delivery in real time. Stock arrives at your shop.</p></div>
     </div>
   </div>
 </section>
@@ -670,7 +675,7 @@ footer{background:var(--blue);padding:56px 5% 32px}
   <div class="mission-inner">
     <div class="tag" style="background:rgba(255,255,255,0.1);color:rgba(255,255,255,0.7);margin-bottom:24px">Our mission</div>
     <blockquote>"To build <em>safer, smarter,</em> and more profitable township retail ecosystems."</blockquote>
-    <p>Connecting spaza shops to <strong>trusted suppliers</strong>, <strong>affordable logistics</strong>, and <strong>digital tools</strong> — so informal retail becomes the economic backbone it deserves.</p>
+    <p>Connecting spaza shops to <strong>trusted suppliers</strong>, <strong>affordable logistics</strong>, and <strong>digital tools</strong> — so informal retail becomes the economic backbone it deserves to be.</p>
     <div class="mission-dots">
       <span style="background:var(--blue-light);opacity:0.5"></span>
       <span style="background:var(--green)"></span>
@@ -702,22 +707,25 @@ footer{background:var(--blue);padding:56px 5% 32px}
     <div class="form-card">
       <div class="form-title">Register your interest</div>
       <div class="form-sub">Free to join. No setup fees. We'll reach out to get you started.</div>
-      <div class="fg-row">
-        <div class="fg"><label>First name</label><input type="text" placeholder="Sipho"></div>
-        <div class="fg"><label>Last name</label><input type="text" placeholder="Dlamini"></div>
-      </div>
-      <div class="fg"><label>Phone number</label><input type="tel" placeholder="+27 71 000 0000"></div>
-      <div class="fg"><label>Email address</label><input type="email" placeholder="sipho@example.com"></div>
-      <div class="fg"><label>I am a...</label>
-        <select>
-          <option>Spaza shop owner</option>
-          <option>Supplier / wholesaler</option>
-          <option>Investor / partner</option>
-          <option>Government / NGO</option>
-        </select>
-      </div>
-      <div class="fg"><label>Town / township</label><input type="text" placeholder="e.g. Khayelitsha, Umlazi, Soweto"></div>
-      <button class="btn-submit" onclick="this.textContent='✓ Registered! We will be in touch.';this.style.background='var(--green)';this.disabled=true">Register now — it's free</button>
+      <form id="contactForm" method="POST" action="https://formspree.io/f/mldewozg">
+        <div class="fg-row">
+          <div class="fg"><label>First name</label><input type="text" name="firstName" placeholder="Sipho" required></div>
+          <div class="fg"><label>Last name</label><input type="text" name="lastName" placeholder="Dlamini" required></div>
+        </div>
+        <div class="fg"><label>Phone number</label><input type="tel" name="phone" placeholder="+27 71 000 0000" required></div>
+        <div class="fg"><label>Email address</label><input type="email" name="email" placeholder="sipho@example.com" required></div>
+        <div class="fg"><label>I am a...</label>
+          <select name="userType" required>
+            <option value="">Select an option</option>
+            <option value="Spaza shop owner">Spaza shop owner</option>
+            <option value="Supplier / wholesaler">Supplier / wholesaler</option>
+            <option value="Investor / partner">Investor / partner</option>
+            <option value="Government / NGO">Government / NGO</option>
+          </select>
+        </div>
+        <div class="fg"><label>Town / township</label><input type="text" name="town" placeholder="e.g. Khayelitsha, Umlazi, Soweto" required></div>
+        <button type="submit" class="btn-submit">Register now — it's free</button>
+      </form>
     </div>
   </div>
 </section>
@@ -728,7 +736,7 @@ footer{background:var(--blue);padding:56px 5% 32px}
     <div class="footer-top">
       <div class="fb">
         <a href="#" class="logo-mark white">
-          <img id="img-footer-logo" alt="SpazaSure" class="logo-img" style="filter:brightness(0) invert(1)">
+          <img id="img-footer-logo" alt="SpazaSure" class="logo-img">
           <span class="logo-text">SPAZASURE</span>
         </a>
         <p>Digital infrastructure for township retail — connecting spaza shops to trusted supply chains, one order at a time.</p>
@@ -767,10 +775,10 @@ function swTab(btn,tab){
 </script>
 
 <script>
-const BASE = "https://raw.githubusercontent.com/sphamandlaFuweka/SpazaSure-Marketplace/main/";
+const BASE = "https://raw.githubusercontent.com/sphafuneka/spazasure-/main/";
 const imgMap = {
-  "img-nav-logo":    ["logo.png","Logo.png","spazasure-logo.png","SpazaSure logo.png","SpazaSure%20logo.png"],
-  "img-footer-logo": ["logo.png","Logo.png","spazasure-logo.png","SpazaSure logo.png","SpazaSure%20logo.png"]
+  "img-nav-logo":    ["logo20206.png","logo.png","spazasure-logo.png"],
+  "img-footer-logo": ["logo20206.png","logo.png","spazasure-logo.png"]
 };
 
 function tryLoad(imgEl, names, idx) {
