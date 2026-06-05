@@ -789,23 +789,71 @@ footer{background:var(--blue);padding:56px 5% 32px;position:relative}
       <div class="form-sub">Free to join. No setup fees. We'll reach out to get you started.</div>
       <form id="contactForm" method="POST" action="https://api.web3forms.com/submit">
         <input type="hidden" name="access_key" value="4bf9ef37-64d4-40ac-9abe-ef77848c7b18">
-        <div class="fg-row">
-          <div class="fg"><label>First name</label><input type="text" name="firstName" placeholder="Sipho" required></div>
-          <div class="fg"><label>Last name</label><input type="text" name="lastName" placeholder="Dlamini" required></div>
-        </div>
-        <div class="fg"><label>Phone number</label><input type="tel" name="phone" placeholder="+27 71 000 0000" required></div>
-        <div class="fg"><label>Email address</label><input type="email" name="email" placeholder="sipho@example.com" required></div>
-        <div class="fg"><label>I am a...</label>
-          <select name="userType" required>
-            <option value="">Select an option</option>
-            <option value="Spaza shop owner">Spaza shop owner</option>
-            <option value="Supplier / wholesaler">Supplier / wholesaler</option>
-            <option value="Investor / partner">Investor / partner</option>
-            <option value="Government / NGO">Government / NGO</option>
-          </select>
-        </div>
-        <div class="fg"><label>Town / township</label><input type="text" name="town" placeholder="e.g. Khayelitsha, Umlazi, Soweto" required></div>
-        <button type="submit" class="btn-submit">Register now — it's free</button>
+    <div class="fg-row">
+    <div class="fg"><label>First name</label><input type="text" name="firstName" placeholder="Sipho" required></div>
+    <div class="fg"><label>Last name</label><input type="text" name="lastName" placeholder="Dlamini" required></div>
+  </div>
+
+  <!-- NEW FIELDS: Age Range & Gender Row -->
+  <div class="fg-row">
+    <div class="fg">
+      <label>Age range</label>
+      <select name="ageRange" required>
+        <option value="">Select age</option>
+        <option value="Under 18">Under 18</option>
+        <option value="18-24">18–24 (Youth)</option>
+        <option value="25-34">25–34</option>
+        <option value="35-44">35–44</option>
+        <option value="45-54">45–54</option>
+        <option value="55+">55+</option>
+      </select>
+    </div>
+    <div class="fg">
+      <label>Gender</label>
+      <select name="gender" required>
+        <option value="">Select gender</option>
+        <option value="Male">Male</option>
+        <option value="Female">Female</option>
+        <option value="Other">Other</option>
+        <option value="Prefer not to say">Prefer not to say</option>
+      </select>
+    </div>
+  </div>
+
+  <div class="fg"><label>Business / Trading Name</label><input type="text" name="businessName" placeholder="e.g. Sipho's Supermarket (Leave blank if individual)"></div>
+
+  <div class="fg-row">
+    <div class="fg"><label>Phone number</label><input type="tel" name="phone" placeholder="+27 71 000 0000" required></div>
+    <div class="fg"><label>WhatsApp number</label><input type="tel" name="whatsapp" placeholder="+27 71 000 0000"></div>
+  </div>
+
+  <div class="fg"><label>Email address</label><input type="email" name="email" placeholder="sipho@example.com" required></div>
+  
+  <div class="fg"><label>I am a...</label>
+    <select name="userType" required>
+      <option value="">Select an option</option>
+      <option value="Spaza shop owner">Spaza shop owner</option>
+      <option value="Supplier / wholesaler">Supplier / wholesaler</option>
+      <option value="Investor / partner">Investor / partner</option>
+      <option value="Government / NGO">Government / NGO</option>
+    </select>
+  </div>
+
+  <div class="fg"><label>Do you use a smartphone?</label>
+    <select name="hasSmartphone" required>
+      <option value="Yes">Yes, I use a smartphone</option>
+      <option value="No">No, I use a basic phone</option>
+    </select>
+  </div>
+
+  <div class="fg"><label>Town / township</label><input type="text" name="town" placeholder="e.g. Umlazi, KwaMashu, Soweto" required></div>
+  
+  <div class="fg">
+    <label>Comments, questions, or specific needs</label>
+    <textarea name="comments" rows="4" placeholder="Tell us more about your business or what products you are looking for..."></textarea>
+  </div>
+  
+  <button type="submit" class="btn-submit">Register now — it's free</button>
       </form>
     </div>
   </div>
